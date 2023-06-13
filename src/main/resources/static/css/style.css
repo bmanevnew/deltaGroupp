@@ -70,7 +70,45 @@ html {
 body {
     margin: 0;
 }
+.slide {
+    position: relative;
+}
 
+.slide-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(2px);
+    opacity: 0.3; /* Adjust the opacity value as needed */
+    z-index: -1;
+}
+
+.slide-content {
+    position: relative;
+    color: #fff; /* Adjust the text color as needed */
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+    padding: 20px; /* Adjust the padding as needed */
+    /* Additional styling for the slide content */
+}
+
+.site-header {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+.slide-content .title,
+.slide-content .content {
+    color: blue;
+}
 article,
 aside,
 details,
@@ -102,6 +140,14 @@ audio:not([controls]) {
 [hidden],
 template {
     display: none;
+}
+.lazyload {
+    opacity: 0; /* Hide the image initially */
+    transition: opacity 0.3s ease-in; /* Add a smooth transition effect */
+}
+
+.lazyload.visible {
+    opacity: 1; /* Make the image visible when it is in the viewport */
 }
 
 a {

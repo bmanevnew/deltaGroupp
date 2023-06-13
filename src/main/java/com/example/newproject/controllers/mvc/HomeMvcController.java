@@ -11,7 +11,7 @@ public class HomeMvcController {
 
     @GetMapping("/")
     public String home() {
-        return "index";
+        return "index.html";
     }
 
     @GetMapping("/request-a-quote.html")
@@ -23,5 +23,30 @@ public class HomeMvcController {
     public String showContactPage(Model model) {
         model.addAttribute("qputeDto", new QouteDto());
         return "request-a-quote";
+    }
+    @GetMapping("/index.html")
+    public String home2() {
+        return "index";
+    }
+
+    @GetMapping("/home-page-4.html")
+    public String home4() {
+        return "home-page-4";
+    }
+    @GetMapping("/about-us.html")
+    public String aboutUs() {
+        return "about-us";
+    }
+    @GetMapping("/news.html")
+    public String news() {
+        return "news";
+    }
+    @GetMapping("/ocean-forwarding.html")
+    public String oceanForwarding() {
+        return "ocean-forwarding";
+    }
+    @GetMapping("/contact.html")
+    public String contact() {
+        return "contact";
     }
 }
