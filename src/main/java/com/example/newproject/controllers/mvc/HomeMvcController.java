@@ -49,4 +49,19 @@ public class HomeMvcController {
     public String contact() {
         return "contact";
     }
+    @GetMapping("/warehousing.html")
+    public String warehousing() {
+        return "warehousing";
+    }
+
+    @GetMapping("/road-freight-forwarding.html")
+    public String roadFreightForwarding() {
+        return "road-freight-forwarding";
+    }
+
+    @GetMapping("/services.html")
+    public String services() {
+        return "services";
+    }
+
 }

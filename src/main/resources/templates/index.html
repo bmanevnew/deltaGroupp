@@ -1,7 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 
 <head>
+<!--    <style>-->
+<!--        .count-title {-->
+<!--            color: #ff0006 !important; /* Change the color to your desired value */-->
+<!--        }-->
+<!--    </style>-->
+    <style>
+        .welservices.row {
+            justify-content: center;
+        }
+
+        .welservices .col-md-4 {
+            display: flex;
+            justify-content: center;
+        }
+        .footer-widgets {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-widgets::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url(../static/images/bg/footer-bg.jpg); /* Replace with the actual path to your image */
+            background-size: cover;
+            filter: blur(50px); /* Adjust the blur strength as needed */
+            z-index: -1;
+        }
+
+        .footer-widgets::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 255, 0.5); /* Adjust the color and opacity as needed */
+            z-index: -1;
+        }
+    </style>
+
     <meta charset="utf-8">
     <title>Delta Group</title>
     <!-- Stylesheets -->
@@ -25,923 +70,423 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <!-- switcher css -->
     <link href="../static/css/switcher.css" rel="stylesheet">
-    <link rel='stylesheet' id='factoryhub-color-switcher-css' href='../static/css/switcher/default.css' />
+    <link rel='stylesheet' id='factoryhub-color-switcher-css' href='../static/css/switcher/default.css'/>
     <!-- revolution slider css -->
     <link rel="stylesheet" type="text/css" href="../static/css/revolution/settings.css">
     <link rel="stylesheet" type="text/css" href="../static/css/revolution/layers.css">
     <link rel="stylesheet" type="text/css" href="../static/css/revolution/navigation.css">
 
     <!--Favicon-->
-    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">
+<!--    <link rel="shortcut icon" href="../static/images/maker1.png" type="image/x-icon">-->
+<!--    <link rel="icon" href="../static/images/maker1.png" type="image/x-icon">-->
+    <link rel="icon" type="image/png" href="../static/images/icon/maker1.png">
+
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../static/css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]>
     <script src="../static/js/respond.js"></script><![endif]-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body class="home header-transparent  header-sticky header-v1 hide-topbar-mobile">
-    <div id="page">
+<div id="page">
 
 
-
-        <!-- topbar -->
-        <div id="fh-header-minimized" class="fh-header-minimized fh-header-v1"></div>
-        <div id="topbar" class="topbar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 pd-right_zero">
-                        <!-- <div class="topbar-left topbar-widgets text-left">
-                    <div id="cargo-office-location-widget-2" class="widget cargo-office-location-widget">
-                        <div class="office-location clearfix">
-                            <div class="office-switcher"><i class="flaticon-globe "></i>
-                                <a class="current-office" href="#">Newyork Office</a>
-                                <ul>
-                                    <li>Newyork Office</li>
-                                    <li>London Office</li>
-                                    <li>Tokyo Office</li>
-                                </ul>
-                            </div>
-                            <ul class="topbar-office active">
-                                <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +012 345 6789</li>
-                                <li><i class="flaticon-web" aria-hidden="true"></i>Mail@CargoHub.com</li>
-                                <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, NY 10012, USA</li>
-                            </ul>
-                            <ul class="topbar-office">
-                                <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +099 222 1111</li>
-                                <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Evanto.com</li>
-                                <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LD 32614, UK</li>
-                            </ul>
-                            <ul class="topbar-office">
-                                <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +098 765 4321</li>
-                                <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Steelthemes.com</li>
-                                <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, Tokyo 32614, Japan</li>
+    <!-- topbar -->
+    <div id="fh-header-minimized" class="fh-header-minimized fh-header-v1"></div>
+    <div id="topbar" class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 pd-right_zero">
+                    <!-- <div class="topbar-left topbar-widgets text-left">
+                <div id="cargo-office-location-widget-2" class="widget cargo-office-location-widget">
+                    <div class="office-location clearfix">
+                        <div class="office-switcher"><i class="flaticon-globe "></i>
+                            <a class="current-office" href="#">Newyork Office</a>
+                            <ul>
+                                <li>Newyork Office</li>
+                                <li>London Office</li>
+                                <li>Tokyo Office</li>
                             </ul>
                         </div>
+                        <ul class="topbar-office active">
+                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +012 345 6789</li>
+                            <li><i class="flaticon-web" aria-hidden="true"></i>Mail@CargoHub.com</li>
+                            <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, NY 10012, USA</li>
+                        </ul>
+                        <ul class="topbar-office">
+                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +099 222 1111</li>
+                            <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Evanto.com</li>
+                            <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LD 32614, UK</li>
+                        </ul>
+                        <ul class="topbar-office">
+                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +098 765 4321</li>
+                            <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Steelthemes.com</li>
+                            <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, Tokyo 32614, Japan</li>
+                        </ul>
                     </div>
-                </div>--->
+                </div>
+            </div>--->
 
 
-                        <div class="topbar-left topbar-widgets text-left">
-                            <div id="cargo-office-location-widget-2" class="widget cargo-office-location-widget">
-                                <div class="office-location clearfix">
+                    <div class="topbar-left topbar-widgets text-left">
+                        <div id="cargo-office-location-widget-2" class="widget cargo-office-location-widget">
+                            <div class="office-location clearfix">
 
 
-<!--                                    <div class="office-switcher_nw"><i class="flaticon-globe "></i><span class="fa fa-angle-down"></span>-->
-<!--                                        <select id="select-box">-->
-<!--                                    <option value="1">Newyork Office-->
+                                <!--                                    <div class="office-switcher_nw"><i class="flaticon-globe "></i><span class="fa fa-angle-down"></span>-->
+                                <!--                                        <select id="select-box">-->
+                                <!--                                    <option value="1">Newyork Office-->
 
-<!--                                       </option>-->
-<!--                                    <option value="2">  London Office</option>-->
-<!--                                    <option value="3"> Tokyo Office</option>-->
+                                <!--                                       </option>-->
+                                <!--                                    <option value="2">  London Office</option>-->
+                                <!--                                    <option value="3"> Tokyo Office</option>-->
 
-<!--                                </select>-->
-<!--                                    </div>-->
-
-
+                                <!--                                </select>-->
+                                <!--                                    </div>-->
 
 
-                                    <div id="tab-1" class="tab-content">
-                                        <ul class="topbar-office ">
-                                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +359 2 9202137</li>
-                                            <li><i class="flaticon-web" aria-hidden="true"></i>info@deltagroup.bg</li>
-                                            <li><i class="flaticon-pin" aria-hidden="true"></i>48-A, Suhodolska Str.</li>
-                                        </ul>
-                                    </div>
-                                    <div id="tab-2" class="tab-content">
-                                        <ul class="topbar-office">
-                                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +099 222 1111</li>
-                                            <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Evanto.com</li>
-                                            <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LD 32614, UK</li>
-                                        </ul>
-                                    </div>
-                                    <div id="tab-3" class="tab-content">
-                                        <ul class="topbar-office">
-                                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +098 765 4321</li>
-                                            <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Steelthemes.com</li>
-                                            <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LE 32614, Japan</li>
-                                        </ul>
-                                    </div>
-
-
-
-
+                                <div id="tab-1" class="tab-content">
+                                    <ul class="topbar-office ">
+                                        <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +359 2 9202137
+                                        </li>
+                                        <li><i class="flaticon-web" aria-hidden="true"></i>info@deltagroup.bg</li>
+                                        <li><i class="flaticon-pin" aria-hidden="true"></i>48-A, Suhodolska Str.</li>
+                                    </ul>
                                 </div>
+                                <div id="tab-2" class="tab-content">
+                                    <ul class="topbar-office">
+                                        <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +099 222 1111
+                                        </li>
+                                        <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Evanto.com</li>
+                                        <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LD 32614, UK</li>
+                                    </ul>
+                                </div>
+                                <div id="tab-3" class="tab-content">
+                                    <ul class="topbar-office">
+                                        <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +098 765 4321
+                                        </li>
+                                        <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Steelthemes.com</li>
+                                        <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LE 32614, Japan
+                                        </li>
+                                    </ul>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
-                        <div class="topbar-right topbar-widgets text-right">
-                            <div class="widget cargohub-social-links-widget">
-                                <div class="list-social style-1">
-                                    <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-skype"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                                </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="topbar-right topbar-widgets text-right">
+                        <div class="widget cargohub-social-links-widget">
+                            <div class="list-social style-1">
+                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-skype"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
                             </div>
-                            <div class="widget cargo-search-widget">
-                                <div class="topbar-search topbar-search-1">
-                                    <a href="#" class="toggle-search" id="toggle-search"><i class="fa fa-search" aria-hidden="true"></i></a>
-                                    <form class="search-form" action="#">
-                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                        <input type="search" class="search-field" placeholder="Search..." value="">
-                                        <input type="submit" class="search-submit" value="Search">
-                                    </form>
-                                </div>
+                        </div>
+                        <div class="widget cargo-search-widget">
+                            <div class="topbar-search topbar-search-1">
+                                <a href="#" class="toggle-search" id="toggle-search"><i class="fa fa-search"
+                                                                                        aria-hidden="true"></i></a>
+                                <form class="search-form" action="#">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    <input type="search" class="search-field" placeholder="Search..." value="">
+                                    <input type="submit" class="search-submit" value="Search">
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- topbar end -->
+    </div>
+    <!-- topbar end -->
 
-        <!-- masthead -->
-        <header id="masthead" class="site-header clearfix">
 
-            <div class="header-main clearfix">
-                <div class="container mobile_relative">
-                    <div class="row">
-                        <div class="site-logo col-md-3 col-sm-6 col-xs-6">
-                            <a href="index.html" class="logo">
-                                <img src="../static/images/logo-light.png" alt="CargoHub" class="logo-light show-logo">
-                                <img src="../static/images/logo.png" alt="CargoHub" class="logo-dark hide-logo">
-                            </a>
-                            <h1 class="site-title"><a href="#">CargoHub</a></h1>
-                            <h2 class="site-description">Just another Steel Themes Sites site</h2>
-                        </div>
-                        <div class="site-menu col-md-9 col-sm-6 col-xs-6">
-                            <nav id="site-navigation" class="main-nav primary-nav nav">
-                                <ul class="menu">
-                                    <li class="active has-children"><a href="index.html" class="dropdown-toggle">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home Page 1</a></li>
-                                            <li><a href="home-page-2.html">Home Page 2</a></li>
-                                            <li><a href="home-page-3.html">Home Page 3</a></li>
-                                            <li><a href="home-page-4.html" >Home Page 4</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children"><a href="services.html" class="dropdown-toggle">Services</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="services.html">All Services</a></li>
-                                            <li><a href="road-freight-forwarding.html">Road Freight Forwarding</a></li>
-                                            <li><a href="ocean-forwarding.html">Ocean Freight Forwarding</a></li>
-                                            <li><a href="air-freight-forwarding.html">Air Freight Forwarding</a></li>
-                                            <li><a href="warehousing.html">Warehousing</a></li>
-                                            <li><a href="door-to-door-delivery.html">Door to Door Delivery</a></li>
-                                            <li><a href="ground-transport.html">Ground Transport</a></li>
-                                            <li><a href="worldwide-transport.html">Worldwide Transport</a></li>
-                                            <li><a href="cargo-service.html">Cargo Service</a></li>
-                                            <li><a href="packaging-storage.html">Packaging &#038; Storage</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children"><a href="#" class="dropdown-toggle">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="about-us.html">About Us</a></li>
-                                            <li><a href="faqs.html">FAQS</a></li>
-                                            <li><a href="our-prices.html">Our Prices</a></li>
-                                            <li><a href="testimonials.html">Testimonials</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children"><a href="gallery.html" class="dropdown-toggle">Gallery</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="gallery-column-4.html">Gallery Four Columns</a></li>
-                                            <li><a href="gallery-column-3.html">Gallery Three Columns</a></li>
-                                            <li><a href="gallery.html">Gallery Two Columns</a></li>
-                                            <li><a href="gallery-single.html">Gallery Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-children"><a href="#" class="dropdown-toggle">Features</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="request-a-quote.html">Request A Quote</a></li>
-                                            <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
-                                        </ul>
-                                    </li>
-                                    <li ><a href="news.html" >News</a>
+    <!-- masthead -->
+    <header id="masthead" class="site-header clearfix">
 
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li class="extra-menu-item menu-item-button-link">
-                                        <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+        <div class="header-main clearfix">
+            <div class="container mobile_relative">
+                <div class="row">
+                    <div class="site-logo col-md-3 col-sm-6 col-xs-6">
+                        <a href="index.html" class="logo">
+                            <img src="../static/images/logo-light.png" alt="DeltaGroup" class="logo-light show-logo">
+                            <img src="../static/images/logo-light.png" alt="DeltaGroup" class="logo-dark hide-logo">
+                        </a>
+                        <h1 class="site-title"><a href="#">DeltaGroup</a></h1>
+                        <h2 class="site-description">Just another Steel Themes Sites site</h2>
                     </div>
-                    <a href="#" class="navbar-toggle">
+                    <div class="site-menu col-md-9 col-sm-6 col-xs-6">
+                        <nav id="site-navigation" class="main-nav primary-nav nav">
+                            <ul class="menu">
+                                <li ><a href="index.html">Home</a></li>
+                                <li class="has-children"><a href="services.html" class="dropdown-toggle">Services</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="services.html">All Services</a></li>
+                                        <li><a href="road-freight-forwarding.html">Road Freight Forwarding</a></li>
+                                        <li><a href="ocean-forwarding.html">Ocean Freight Forwarding</a></li>
+                                        <li><a href="warehousing.html">Warehousing</a></li>
+                                        <li><a href="ground-transport.html">Ground Transport</a></li>
+                                        <li><a href="cargo-service.html">Cargo Service</a></li>
+                                        <li><a href="packaging-storage.html">Packaging &#038; Storage</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children"><a href="#" class="dropdown-toggle">Pages</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="about-us.html">About Us</a></li>
+                                        <li><a href="faqs.html">FAQS</a></li>
+                                        <li><a href="our-prices.html">Our Prices</a></li>
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children"><a href="#" class="dropdown-toggle">Features</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="request-a-quote.html">Request A Quote</a></li>
+                                        <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="news.html">News</a>
+
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li class="extra-menu-item menu-item-button-link">
+                                    <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <a href="#" class="navbar-toggle">
                         <span class="navbar-icon">
 							<span class="navbars-line"></span>
                         </span>
-                    </a>
-                </div>
+                </a>
             </div>
+        </div>
 
-        </header>
+    </header>
 
-        <!-- masthead end -->
+    <!-- masthead end -->
 
-        <!--Main Slider-->
-        <section class="rev_slider_wrapper">
-            <div id="slider1" class="rev_slider" data-version="5.0">
-                <ul>
-                    <!-- SLIDE  -->
-                    <li class="slide" data-index="rs-1">
-                        <img src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg" data-src="https://coolwallpapers.me/picsup/5824661-container-terminal-wallpapers.jpg" alt="Home Page 1" class="slide-bg lazyload">
-                        <div class="slide-content">
-                            <div class="title">WE CARE ABOUT</div>
-                            <div class="title">YOUR CARGO</div>
-                            <div class="content">Dedicated employees, working in 06 regional</div>
-                            <div class="content">around the globe, deliver operational</div>
-                            <a href="about-us.html" class="button">About us</a>
-                            <a href="request-a-quote.html" class="button">Request Quote</a>
-                        </div>
-                    </li>
-                    <!-- SLIDE  -->
-                    <li class="slide" data-index="rs-1">
-                        <img src="https://coolwallpapers.me/picsup/5824636-container-terminal-wallpapers.jpg" data-src="https://coolwallpapers.me/picsup/5824636-container-terminal-wallpapers.jpg" alt="Home Page 1" class="slide-bg lazyload">
-                        <div class="slide-content">
-                            <div class="title">WE CARE ABOUT</div>
-                            <div class="title">YOUR CARGO</div>
-                            <div class="content">Dedicated employees, working in 06 regional</div>
-                            <div class="content">around the globe, deliver operational</div>
-                            <a href="about-us.html" class="button">About us</a>
-                            <a href="request-a-quote.html" class="button">Request Quote</a>
-                        </div>
-                    </li>
-                    <!-- SLIDE  -->
-                    <li class="slide" data-index="rs-1">
-                        <img src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg" data-src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg" alt="Home Page 1" class="slide-bg lazyload">
-                        <div class="slide-content">
-                            <div class="title">WE CARE ABOUT</div>
-                            <div class="title">YOUR CARGO</div>
-                            <div class="content">Dedicated employees, working in 06 regional</div>
-                            <div class="content">around the globe, deliver operational</div>
-                            <a href="about-us.html" class="button">About us</a>
-                            <a href="request-a-quote.html" class="button">Request Quote</a>
-                        </div>
-                    </li>
-                </ul>
+    <!--Main Slider-->
+    <section class="rev_slider_wrapper">
+        <div id="slider1" class="rev_slider" data-version="5.0">
+            <ul>
+                <!-- SLIDE  -->
+                <li class="slide" data-index="rs-1">
+                    <img src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"
+                         data-src="https://coolwallpapers.me/picsup/5824661-container-terminal-wallpapers.jpg"
+                         alt="Home Page 1" class="slide-bg lazyload">
+                    <div class="slide-content">
+                        <div class="title">WE CARE ABOUT</div>
+                        <div class="title">YOUR CARGO</div>
+                        <div class="content">Dedicated employees, working in 06 regional</div>
+                        <div class="content">around the globe, deliver operational</div>
+                        <a href="about-us.html" class="button">About us</a>
+                        <a href="request-a-quote.html" class="button">Request Quote</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li class="slide" data-index="rs-1">
+                    <img src="https://coolwallpapers.me/picsup/5824636-container-terminal-wallpapers.jpg"
+                         data-src="https://coolwallpapers.me/picsup/5824636-container-terminal-wallpapers.jpg"
+                         alt="Home Page 1" class="slide-bg lazyload">
+                    <div class="slide-content">
+                        <div class="title">WE CARE ABOUT</div>
+                        <div class="title">YOUR CARGO</div>
+                        <div class="content">Dedicated employees, working in 06 regional</div>
+                        <div class="content">around the globe, deliver operational</div>
+                        <a href="about-us.html" class="button">About us</a>
+                        <a href="request-a-quote.html" class="button">Request Quote</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li class="slide" data-index="rs-1">
+                    <img src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"
+                         data-src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"
+                         alt="Home Page 1" class="slide-bg lazyload">
+                    <div class="slide-content">
+                        <div class="title">WE CARE ABOUT</div>
+                        <div class="title">YOUR CARGO</div>
+                        <div class="content">Dedicated employees, working in 06 regional</div>
+                        <div class="content">around the globe, deliver operational</div>
+                        <a href="about-us.html" class="button">About us</a>
+                        <a href="request-a-quote.html" class="button">Request Quote</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--Main Slider  end-->
+
+    <!-- Welcome sec -->
+
+    <!--                    <div class="col-md-4 col-sm-6">-->
+    <!--                        <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">-->
+    <!--                            <span class="fh-icon"><i class="flaticon-transport-3"></i></span>-->
+    <!--                            <h4 class="box-title"><a href="#">Air Freight Forwarding</a></h4>-->
+    <!--                            <div class="desc">-->
+    <!--                                <p>As a leader in global air freight forwarding, OIA Global excels in providing tailored transportation</p>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+
+    <div class="welcomesec secpadd">
+        <div class="container">
+            <div class="fh-section-title clearfix text-center version-dark paddbtm20">
+                <h2>Welcome to Delta Group</h2>
             </div>
-        </section>
-        <!--Main Slider  end-->
+            <p class="haeadingpara text-center paddbtm40">Cargo HUB is more than logistics.
+                <br/> We can also optimize your packaging, manage your materials sourcing, and so much more.</p>
 
-        <!-- Welcome sec -->
-        <div class="welcomesec secpadd">
-            <div class="container">
-                <div class="fh-section-title clearfix  text-center version-dark paddbtm20">
-                    <h2>Welcome to Cargo <span class="main-color">Hub</span></h2>
-                </div>
-                <p class="haeadingpara text-center paddbtm40">Cargo HUB is more than logistics.
-                    <br/> We can also optimize your packaging, manage your materials sourcing, and so much more.</p>
-
-                <div class="welservices row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
-                            <span class="fh-icon"><i class="flaticon-transport-3"></i></span>
-                            <h4 class="box-title"><a href="#">Air Freight Forwarding</a></h4>
-                            <div class="desc">
-                                <p>As a leader in global air freight forwarding, OIA Global excels in providing tailored transportation</p>
-                            </div>
+            <div class="welservices row justify-content-center" style="display: flex; justify-content: center;">
+                <div class="col-md-4 col-sm-6 text-center">
+                    <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
+                        <span class="fh-icon"><i class="flaticon-transport-4"></i></span>
+                        <h4 class="box-title"><a href="#">Ocean Freight Forwarding</a></h4>
+                        <div class="desc">
+                            <p>Ocean Freight plays perhaps the most vital role in most transportation and supply chain solutions.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
-                            <span class="fh-icon"><i class="flaticon-transport-4"></i></span>
-                            <h4 class="box-title"><a href="#">Ocean Freight Forwarding</a></h4>
-                            <div class="desc">
-                                <p>Ocean Freight plays perhaps the most vital role in most transportation and supply chain solutions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
-                            <span class="fh-icon"><i class="flaticon-transport-5"></i></span>
-                            <h4 class="box-title"><a href="#">Road Freight Forwarding</a></h4>
-                            <div class="desc">
-                                <p>Cargo are transported at some stage of their journey along the world’s roads where we give you a reassuring presence.</p>
-                            </div>
+                </div>
+                <div class="col-md-4 col-sm-6 text-center">
+                    <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
+                        <span class="fh-icon"><i class="flaticon-transport-5"></i></span>
+                        <h4 class="box-title"><a href="#">Road Freight Forwarding</a></h4>
+                        <div class="desc">
+                            <p>Cargo is transported at some stage of its journey along the world’s roads where we give you a reassuring presence.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Welcome sec   end-->
+    </div>
+    <!-- Welcome sec   end-->
 
-        <!-- special services -->
-        <section class="special_services bluebg secpadd">
-            <div class="container">
-                <div class="row paddbtm40">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="fh-section-title clearfix  text-left version-light">
-                            <h2>Our Special SERVICES</h2>
+    <!-- special services -->
+    <section class="special_services bluebg secpadd">
+        <div class="container">
+            <div class="row paddbtm40">
+                <div class="col-md-4 col-sm-12">
+                    <div class="fh-section-title clearfix  text-left version-light">
+                        <h2>Our Special SERVICES</h2>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <div class="hdrgtpara lftredbrdr">
+                        <p>Our warehousing services are known nationwide to be one of the most reliable, safe and
+                            affordable, because we take pride in delivering the best of warehousing services, at the
+                            most reasonable prices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <!--                        <div class="fh-service-box icon-type-theme_icon style-1">-->
+                    <!--                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>-->
+                    <!--                            <h4 class="service-title"><a href="#" class="link" target="_blank">Packaging And Storage</a></h4>-->
+                    <!--                            <div class="desc">-->
+                    <!--                                <p>Package and store your things effectively and securely to make sure them in storage.</p>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <div class="fh-service-box icon-type-theme_icon style-1">
+                        <span class="fh-icon"><i class="flaticon-transport-9"></i></span>
+                        <h4 class="service-title"><a href="#" class="link" target="_blank">Cargo</a></h4>
+                        <div class="desc">
+                            <p>Delivery of any freight from a place to another place quickly to save your cost and your
+                                time.</p>
                         </div>
                     </div>
-                    <div class="col-md-8 col-sm-12">
-                        <div class="hdrgtpara lftredbrdr">
-                            <p>Our warehousing services are known nationwide to be one of the most reliable, safe and affordable, because we take pride in delivering the best of warehousing services, at the most reasonable prices.</p>
+                    <div class="fh-service-box icon-type-theme_icon style-1">
+                        <span class="fh-icon"><i class="flaticon-buildings"></i></span>
+                        <h4 class="service-title"><a href="#" class="link" target="_blank">Warehousing</a></h4>
+                        <div class="desc">
+                            <p>Package and store your things effectively and securely to make sure them in storage.</p>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-12">
-                        <div class="fh-service-box icon-type-theme_icon style-1">
-                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>
-                            <h4 class="service-title"><a href="#" class="link" target="_blank">Packaging And Storage</a></h4>
-                            <div class="desc">
-                                <p>Package and store your things effectively and securely to make sure them in storage.</p>
-                            </div>
-                        </div>
-                        <div class="fh-service-box icon-type-theme_icon style-1">
-                            <span class="fh-icon"><i class="flaticon-buildings"></i></span>
-                            <h4 class="service-title"><a href="#" class="link" target="_blank">Warehousing</a></h4>
-                            <div class="desc">
-                                <p>Package and store your things effectively and securely to make sure them in storage.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="fh-service-box icon-type-theme_icon style-1">
-                            <span class="fh-icon"><i class="flaticon-transport-9"></i></span>
-                            <h4 class="service-title"><a href="#" class="link" target="_blank">Cargo</a></h4>
-                            <div class="desc">
-                                <p>Delivery of any freight from a place to another place quickly to save your cost and your time.</p>
-                            </div>
-                        </div>
-                        <div class="fh-service-box icon-type-theme_icon style-1">
-                            <span class="fh-icon"><i class="flaticon-transport-2"></i></span>
-                            <h4 class="service-title"><a href="#" class="link" target="_blank">Door to Door Delivery</a></h4>
-                            <div class="desc">
-                                <p>Our expertise in transport management and planning allows us to design a solution.</p>
-                            </div>
+                <!--                    <div class="col-md-4 col-sm-12">-->
+                <!--                       -->
+                <!--&lt;!&ndash;                        <div class="fh-service-box icon-type-theme_icon style-1">&ndash;&gt;-->
+                <!--&lt;!&ndash;                            <span class="fh-icon"><i class="flaticon-transport-2"></i></span>&ndash;&gt;-->
+                <!--&lt;!&ndash;                            <h4 class="service-title"><a href="#" class="link" target="_blank">Door to Door Delivery</a></h4>&ndash;&gt;-->
+                <!--&lt;!&ndash;                            <div class="desc">&ndash;&gt;-->
+                <!--&lt;!&ndash;                                <p>Our expertise in transport management and planning allows us to design a solution.</p>&ndash;&gt;-->
+                <!--&lt;!&ndash;                            </div>&ndash;&gt;-->
+                <!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+                <!--                    </div>-->
+                <div class="col-md-4 col-sm-12">
+                    <div class="fh-service-box icon-type-theme_icon style-1">
+                        <span class="fh-icon"><i class="flaticon-international-delivery"></i></span>
+                        <h4 class="service-title"><a href="#" class="link" target="_blank">Worldwide Transport</a></h4>
+                        <div class="desc">
+                            <p>Specialises in international freight forwarding of merchandise and associated general
+                                logistic services.</p>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                        <div class="fh-service-box icon-type-theme_icon style-1">
-                            <span class="fh-icon"><i class="flaticon-international-delivery"></i></span>
-                            <h4 class="service-title"><a href="#" class="link" target="_blank">Worldwide Transport</a></h4>
-                            <div class="desc">
-                                <p>Specialises in international freight forwarding of merchandise and associated general logistic services.</p>
-                            </div>
-                        </div>
-                        <div class="fh-service-box icon-type-theme_icon style-1">
-                            <span class="fh-icon"><i class="flaticon-transport-1"></i></span>
-                            <h4 class="service-title"><a href="#" class="link" target="_blank">Ground Transport</a></h4>
-                            <div class="desc">
-                                <p>Ground transportation options for all visitors, no matter your needs, schedule or destination.</p>
-                            </div>
+                    <div class="fh-service-box icon-type-theme_icon style-1">
+                        <span class="fh-icon"><i class="flaticon-transport-1"></i></span>
+                        <h4 class="service-title"><a href="#" class="link" target="_blank">Ground Transport</a></h4>
+                        <div class="desc">
+                            <p>Ground transportation options for all visitors, no matter your needs, schedule or
+                                destination.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- special services end -->
+        </div>
+    </section>
+    <!-- special services end -->
 
-        <!--home counters -->
-        <section class="homecounts">
-            <div class="container">
-                <h2 class="count-title">Cargo <span class="main-color">Hub</span> is a Global Supplier of Transport and logistics Solutions.</h2>
-                <div class="row">
-                    <div class="col-lg-2 col-md-3 col-lg-offset-2">
-                        <div class="fh-counter icon-type-none">
-                            <div class="counter">
-                                <div class="value">9800</div>
-                                <h4>Delivered Package</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3">
-                        <div class="fh-counter icon-type-none">
-                            <div class="counter">
-                                <div class="value">230</div>
-                                <h4>Office Wordwide</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3">
-                        <div class="fh-counter icon-type-none">
-                            <div class="counter">
-                                <div class="value">1200</div>
-                                <h4>Employees</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3">
-                        <div class="fh-counter icon-type-none">
-                            <div class="counter">
-                                <div class="value">5200</div>
-                                <h4>Tons of Goods</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--home counters end -->
+    <!--home counters -->
+    <section class="homecounts">
+        <style>
+            .homecounts .row.justify-content-center {
+                display: flex;
+                justify-content: center;
+            }
 
-        <!--why choose us -->
-        <section class="whychoose-1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-md-6  secpaddlf">
-                        <div class="fh-section-title clearfix  text-left version-dark paddbtm40">
-                            <h2>Why Choosing us?</h2>
-                        </div>
-                        <div class="fh-icon-box  style-2 icon-left has-line">
-                            <span class="fh-icon"><i class="flaticon-international-delivery"></i></span>
-                            <h4 class="box-title"><span>Global supply Chain Solutions</span></h4>
-                            <div class="desc">
-                                <p>Efficiently unleash cross-media information without cross-media value.</p>
-                            </div>
-                        </div>
-                        <div class="fh-icon-box  style-2 icon-left has-line">
-                            <span class="fh-icon"><i class="flaticon-people"></i></span>
-                            <h4 class="box-title"><span>24 Hours - Technical Support</span></h4>
-                            <div class="desc">
-                                <p>Specialises in international freight forwarding of merchandise and associated logistic services</p>
-                            </div>
-                        </div>
-                        <div class="fh-icon-box  style-2 icon-left has-line">
-                            <span class="fh-icon"><i class="flaticon-route"></i></span>
-                            <h4 class="box-title"><span>Mobile Shipment Tracking</span></h4>
-                            <div class="desc">
-                                <p>We Offers intellgent concepts for road and tail and well as complex special transport services</p>
-                            </div>
-                        </div>
-                        <div class="fh-icon-box  style-2 icon-left">
-                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>
-                            <h4 class="box-title"><span>Careful Handling of Valuable Goods</span></h4>
-                            <div class="desc">
-                                <p>Cargo HUB are transported at some stage of their journey along the world’s roads</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-lg-offset-2 col-md-6 quofrm1  secpaddlf">
-                        <div class="fh-section-title clearfix  text-left version-dark paddbtm40">
-                            <h2>REQUEST A QUOTE</h2>
-                        </div>
-                        <form>
-                            <div class="fh-form-1 fh-form">
-                                <div class="row fh-form-row">
-                                    <div class="col-md-6 col-xs-12 col-sm-12">
-                                        <p class="field">
-                                            <select>
-                                                <option value="Services">Services</option>
-                                                <option value="Services 1">Services 1</option>
-                                                <option value="Services 2">Services 2</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6 col-xs-12 col-sm-12">
-                                        <p class="field">
-                                            <input name="delivery-city" value="" placeholder="Delivery City*" type="text">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6 col-xs-12 col-sm-12">
-                                        <p class="field">
-                                            <input name="distance" value="" placeholder="Distance*" type="text">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6 col-xs-12 col-sm-12">
-                                        <p class="field">
-                                            <input name="weight" value="" placeholder="Weight*" type="text">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6 col-xs-12 col-sm-12">
-                                        <p class="field">
-                                            <input name="your-name" value="" placeholder="Name*" type="text">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6 col-xs-12 col-sm-12">
-                                        <p class="field">
-                                            <input name="your-email" value="" placeholder="Email*" type="email">
-                                        </p>
-                                    </div>
-                                    <div class="col-md-12 col-xs-12 col-sm-12">
-                                        <p class="field single-field">
-                                            <textarea cols="40" placeholder="Message*"></textarea>
-                                        </p>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <p class="field submit">
-                                            <input value="Submit" class="fh-btn" type="submit">
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--why choose us end -->
+            .homecounts .row.justify-content-center .col-md-3 {
+                flex: none;
+            }
 
-        <!--partener -->
-        <section class="partener-1 bluebg">
-            <div class="container">
-                <div class="fh-partner clearfix">
-                    <div class="list-item slide-partener">
-                        <div class="partner-item">
-                            <div class="partner-content">
-                                <a href="#" target="_self"><img alt="1764" src="../static/images/partener/partner-4.png"></a>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <div class="partner-content">
-                                <a href="#" target="_self"><img alt="1763" src="../static/images/partener/partner-3.png"></a>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <div class="partner-content">
-                                <a href="#" target="_self"><img alt="1762" src="../static/images/partener/partner-2.png"></a>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <div class="partner-content">
-                                <a href="#" target="_self"><img alt="1761" src="../static/images/partener/partner.png"></a>
-                            </div>
-                        </div>
-                        <div class="partner-item">
-                            <div class="partner-content">
-                                <a href="#" target="_self"><img alt="1765" src="../static/images/partener/Fertilizers.png"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--partener end -->
-
-        <!--testimonials -->
-        <section class="testmonial-1">
-            <div class="fh-testimonials-carousel fh-testimonials column-1">
-                <div class="testi-list  single-slide">
-                    <div class="testi-wrapper" style="background-image:url(static/images/main-slider/testi-1.jpg)">
-                        <div class="container">
-                            <div class="testi-item">
-                                <span class="testi-icon"><i class="flaticon-quotations"></i></span>
-                                <div class="testi-content">
-                                    <div class="testi-star">
-                                        <i class="fa fa-star fa-md"></i>
-                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>
-                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>
-                                    </div>
-                                    <div class="testi-des">These guys are just the coolest company ever! They were aware of our transported for road and tail and well as complex transport services.</div>
-                                    <div class="info clearfix">
-                                        <span class="testi-name">Magdalena Donowan</span>
-                                        <span class="testi-job">CFD Engineer</span>
-                                    </div>
+        </style>
+        <div class="container text-content">
+            <h2 class="count-title ">Delta Group is a Supplier of Transport and Logistics Solutions.</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row justify-content-center">
+                        <div class="col-md-3">
+                            <div class="fh-counter icon-type-none text-center">
+                                <div class="counter">
+                                    <div class="value blue-number" id="deliveredCounter">300</div>
+                                    <h4>Delivered Package</h4>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testi-wrapper" style="background-image:url(static/images/main-slider/testi-3.jpg)">
-                        <div class="container">
-                            <div class="testi-item">
-                                <span class="testi-icon"><i class="flaticon-quotations "></i></span>
-                                <div class="testi-content">
-                                    <div class="testi-star">
-                                        <i class="fa fa-star fa-md"></i>
-                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>
-                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>
-                                    </div>
-                                    <div class="testi-des">The shipping process with this crew was a pleasurable experience! They did all in time and with no safety incidents. Thank you so much guys!</div>
-                                    <div class="info clearfix">
-                                        <span class="testi-name">Emilia Crena</span>
-                                        <span class="testi-job">CEO, VIP Construction, Australia</span>
-                                    </div>
+                        <div class="col-md-3">
+                            <div class="fh-counter icon-type-none text-center">
+                                <div class="counter">
+                                    <div class="value blue-number" id="employeesCounter">400</div>
+                                    <h4>Employees</h4>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="testi-wrapper" style="background-image:url(static/images/main-slider/testi-2.jpg)">
-                        <div class="container">
-                            <div class="testi-item">
-                                <span class="testi-icon"><i class="flaticon-quotations "></i></span>
-                                <div class="testi-content">
-                                    <div class="testi-star">
-                                        <i class="fa fa-star fa-md"></i>
-                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>
-                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>
-                                    </div>
-                                    <div class="testi-des">Their performance on our project was extremely successful. As a result of this collaboration, the project was built with exceptional quality &amp; delivered.</div>
-                                    <div class="info clearfix">
-                                        <span class="testi-name">Orlando E. Dougles</span>
-                                        <span class="testi-job">CEO, Green Valley Inc, London</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--testimonilas-->
-
-        <!--news -->
-        <section class="testmonial-1 secpadd">
-            <div class="container">
-                <div class="fh-section-title clearfix  text-left version-dark paddbtm40">
-                    <h2>FEATURED NEWS</h2>
-                </div>
-                <div class="fh-latest-post carousel">
-                    <div class="post-list  news-slide">
-                        <div class="item-latest-post clearfix">
-                            <div class="entry-thumbnail">
-                                <a href="#"><img src="../static/images/blogs/blog-1.jpg" alt="" /></a>
-                                <div class="entry-time">
-                                    <span class="day">09</span>
-                                    <span class="month">Aug</span>
-                                </div>
-                            </div>
-                            <div class="entry-summary">
-                                <div class="entry-meta clearfix">
-                                    <span class="meta author">by <a href="#">steelthemes</a></span>
-                                    <span class="meta cat-links"><a href="#">High Way</a>, <a href="#">Logistic</a></span>
-                                </div>
-                                <h2 class="entry-title"><a href="#">Air Cargo May Become Short-term Solution</a></h2>
-                                <div class="entry-footer">
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-latest-post clearfix">
-                            <div class="entry-thumbnail">
-                                <a href="#"><img src="../static/images/blogs/blog-2.jpg" alt="" /></a>
-                                <div class="entry-time">
-                                    <span class="day">09</span>
-                                    <span class="month">Aug</span>
-                                </div>
-                            </div>
-                            <div class="entry-summary">
-                                <div class="entry-meta clearfix">
-                                    <span class="meta author">by <a href="#">steelthemes</a></span>
-                                    <span class="meta cat-links"><a href="#">High Way</a>, <a href="#">Logistic</a></span>
-                                </div>
-                                <h2 class="entry-title"><a href="#">We introduce new boat and flight service</a></h2>
-                                <div class="entry-footer">
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-latest-post clearfix">
-                            <div class="entry-thumbnail">
-                                <a href="#"><img src="../static/images/blogs/blog-3.jpg" alt="" /></a>
-                                <div class="entry-time">
-                                    <span class="day">26</span>
-                                    <span class="month">Jul</span>
-                                </div>
-                            </div>
-                            <div class="entry-summary">
-                                <div class="entry-meta clearfix">
-                                    <span class="meta author">by <a href="#">steelthemes</a></span>
-                                    <span class="meta cat-links"><a href="#">Logistic</a>, <a href="#">Warehousing</a></span>
-                                </div>
-                                <h2 class="entry-title"><a href="#">Introduce new boat service in this spring</a></h2>
-                                <div class="entry-footer">
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-latest-post clearfix">
-                            <div class="entry-thumbnail">
-                                <a href="#"><img src="../static/images/blogs/blog-4.jpg" alt="" /></a>
-                                <div class="entry-time">
-                                    <span class="day">26</span>
-                                    <span class="month">Jul</span>
-                                </div>
-                            </div>
-                            <div class="entry-summary">
-                                <div class="entry-meta clearfix">
-                                    <span class="meta author">by <a href="#">steelthemes</a></span>
-                                    <span class="meta cat-links"><a href="#">High Way</a>, <a href="#">Warehousing</a></span>
-                                </div>
-                                <h2 class="entry-title"><a href="#">Goods will be contain in certified safe warehouse</a></h2>
-                                <div class="entry-footer">
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-latest-post clearfix">
-                            <div class="entry-thumbnail">
-                                <a href="#"><img src="../static/images/blogs/blog-5.jpg" alt="" /></a>
-                                <div class="entry-time">
-                                    <span class="day">26</span>
-                                    <span class="month">Jul</span>
-                                </div>
-                            </div>
-                            <div class="entry-summary">
-                                <div class="entry-meta clearfix">
-                                    <span class="meta author">by <a href="#">steelthemes</a></span>
-                                    <span class="meta cat-links"><a href="#">High Way</a>, <a href="#">Logistic</a></span>
-                                </div>
-                                <h2 class="entry-title"><a href="#">Our customer around the world satisty with it</a></h2>
-                                <div class="entry-footer">
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-latest-post clearfix">
-                            <div class="entry-thumbnail">
-                                <a href="#"><img src="../static/images/blogs/blog-6.jpg" alt="" /></a>
-                                <div class="entry-time">
-                                    <span class="day">25</span>
-                                    <span class="month">Jul</span>
-                                </div>
-                            </div>
-                            <div class="entry-summary">
-                                <div class="entry-meta clearfix">
-                                    <span class="meta author">by <a href="#">steelthemes</a></span>
-                                    <span class="meta cat-links"><a href="#">Entrepreneurs</a>, <a href="#">Warehousing</a></span>
-                                </div>
-                                <h2 class="entry-title"><a href="#">We ensures you best the quality services</a></h2>
-                                <div class="entry-footer">
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-latest-post clearfix">
-                            <div class="entry-thumbnail">
-                                <a href="#"><img src="../static/images/blogs/blog-7.jpg" alt="" /></a>
-                                <div class="entry-time">
-                                    <span class="day">09</span>
-                                    <span class="month">Aug</span>
-                                </div>
-                            </div>
-                            <div class="entry-summary">
-                                <div class="entry-meta clearfix">
-                                    <span class="meta author">by <a href="#">steelthemes</a></span>
-                                    <span class="meta cat-links"><a href="#">Logistic</a>, <a href="#">Pharmacology</a></span>
-                                </div>
-                                <h2 class="entry-title"><a href="#">Our Cargo trucking service</a></h2>
-                                <div class="entry-footer">
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item-latest-post clearfix">
-                            <div class="entry-thumbnail">
-                                <a href="#"><img src="../static/images/blogs/blog-8.jpg" alt="" /></a>
-                                <div class="entry-time">
-                                    <span class="day">09</span>
-                                    <span class="month">Aug</span>
-                                </div>
-                            </div>
-                            <div class="entry-summary">
-                                <div class="entry-meta clearfix">
-                                    <span class="meta author">by <a href="#">steelthemes</a></span>
-                                    <span class="meta cat-links"><a href="#">Manufacturing</a>, <a href="#">Warehousing</a></span>
-                                </div>
-                                <h2 class="entry-title"><a href="#">Delivering logistic services</a></h2>
-                                <div class="entry-footer">
-                                    <a href="#">Read More...</a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--news ends -->
-
-        <!--footer sec-->
-        <div class="footer-widgets widgets-area">
-            <div class="contact-widget">
-                <div class="container">
-                    <div class="row">
-                        <div class="contact col-md-3 col-xs-12 col-sm-12">
-                            <a href="#" class="footer-logo"><img src="../static/images/DELTA GROUP (241 × 53px).svg" alt="Footer Logo"></a>
-                        </div>
-                        <div class="contact col-md-3 col-xs-12 col-sm-12"><i class="flaticon-signs"></i>
-                            <p>Address : Cargo Hub,</p>
-                            <h4>NEWYORK 10012, USA</h4>
-                        </div>
-                        <div class="contact col-md-3 col-xs-12 col-sm-12"><i class="flaticon-phone-call "></i>
-                            <p>Toll Free Number :</p>
-                            <h4>+44 567 890123 – 30</h4>
-                        </div>
-                        <div class="contact col-md-3 col-xs-12 col-sm-12"><i class="flaticon-clock-1"></i>
-                            <p>Opening Hours :</p>
-                            <h4>MON – FRI: 8AM – 5PM</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-sidebars">
-                <div class="container">
-                    <div class="row">
-                        <div class="footer-sidebar footer-1 col-xs-12 col-sm-6 col-md-3">
-                            <div class="widget widget_text">
-                                <h4 class="widget-title">About Cargo</h4>
-                                <div class="textwidget">
-                                    <p>Cargo HUB Logistics Services is a global supplier of transport and logistics solutions. We have offices in more than 20 countries and an international network of partners and agents.</p>
-                                </div>
-                            </div>
-                            <div class="widget cargohub-social-links-widget">
-                                <div class="list-social style-1">
-                                    <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-sidebar footer-2 col-xs-12 col-sm-6 col-md-3">
-                            <div class="widget widget_nav_menu">
-                                <h4 class="widget-title">Useful Links</h4>
-                                <div class="menu-service-menu-container">
-                                    <ul class="menu">
-                                        <li><a href="#">All Services</a></li>
-                                        <li><a href="#">Ground Transport</a></li>
-                                        <li><a href="#">Cargo Service</a></li>
-                                        <li><a href="#">Warehousing</a></li>
-                                        <li><a href="#">Road Freight Forwarding</a></li>
-                                        <li><a href="#">Ocean Freight Forwarding</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-sidebar footer-3 col-xs-12 col-sm-6 col-md-3">
-                            <div class="widget latest-project-widget">
-                                <h4 class="widget-title">Photo gallery</h4>
-                                <div class="latest-project-list clearfix">
-                                    <div class="latest-project clearfix">
-                                        <div class="fp-widget-thumb">
-                                            <a class="widget-thumb" href="#">
-                                                <i class="fa fa-link" aria-hidden="true"></i>
-                                                <img src="../static/images/projects/fg1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="latest-project clearfix">
-                                        <div class="fp-widget-thumb">
-                                            <a class="widget-thumb" href="#">
-                                                <i class="fa fa-link" aria-hidden="true"></i>
-                                                <img src="../static/images/projects/fg2.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="latest-project clearfix">
-                                        <div class="fp-widget-thumb">
-                                            <a class="widget-thumb" href="#">
-                                                <i class="fa fa-link" aria-hidden="true"></i>
-                                                <img src="../static/images/projects/fg3.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="latest-project clearfix">
-                                        <div class="fp-widget-thumb">
-                                            <a class="widget-thumb" href="#">
-                                                <i class="fa fa-link" aria-hidden="true"></i>
-                                                <img src="../static/images/projects/fg4.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="latest-project clearfix">
-                                        <div class="fp-widget-thumb">
-                                            <a class="widget-thumb" href="#">
-                                                <i class="fa fa-link" aria-hidden="true"></i>
-                                                <img src="../static/images/projects/fg5.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="latest-project clearfix">
-                                        <div class="fp-widget-thumb">
-                                            <a class="widget-thumb" href="#">
-                                                <i class="fa fa-link" aria-hidden="true"></i>
-                                                <img src="../static/images/projects/fg6.jpg" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-sidebar footer-4 col-xs-12 col-sm-6 col-md-3">
-                            <div class="widget widget_mc4wp_form_widget">
-                                <h4 class="widget-title">Our Newsletter</h4>
-                                <form>
-                                    <div class="footform">
-                                        <div class="fh-form-field">
-                                            <p>
-                                                Sign up today for tips and latest news and exclusive special offers.
-                                            </p>
-                                            <div class="subscribe">
-                                                <input name="EMAIL" placeholder="Enter Your Email" required="" type="email">
-                                                <input value="Sign Up" type="submit">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <!-- / MailChimp for WordPress Plugin -->
-                            </div>
-                            <div class="widget widget_text">
-                                <div class="textwidget">
-                                    <p>We don’t do spam and Your mail id very confidential.</p>
+                        <div class="col-md-3">
+                            <div class="fh-counter icon-type-none text-center">
+                                <div class="counter">
+                                    <div class="value blue-number" id="goodsCounter">1000</div>
+                                    <h4>Tons of Goods</h4>
                                 </div>
                             </div>
                         </div>
@@ -949,184 +494,686 @@
                 </div>
             </div>
         </div>
-        <!--footer sec end-->
+    </section>
+    <!--home counters end -->
 
-        <!--copyright sec-->
-        <footer class="site-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-copyright col-md-6 col-sm-12 col-sx-12">
-                        <div class="site-info">Copyright @ 2017 <a href="#">Steelthemes</a>, All Right Reserved </div>
+    <!--why choose us -->
+    <section class="whychoose-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6  secpaddlf">
+                    <div class="fh-section-title clearfix  text-left version-dark paddbtm40">
+                        <h2>Why Choosing us?</h2>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12 text-right footer-text"><a href="#">Purchase Now</a> </div>
+                    <div class="fh-icon-box  style-2 icon-left has-line">
+                        <span class="fh-icon"><i class="flaticon-international-delivery"></i></span>
+                        <h4 class="box-title"><span>Global supply Chain Solutions</span></h4>
+                        <div class="desc">
+                            <p>Efficiently unleash cross-media information without cross-media value.</p>
+                        </div>
+                    </div>
+                    <div class="fh-icon-box  style-2 icon-left has-line">
+                        <span class="fh-icon"><i class="flaticon-route"></i></span>
+                        <h4 class="box-title"><span>Shipment Tracking</span></h4>
+                        <div class="desc">
+                            <p>We Offers intellgent concepts for road and tail and well as complex special transport
+                                services</p>
+                        </div>
+                    </div>
+                    <div class="fh-icon-box  style-2 icon-left">
+                        <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>
+                        <h4 class="box-title"><span>Careful Handling of Valuable Goods</span></h4>
+                        <div class="desc">
+                            <p>Cargo HUB are transported at some stage of their journey along the world’s roads</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
-        <!--copyright sec end-->
-    </div>
-    <!--End pagewrapper-->
+        </div>
+    </section>
+    <!--why choose us end -->
 
-    <!--primary-mobile-nav-->
-    <div class="primary-mobile-nav header-v1" id="primary-mobile-nav" role="navigation">
-        <a href="#" class="close-canvas-mobile-panel">×</a>
-        <ul class="menu">
-            <li class="current-menu-item menu-item-has-children"><a href="index.html">Home</a>
-                <ul class="sub-menu">
-                    <li><a href="index.html">Home Page 1</a></li>
-                    <li><a href="home-page-2.html">Home Page 2</a></li>
-                    <li><a href="home-page-3.html">Home Page 3</a></li>
-                    <li><a href="home-page-4.html">Home Page 4</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="services.html" class="dropdown-toggle">Services</a>
-                <ul class="sub-menu">
-                    <li><a href="services.html">All Services</a></li>
-                    <li><a href="road-freight-forwarding.html">Road Freight Forwarding</a></li>
-                    <li><a href="ocean-forwarding.html">Ocean Freight Forwarding</a></li>
-                    <li><a href="air-freight-forwarding.html">Air Freight Forwarding</a></li>
-                    <li><a href="warehousing.html">Warehousing</a></li>
-                    <li><a href="door-to-door-delivery.html">Door to Door Delivery</a></li>
-                    <li><a href="ground-transport.html">Ground Transport</a></li>
-                    <li><a href="worldwide-transport.html">Worldwide Transport</a></li>
-                    <li><a href="cargo-service.html">Cargo Service</a></li>
-                    <li><a href="packaging-storage.html">Packaging &#038; Storage</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="projects.html" class="dropdown-toggle">Pages</a>
-                <ul class="sub-menu">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="faqs.html">FAQS</a></li>
-                    <li><a href="our-prices.html">Our Prices</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="gallery.html" class="dropdown-toggle">Gallery</a>
-                <ul class="sub-menu">
-                    <li><a href="gallery-column-4.html">Gallery Four Columns</a></li>
-                    <li><a href="gallery-column-3.html">Gallery Three Columns</a></li>
-                    <li><a href="gallery.html">Gallery Two Columns</a></li>
-                    <li><a href="gallery-single.html">Gallery Single</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="#" class="dropdown-toggle">Features</a>
-                <ul class="sub-menu">
-                    <li><a href="request-a-quote.html">Request A Quote</a></li>
-                    <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="blog.html" class="dropdown-toggle">News</a>
-                <ul class="sub-menu">
-                    <li><a href="news.html">Blog Two Columns</a></li>
-                    <li><a href="blog-column-3.html">Blog Three Columns</a></li>
-                    <li><a href="blog-column-4.html">Blog Four Columns</a></li>
-                    <li><a href="blog-sidebar.html">Blog With Sidebar</a></li>
-                    <li><a href="blog-single.html">Blog Single Post</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
-            <li class="extra-menu-item menu-item-button-link">
-                <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
-            </li>
-        </ul>
+    <!--        &lt;!&ndash;partener &ndash;&gt;-->
+    <!--        <section class="partener-1 bluebg">-->
+    <!--            <div class="container">-->
+    <!--                <div class="fh-partner clearfix">-->
+    <!--                    <div class="list-item slide-partener">-->
+    <!--                        <div class="partner-item">-->
+    <!--                            <div class="partner-content">-->
+    <!--                                <a href="#" target="_self"><img alt="1764" src="../static/images/partener/partner-4.png"></a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="partner-item">-->
+    <!--                            <div class="partner-content">-->
+    <!--                                <a href="#" target="_self"><img alt="1763" src="../static/images/partener/partner-3.png"></a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="partner-item">-->
+    <!--                            <div class="partner-content">-->
+    <!--                                <a href="#" target="_self"><img alt="1762" src="../static/images/partener/partner-2.png"></a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="partner-item">-->
+    <!--                            <div class="partner-content">-->
+    <!--                                <a href="#" target="_self"><img alt="1761" src="../static/images/partener/partner.png"></a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="partner-item">-->
+    <!--                            <div class="partner-content">-->
+    <!--                                <a href="#" target="_self"><img alt="1765" src="../static/images/partener/Fertilizers.png"></a>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </section>-->
+    <!--        &lt;!&ndash;partener end &ndash;&gt;-->
 
-    </div>
-    <div id="off-canvas-layer" class="off-canvas-layer"></div>
-    <!--primary-mobile-nav end-->
+    <!--        &lt;!&ndash;testimonials &ndash;&gt;-->
+    <!--        <section class="testmonial-1">-->
+    <!--            <div class="fh-testimonials-carousel fh-testimonials column-1">-->
+    <!--                <div class="testi-list  single-slide">-->
+    <!--                    <div class="testi-wrapper" style="background-image:url(static/images/main-slider/testi-1.jpg)">-->
+    <!--                        <div class="container">-->
+    <!--                            <div class="testi-item">-->
+    <!--                                <span class="testi-icon"><i class="flaticon-quotations"></i></span>-->
+    <!--                                <div class="testi-content">-->
+    <!--                                    <div class="testi-star">-->
+    <!--                                        <i class="fa fa-star fa-md"></i>-->
+    <!--                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>-->
+    <!--                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>-->
+    <!--                                    </div>-->
+    <!--                                    <div class="testi-des">These guys are just the coolest company ever! They were aware of our transported for road and tail and well as complex transport services.</div>-->
+    <!--                                    <div class="info clearfix">-->
+    <!--                                        <span class="testi-name">Magdalena Donowan</span>-->
+    <!--                                        <span class="testi-job">CFD Engineer</span>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="testi-wrapper" style="background-image:url(static/images/main-slider/testi-3.jpg)">-->
+    <!--                        <div class="container">-->
+    <!--                            <div class="testi-item">-->
+    <!--                                <span class="testi-icon"><i class="flaticon-quotations "></i></span>-->
+    <!--                                <div class="testi-content">-->
+    <!--                                    <div class="testi-star">-->
+    <!--                                        <i class="fa fa-star fa-md"></i>-->
+    <!--                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>-->
+    <!--                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>-->
+    <!--                                    </div>-->
+    <!--                                    <div class="testi-des">The shipping process with this crew was a pleasurable experience! They did all in time and with no safety incidents. Thank you so much guys!</div>-->
+    <!--                                    <div class="info clearfix">-->
+    <!--                                        <span class="testi-name">Emilia Crena</span>-->
+    <!--                                        <span class="testi-job">CEO, VIP Construction, Australia</span>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="testi-wrapper" style="background-image:url(static/images/main-slider/testi-2.jpg)">-->
+    <!--                        <div class="container">-->
+    <!--                            <div class="testi-item">-->
+    <!--                                <span class="testi-icon"><i class="flaticon-quotations "></i></span>-->
+    <!--                                <div class="testi-content">-->
+    <!--                                    <div class="testi-star">-->
+    <!--                                        <i class="fa fa-star fa-md"></i>-->
+    <!--                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>-->
+    <!--                                        <i class="fa fa-star fa-md"></i><i class="fa fa-star fa-md"></i>-->
+    <!--                                    </div>-->
+    <!--                                    <div class="testi-des">Their performance on our project was extremely successful. As a result of this collaboration, the project was built with exceptional quality &amp; delivered.</div>-->
+    <!--                                    <div class="info clearfix">-->
+    <!--                                        <span class="testi-name">Orlando E. Dougles</span>-->
+    <!--                                        <span class="testi-job">CEO, Green Valley Inc, London</span>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </section>-->
+    <!--        &lt;!&ndash;testimonilas&ndash;&gt;-->
 
-    <!--Scroll to top-->
-    <a id="scroll-top" class="backtotop" href="#page-top"><i class="fa fa-angle-up"></i></a>
+    <!--        &lt;!&ndash;news &ndash;&gt;-->
+    <!--        <section class="testmonial-1 secpadd">-->
+    <!--            <div class="container">-->
+    <!--                <div class="fh-section-title clearfix  text-left version-dark paddbtm40">-->
+    <!--                    <h2>FEATURED NEWS</h2>-->
+    <!--                </div>-->
+    <!--                <div class="fh-latest-post carousel">-->
+    <!--                    <div class="post-list  news-slide">-->
+    <!--                        <div class="item-latest-post clearfix">-->
+    <!--                            <div class="entry-thumbnail">-->
+    <!--                                <a href="#"><img src="../static/images/blogs/blog-1.jpg" alt="" /></a>-->
+    <!--                                <div class="entry-time">-->
+    <!--                                    <span class="day">09</span>-->
+    <!--                                    <span class="month">Aug</span>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div class="entry-summary">-->
+    <!--                                <div class="entry-meta clearfix">-->
+    <!--                                    <span class="meta author">by <a href="#">steelthemes</a></span>-->
+    <!--                                    <span class="meta cat-links"><a href="#">High Way</a>, <a href="#">Logistic</a></span>-->
+    <!--                                </div>-->
+    <!--                                <h2 class="entry-title"><a href="#">Air Cargo May Become Short-term Solution</a></h2>-->
+    <!--                                <div class="entry-footer">-->
+    <!--                                    <a href="#">Read More...</a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="item-latest-post clearfix">-->
+    <!--                            <div class="entry-thumbnail">-->
+    <!--                                <a href="#"><img src="../static/images/blogs/blog-2.jpg" alt="" /></a>-->
+    <!--                                <div class="entry-time">-->
+    <!--                                    <span class="day">09</span>-->
+    <!--                                    <span class="month">Aug</span>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div class="entry-summary">-->
+    <!--                                <div class="entry-meta clearfix">-->
+    <!--                                    <span class="meta author">by <a href="#">steelthemes</a></span>-->
+    <!--                                    <span class="meta cat-links"><a href="#">High Way</a>, <a href="#">Logistic</a></span>-->
+    <!--                                </div>-->
+    <!--                                <h2 class="entry-title"><a href="#">We introduce new boat and flight service</a></h2>-->
+    <!--                                <div class="entry-footer">-->
+    <!--                                    <a href="#">Read More...</a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="item-latest-post clearfix">-->
+    <!--                            <div class="entry-thumbnail">-->
+    <!--                                <a href="#"><img src="../static/images/blogs/blog-3.jpg" alt="" /></a>-->
+    <!--                                <div class="entry-time">-->
+    <!--                                    <span class="day">26</span>-->
+    <!--                                    <span class="month">Jul</span>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div class="entry-summary">-->
+    <!--                                <div class="entry-meta clearfix">-->
+    <!--                                    <span class="meta author">by <a href="#">steelthemes</a></span>-->
+    <!--                                    <span class="meta cat-links"><a href="#">Logistic</a>, <a href="#">Warehousing</a></span>-->
+    <!--                                </div>-->
+    <!--                                <h2 class="entry-title"><a href="#">Introduce new boat service in this spring</a></h2>-->
+    <!--                                <div class="entry-footer">-->
+    <!--                                    <a href="#">Read More...</a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="item-latest-post clearfix">-->
+    <!--                            <div class="entry-thumbnail">-->
+    <!--                                <a href="#"><img src="../static/images/blogs/blog-4.jpg" alt="" /></a>-->
+    <!--                                <div class="entry-time">-->
+    <!--                                    <span class="day">26</span>-->
+    <!--                                    <span class="month">Jul</span>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div class="entry-summary">-->
+    <!--                                <div class="entry-meta clearfix">-->
+    <!--                                    <span class="meta author">by <a href="#">steelthemes</a></span>-->
+    <!--                                    <span class="meta cat-links"><a href="#">High Way</a>, <a href="#">Warehousing</a></span>-->
+    <!--                                </div>-->
+    <!--                                <h2 class="entry-title"><a href="#">Goods will be contain in certified safe warehouse</a></h2>-->
+    <!--                                <div class="entry-footer">-->
+    <!--                                    <a href="#">Read More...</a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="item-latest-post clearfix">-->
+    <!--                            <div class="entry-thumbnail">-->
+    <!--                                <a href="#"><img src="../static/images/blogs/blog-5.jpg" alt="" /></a>-->
+    <!--                                <div class="entry-time">-->
+    <!--                                    <span class="day">26</span>-->
+    <!--                                    <span class="month">Jul</span>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div class="entry-summary">-->
+    <!--                                <div class="entry-meta clearfix">-->
+    <!--                                    <span class="meta author">by <a href="#">steelthemes</a></span>-->
+    <!--                                    <span class="meta cat-links"><a href="#">High Way</a>, <a href="#">Logistic</a></span>-->
+    <!--                                </div>-->
+    <!--                                <h2 class="entry-title"><a href="#">Our customer around the world satisty with it</a></h2>-->
+    <!--                                <div class="entry-footer">-->
+    <!--                                    <a href="#">Read More...</a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="item-latest-post clearfix">-->
+    <!--                            <div class="entry-thumbnail">-->
+    <!--                                <a href="#"><img src="../static/images/blogs/blog-6.jpg" alt="" /></a>-->
+    <!--                                <div class="entry-time">-->
+    <!--                                    <span class="day">25</span>-->
+    <!--                                    <span class="month">Jul</span>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div class="entry-summary">-->
+    <!--                                <div class="entry-meta clearfix">-->
+    <!--                                    <span class="meta author">by <a href="#">steelthemes</a></span>-->
+    <!--                                    <span class="meta cat-links"><a href="#">Entrepreneurs</a>, <a href="#">Warehousing</a></span>-->
+    <!--                                </div>-->
+    <!--                                <h2 class="entry-title"><a href="#">We ensures you best the quality services</a></h2>-->
+    <!--                                <div class="entry-footer">-->
+    <!--                                    <a href="#">Read More...</a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="item-latest-post clearfix">-->
+    <!--                            <div class="entry-thumbnail">-->
+    <!--                                <a href="#"><img src="../static/images/blogs/blog-7.jpg" alt="" /></a>-->
+    <!--                                <div class="entry-time">-->
+    <!--                                    <span class="day">09</span>-->
+    <!--                                    <span class="month">Aug</span>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div class="entry-summary">-->
+    <!--                                <div class="entry-meta clearfix">-->
+    <!--                                    <span class="meta author">by <a href="#">steelthemes</a></span>-->
+    <!--                                    <span class="meta cat-links"><a href="#">Logistic</a>, <a href="#">Pharmacology</a></span>-->
+    <!--                                </div>-->
+    <!--                                <h2 class="entry-title"><a href="#">Our Cargo trucking service</a></h2>-->
+    <!--                                <div class="entry-footer">-->
+    <!--                                    <a href="#">Read More...</a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="item-latest-post clearfix">-->
+    <!--                            <div class="entry-thumbnail">-->
+    <!--                                <a href="#"><img src="../static/images/blogs/blog-8.jpg" alt="" /></a>-->
+    <!--                                <div class="entry-time">-->
+    <!--                                    <span class="day">09</span>-->
+    <!--                                    <span class="month">Aug</span>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                            <div class="entry-summary">-->
+    <!--                                <div class="entry-meta clearfix">-->
+    <!--                                    <span class="meta author">by <a href="#">steelthemes</a></span>-->
+    <!--                                    <span class="meta cat-links"><a href="#">Manufacturing</a>, <a href="#">Warehousing</a></span>-->
+    <!--                                </div>-->
+    <!--                                <h2 class="entry-title"><a href="#">Delivering logistic services</a></h2>-->
+    <!--                                <div class="entry-footer">-->
+    <!--                                    <a href="#">Read More...</a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
 
-    <!--Color switcher-->
-    <div class="demo_changer" id="demo_changer">
-        <div class="demo-icon fa fa-sliders"></div>
-        <div class="form_holder">
-            <h3 class="demo-title">Customize CargoHub</h3>
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </section>-->
+    <!--        &lt;!&ndash;news ends &ndash;&gt;-->
 
-            <div class="line"></div>
-            <p>Color Scheme</p>
-            <div class="predefined_styles" id="styleswitch_area">
-                <a href="?default=true" data-rel="default" class="styleswitch" style="background:#ff0000;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-                <a href="#" data-rel="navy-darkblue" class="styleswitch" style="background:#00baff;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-                <a href="#" data-rel="orange-black" class="styleswitch" style="background:#ee6012;border-right-color: #202020;border-bottom-color: #202020"></a>
-                <a href="#" data-rel="yellow-blue" class="styleswitch" style="background:#f6a604;border-right-color: #0032ab;border-bottom-color: #0032ab"></a>
+    <!--footer sec-->
+    <div class="footer-widgets widgets-area">
+        <div class="contact-widget">
+            <div class="container">
+                <div class="row">
+                    <div class="contact col-md-3 col-xs-12 col-sm-12">
+                        <a href="#" class="footer-logo"><img src="../static/images/DELTA GROUP (241 × 53px).svg"
+                                                             alt="Footer Logo"></a>
+                    </div>
+                    <div class="contact col-md-3 col-xs-12 col-sm-12"><i class="flaticon-signs"></i>
+                        <p>Address :  Sofia, Bulgaria</p>
+                        <h4>48-A, Suhodolska Str.</h4>
+                    </div>
+                    <div class="contact col-md-3 col-xs-12 col-sm-12"><i class="flaticon-phone-call "></i>
+                        <p>Number :</p>
+                        <h4>+35929202137</h4>
+                    </div>
+                    <div class="contact col-md-3 col-xs-12 col-sm-12"><i class="flaticon-clock-1"></i>
+                        <p>Opening Hours :</p>
+                        <h4>MON – FRI: 9AM – 6PM</h4>
+                    </div>
+                </div>
             </div>
-            <div class="line"></div>
+        </div>
+        <div class="footer-sidebars">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-sidebar footer-1 col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget widget_text">
+                            <h4 class="widget-title">About Delta Group</h4>
+                            <div class="textwidget">
+                                <p>Delta Group is a  supplier of transport and logistics
+                                    solutions.</p>
+                            </div>
+                        </div>
+<!--                        <div class="widget cargohub-social-links-widget">-->
+<!--                            <div class="list-social style-1">-->
+<!--                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>-->
+<!--                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>-->
+<!--                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>-->
+<!--                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="footer-sidebar footer-2 col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget widget_nav_menu">
+                            <h4 class="widget-title">Useful Links</h4>
+                            <div class="menu-service-menu-container">
+                                <ul class="menu">
+                                    <li><a href="#">All Services</a></li>
+                                    <li><a href="#">Ground Transport</a></li>
+                                    <li><a href="#">Cargo Service</a></li>
+                                    <li><a href="#">Warehousing</a></li>
+                                    <li><a href="#">Road Freight Forwarding</a></li>
+                                    <li><a href="#">Ocean Freight Forwarding</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <div class="footer-sidebar footer-3 col-xs-12 col-sm-6 col-md-3">-->
+<!--                        <div class="widget latest-project-widget">-->
+<!--                            <h4 class="widget-title">Photo gallery</h4>-->
+<!--                            <div class="latest-project-list clearfix">-->
+<!--                                <div class="latest-project clearfix">-->
+<!--                                    <div class="fp-widget-thumb">-->
+<!--                                        <a class="widget-thumb" href="#">-->
+<!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+<!--                                            <img src="../static/images/projects/fg1.jpg" alt="">-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="latest-project clearfix">-->
+<!--                                    <div class="fp-widget-thumb">-->
+<!--                                        <a class="widget-thumb" href="#">-->
+<!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+<!--                                            <img src="../static/images/projects/fg2.jpg" alt="">-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="latest-project clearfix">-->
+<!--                                    <div class="fp-widget-thumb">-->
+<!--                                        <a class="widget-thumb" href="#">-->
+<!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+<!--                                            <img src="../static/images/projects/fg3.jpg" alt="">-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="latest-project clearfix">-->
+<!--                                    <div class="fp-widget-thumb">-->
+<!--                                        <a class="widget-thumb" href="#">-->
+<!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+<!--                                            <img src="../static/images/projects/fg4.jpg" alt="">-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="latest-project clearfix">-->
+<!--                                    <div class="fp-widget-thumb">-->
+<!--                                        <a class="widget-thumb" href="#">-->
+<!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+<!--                                            <img src="../static/images/projects/fg5.jpg" alt="">-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="latest-project clearfix">-->
+<!--                                    <div class="fp-widget-thumb">-->
+<!--                                        <a class="widget-thumb" href="#">-->
+<!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+<!--                                            <img src="../static/images/projects/fg6.jpg" alt="">-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="footer-sidebar footer-4 col-xs-12 col-sm-6 col-md-3">-->
+<!--                        <div class="widget widget_mc4wp_form_widget">-->
+<!--                            <h4 class="widget-title">Our Newsletter</h4>-->
+<!--                            <form>-->
+<!--                                <div class="footform">-->
+<!--                                    <div class="fh-form-field">-->
+<!--                                        <p>-->
+<!--                                            Sign up today for tips and latest news and exclusive special offers.-->
+<!--                                        </p>-->
+<!--                                        <div class="subscribe">-->
+<!--                                            <input name="EMAIL" placeholder="Enter Your Email" required="" type="email">-->
+<!--                                            <input value="Sign Up" type="submit">-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                            &lt;!&ndash; / MailChimp for WordPress Plugin &ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="widget widget_text">-->
+<!--                            <div class="textwidget">-->
+<!--                                <p>We don’t do spam and Your mail id very confidential.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </div>
         </div>
     </div>
+    <!--footer sec end-->
 
-    <!-- jquery Liabrary -->
-    <script src="../static/js/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap v3.3.6 js -->
-    <script src="../static/js/bootstrap.min.js"></script>
-    <!-- fancybox js -->
-    <script src="../static/js/jquery.fancybox.pack.js"></script>
-    <script src="../static/js/jquery.fancybox-media.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <!-- owl.carousel js -->
-    <script src="../static/js/owl.js"></script>
-    <!-- counter js -->
-    <script src="../static/js/jquery.appear.js"></script>
-    <script src="../static/js/jquery.countTo.js"></script>
-    <!-- validate js -->
-    <script src="../static/js/validate.js"></script>
-    <!-- switcher js -->
-    <script src="../static/js/switcher.js"></script>
+    <!--copyright sec-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-copyright col-md-6 col-sm-12 col-sx-12">
+                    <div class="site-info">Copyright @ 2023 <a href="#">Delta Group</a>, All Right Reserved</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--copyright sec end-->
+</div>
+<!--End pagewrapper-->
 
-    <!-- google map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
-    <script src="../static/js/gmap.js"></script>
-    <script src="../static/js/map-helper.js"></script>
+<!--primary-mobile-nav-->
+<div class="primary-mobile-nav header-v1" id="primary-mobile-nav" role="navigation">
+    <a href="#" class="close-canvas-mobile-panel">×</a>
+    <ul class="menu">
+        <li class="current-menu-item menu-item-has-children"><a href="index.html">Home</a>
+            <ul class="sub-menu">
+                <li><a href="index.html">Home Page 1</a></li>
+                <li><a href="home-page-2.html">Home Page 2</a></li>
+                <li><a href="home-page-3.html">Home Page 3</a></li>
+                <li><a href="home-page-4.html">Home Page 4</a></li>
+            </ul>
+        </li>
+        <li class="menu-item-has-children"><a href="services.html" class="dropdown-toggle">Services</a>
+            <ul class="sub-menu">
+                <li><a href="services.html">All Services</a></li>
+                <li><a href="road-freight-forwarding.html">Road Freight Forwarding</a></li>
+                <li><a href="ocean-forwarding.html">Ocean Freight Forwarding</a></li>
+                <li><a href="air-freight-forwarding.html">Air Freight Forwarding</a></li>
+                <li><a href="warehousing.html">Warehousing</a></li>
+                <li><a href="door-to-door-delivery.html">Door to Door Delivery</a></li>
+                <li><a href="ground-transport.html">Ground Transport</a></li>
+                <li><a href="worldwide-transport.html">Worldwide Transport</a></li>
+                <li><a href="cargo-service.html">Cargo Service</a></li>
+                <li><a href="packaging-storage.html">Packaging &#038; Storage</a></li>
+            </ul>
+        </li>
+        <li class="menu-item-has-children"><a href="projects.html" class="dropdown-toggle">Pages</a>
+            <ul class="sub-menu">
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="faqs.html">FAQS</a></li>
+                <li><a href="our-prices.html">Our Prices</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+        </li>
+        <li class="menu-item-has-children"><a href="#" class="dropdown-toggle">Features</a>
+            <ul class="sub-menu">
+                <li><a href="request-a-quote.html">Request A Quote</a></li>
+                <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
+            </ul>
+        </li>
+        <li class="menu-item-has-children"><a href="blog.html" class="dropdown-toggle">News</a>
+            <ul class="sub-menu">
+                <li><a href="news.html">Blog Two Columns</a></li>
+                <li><a href="blog-column-3.html">Blog Three Columns</a></li>
+                <li><a href="blog-column-4.html">Blog Four Columns</a></li>
+                <li><a href="blog-sidebar.html">Blog With Sidebar</a></li>
+                <li><a href="blog-single.html">Blog Single Post</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="extra-menu-item menu-item-button-link">
+            <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
+        </li>
+    </ul>
 
-    <!-- REVOLUTION JS FILES -->
-    <script type="text/javascript" src="../static/js/revolution/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="../static/js/revolution/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript"
-            src="../static/js/revolution/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript"
-            src="../static/js/revolution/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript"
-            src="../static/js/revolution/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript"
-            src="../static/js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript"
-            src="../static/js/revolution/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript"
-            src="../static/js/revolution/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript"
-            src="../static/js/revolution/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript"
-            src="../static/js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="../static/js/revolution/extensions/revolution.extension.video.min.js"></script>
-    <script>
-        // Select all the images with the lazyload class
-        const lazyImages = document.querySelectorAll('.lazyload');
+</div>
+<div id="off-canvas-layer" class="off-canvas-layer"></div>
+<!--primary-mobile-nav end-->
 
-        // Create an intersection observer instance
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    const src = img.getAttribute('data-src');
+<!--Scroll to top-->
+<a id="scroll-top" class="backtotop" href="#page-top"><i class="fa fa-angle-up"></i></a>
 
-                    // Load the actual image source
-                    img.setAttribute('src', src);
-                    img.classList.remove('lazyload');
+<!--Color switcher-->
+<div class="demo_changer" id="demo_changer">
+    <div class="demo-icon fa fa-sliders"></div>
+    <div class="form_holder">
+        <h3 class="demo-title">Customize CargoHub</h3>
 
-                    // Stop observing the image once it's loaded
-                    observer.unobserve(img);
+        <div class="line"></div>
+        <p>Color Scheme</p>
+        <div class="predefined_styles" id="styleswitch_area">
+            <a href="?default=true" data-rel="default" class="styleswitch"
+               style="background:#ff0000;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
+            <a href="#" data-rel="navy-darkblue" class="styleswitch"
+               style="background:#00baff;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
+            <a href="#" data-rel="orange-black" class="styleswitch"
+               style="background:#ee6012;border-right-color: #202020;border-bottom-color: #202020"></a>
+            <a href="#" data-rel="yellow-blue" class="styleswitch"
+               style="background:#f6a604;border-right-color: #0032ab;border-bottom-color: #0032ab"></a>
+        </div>
+        <div class="line"></div>
+    </div>
+</div>
+
+<!-- jquery Liabrary -->
+<script src="../static/js/jquery-1.12.4.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- bootstrap v3.3.6 js -->
+<script src="../static/js/bootstrap.min.js"></script>
+<!-- fancybox js -->
+<script src="../static/js/jquery.fancybox.pack.js"></script>
+<script src="../static/js/jquery.fancybox-media.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<!-- owl.carousel js -->
+<script src="../static/js/owl.js"></script>
+<!-- counter js -->
+<script src="../static/js/jquery.appear.js"></script>
+<script src="../static/js/jquery.countTo.js"></script>
+<!-- validate js -->
+<script src="../static/js/validate.js"></script>
+<!-- switcher js -->
+<script src="../static/js/switcher.js"></script>
+
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
+<script src="../static/js/gmap.js"></script>
+<script src="../static/js/map-helper.js"></script>
+
+<!-- REVOLUTION JS FILES -->
+<script type="text/javascript" src="../static/js/revolution/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="../static/js/revolution/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript"
+        src="../static/js/revolution/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript"
+        src="../static/js/revolution/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript"
+        src="../static/js/revolution/extensions/revolution.extension.kenburn.min.js"></script>
+<script type="text/javascript"
+        src="../static/js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript"
+        src="../static/js/revolution/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript"
+        src="../static/js/revolution/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript"
+        src="../static/js/revolution/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript"
+        src="../static/js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="../static/js/revolution/extensions/revolution.extension.video.min.js"></script>
+<script>
+    // Select all the images with the lazyload class
+    const lazyImages = document.querySelectorAll('.lazyload');
+
+    // Create an intersection observer instance
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const src = img.getAttribute('data-src');
+
+                // Load the actual image source
+                img.setAttribute('src', src);
+                img.classList.remove('lazyload');
+
+                // Stop observing the image once it's loaded
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    // Observe each lazy image
+    lazyImages.forEach(image => {
+        observer.observe(image);
+    });
+</script>
+
+<!-- script JS  -->
+<script src="../static/js/scripts.min.js"></script>
+<script src="../static/js/script.js"></script>
+<script>
+    function countNumbers(target, counterId, duration) {
+        const counterElement = document.getElementById(counterId);
+        const startValue = 0;
+        const increment = (target - startValue) / (duration / 10); // Adjust the increment for smoother counting
+
+        let currentValue = startValue;
+        const interval = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= target) {
+                clearInterval(interval);
+                currentValue = target;
+            }
+            counterElement.innerText = Math.floor(currentValue);
+        }, 10);
+    }
+
+    // Start counting when the element is visible
+    function startCountersWhenVisible() {
+        const counters = document.querySelectorAll('.value');
+
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function checkCountersVisibility() {
+            counters.forEach(counter => {
+                if (isInViewport(counter) && !counter.classList.contains('counting')) {
+                    const targetValue = parseInt(counter.innerText);
+                    counter.innerText = '0'; // Reset counter to start from 0
+                    counter.classList.add('counting');
+                    countNumbers(targetValue, counter.id, 1000); // Adjust the duration as needed
                 }
             });
+        }
+
+        window.addEventListener('scroll', function () {
+            if (window.requestAnimationFrame) {
+                window.requestAnimationFrame(checkCountersVisibility);
+            } else {
+                checkCountersVisibility();
+            }
         });
 
-        // Observe each lazy image
-        lazyImages.forEach(image => {
-            observer.observe(image);
-        });
-    </script>
+        checkCountersVisibility();
+    }
 
-    <!-- script JS  -->
-    <script src="../static/js/scripts.min.js"></script>
-    <script src="../static/js/script.js"></script>
+    startCountersWhenVisible();
+</script>
 </body>
 
 </html>
