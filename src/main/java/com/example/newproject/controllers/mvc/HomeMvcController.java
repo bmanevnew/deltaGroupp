@@ -41,9 +41,9 @@ public class HomeMvcController {
     public String news() {
         return "news";
     }
-    @GetMapping("/ocean-forwarding.html")
+    @GetMapping("/ocean-freight-forwarding.html")
     public String oceanForwarding() {
-        return "ocean-forwarding";
+        return "ocean-freight-forwarding";
     }
     @GetMapping("/contact.html")
     public String contact() {

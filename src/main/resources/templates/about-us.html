@@ -4,6 +4,32 @@
 <head>
     <meta charset="utf-8">
     <title>About Us</title>
+    <style>
+        .blurry-header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            padding: 20px;
+            color: blue; /* Set the text color to blue */
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
+            backdrop-filter: blur(2px); /* Adjust the blur radius as needed */
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: inherit;
+            filter: blur(2px);
+            opacity: 0.3; /* Adjust the opacity value as needed */
+            z-index: -1;
+        }
+    </style>
     <!-- Stylesheets -->
     <!-- bootstrap v3.3.6 css -->
     <link href="../static/css/bootstrap.css" rel="stylesheet">
@@ -171,10 +197,10 @@
                 <div class="container mobile_relative">
                     <div class="row">
                         <div class="site-logo col-md-3 col-sm-6 col-xs-6">
-                            <a href="index.html" class="logo">
-                                <img src="../static/images/logo-light.png" alt="DeltaGroup" class="logo-light show-logo">
-                                <img src="../static/images/logo-light.png" alt="DeltaGroup" class="logo-dark hide-logo">
-                            </a>
+                            <!--                        <a href="index.html" class="logo">-->
+                            <!--                            <img src="../static/images/logo-light.png" alt="DeltaGroup" class="logo-light show-logo">-->
+                            <!--                            <img src="../static/images/logo-light.png" alt="DeltaGroup" class="logo-dark hide-logo">-->
+                            <!--                        </a>-->
                             <h1 class="site-title"><a href="#">DeltaGroup</a></h1>
                             <h2 class="site-description">Just another Steel Themes Sites site</h2>
                         </div>
@@ -182,15 +208,39 @@
                             <nav id="site-navigation" class="main-nav primary-nav nav">
                                 <ul class="menu">
                                     <li ><a href="index.html">Home</a></li>
-                                    <li class="has-children"><a href="services.html" class="dropdown-toggle">Services</a>
+                                    <li class="has-children">
+                                        <a href="services.html" class="dropdown-toggle">Services</a>
                                         <ul class="sub-menu">
                                             <li><a href="services.html">All Services</a></li>
                                             <li><a href="road-freight-forwarding.html">Road Freight Forwarding</a></li>
-                                            <li><a href="ocean-forwarding.html">Ocean Freight Forwarding</a></li>
+                                            <li><a href="ocean-freight-forwarding.html">Ocean Freight Forwarding</a></li>
                                             <li><a href="warehousing.html">Warehousing</a></li>
-                                            <li><a href="ground-transport.html">Ground Transport</a></li>
-                                            <li><a href="cargo-service.html">Cargo Service</a></li>
-                                            <li><a href="packaging-storage.html">Packaging &#038; Storage</a></li>
+                                            <!--                                        <li><a href="ground-transport.html">Ground Transport</a></li>-->
+                                            <!--                                        <li><a href="cargo-service.html">Cargo Service</a></li>-->
+                                            <!--                                        <li><a href="packaging-storage.html">Packaging & Storage</a></li>-->
+                                            <li class="has-children">
+                                                <a class="dropdown-toggle">Contact</a>
+                                                <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
+                                                    <li>
+                                                        <p>Phones:</p>
+                                                        <p>+359 2 9202137</p>
+                                                        <p>+359 2 9631223</p>
+                                                        <p>+359 2 9634369</p>
+                                                        <p>Fax: +359 2 9202138</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Emails:</p>
+                                                        <p>info@deltagroup.bg</p>
+                                                        <p>sales@deltagroup.bg</p>
+                                                        <p>export@deltagroup.bg</p>
+                                                        <p>import@deltagroup.bg</p>
+                                                        <p>terminal@deltagroup.bg</p>
+                                                        <p>account@deltagroup.bg</p>
+                                                        <p>documentation@deltagroup.bg</p>
+                                                        <p>trucks@deltagroup.bg</p>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="has-children"><a href="#" class="dropdown-toggle">Pages</a>
@@ -199,12 +249,58 @@
                                             <li><a href="faqs.html">FAQS</a></li>
                                             <li><a href="our-prices.html">Our Prices</a></li>
                                             <li><a href="testimonials.html">Testimonials</a></li>
+                                            <li class="has-children">
+                                                <a class="dropdown-toggle">Contact</a>
+                                                <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
+                                                    <li>
+                                                        <p>Phones:</p>
+                                                        <p>+359 2 9202137</p>
+                                                        <p>+359 2 9631223</p>
+                                                        <p>+359 2 9634369</p>
+                                                        <p>Fax: +359 2 9202138</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Emails:</p>
+                                                        <p>info@deltagroup.bg</p>
+                                                        <p>sales@deltagroup.bg</p>
+                                                        <p>export@deltagroup.bg</p>
+                                                        <p>import@deltagroup.bg</p>
+                                                        <p>terminal@deltagroup.bg</p>
+                                                        <p>account@deltagroup.bg</p>
+                                                        <p>documentation@deltagroup.bg</p>
+                                                        <p>trucks@deltagroup.bg</p>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="has-children"><a href="#" class="dropdown-toggle">Features</a>
                                         <ul class="sub-menu">
                                             <li><a href="request-a-quote.html">Request A Quote</a></li>
                                             <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
+                                            <li class="has-children">
+                                                <a class="dropdown-toggle">Contact</a>
+                                                <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
+                                                    <li>
+                                                        <p>Phones:</p>
+                                                        <p>+359 2 9202137</p>
+                                                        <p>+359 2 9631223</p>
+                                                        <p>+359 2 9634369</p>
+                                                        <p>Fax: +359 2 9202138</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Emails:</p>
+                                                        <p>info@deltagroup.bg</p>
+                                                        <p>sales@deltagroup.bg</p>
+                                                        <p>export@deltagroup.bg</p>
+                                                        <p>import@deltagroup.bg</p>
+                                                        <p>terminal@deltagroup.bg</p>
+                                                        <p>account@deltagroup.bg</p>
+                                                        <p>documentation@deltagroup.bg</p>
+                                                        <p>trucks@deltagroup.bg</p>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li><a href="news.html">News</a>
@@ -227,16 +323,18 @@
             </div>
 
         </header>
-
         <!-- masthead end -->
 
         <!--Page Header-->
-        <div class="page-header title-area">
+        <div class="page-header title-area blurry-header">
             <div class="header-title">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h1 class="page-title">About Us</h1>
+                            <div class="header-content">
+                                <div class="header-overlay"></div>
+                                <h1 class="page-title" style="color: blue;">About Us</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -319,64 +417,63 @@
         <!-- Feature sec end -->
 
         <!-- featured sec -->
-        <section class="whychoos-3 secpadd">
-            <div class="container">
-                <div class="fh-section-title clearfix text-center version-dark paddbtm30">
-                    <h2>Why Choose Us</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="fh-icon-box style-2 version-dark icon-center">
-                            <span class="fh-icon"><i class="flaticon-people"></i></span>
-                            <h4 class="box-title"><span>Global Supply Chain</span></h4>
-                            <div class="desc">
-                                <p>Efficiently unleash cross-media information without cross-media value.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="fh-icon-box style-2 version-dark icon-center">
-                            <span class="fh-icon"><i class="flaticon-route"></i></span>
-                            <h4 class="box-title"><span>Shipment Tracking</span></h4>
-                            <div class="desc">
-                                <p>We offer intelligent concepts for road & tail as well as complex special services.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="fh-icon-box style-2 version-dark icon-center">
-                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>
-                            <h4 class="box-title"><span>Careful Handling</span></h4>
-                            <div class="desc">
-                                <p>Cargo HUB items are transported at some stage of their journey along the world's roads.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="fh-icon-box style-2 version-dark icon-center">
-                            <span class="fh-icon"><i class="flaticon-alarm-clock"></i></span>
-                            <h4 class="box-title"><span>On Time Delivery</span></h4>
-                            <div class="desc">
-                                <p>We offer intelligent concepts for road & tail as well as complex special services.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!--        <section class="whychoos-3 secpadd">-->
+<!--            <div class="container">-->
+<!--                <div class="fh-section-title clearfix text-center version-dark paddbtm30">-->
+<!--                    <h2>Why Choose Us</h2>-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+<!--                            <span class="fh-icon"><i class="flaticon-people"></i></span>-->
+<!--                            <h4 class="box-title"><span>Global Supply Chain</span></h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>Efficiently unleash cross-media information without cross-media value.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+<!--                            <span class="fh-icon"><i class="flaticon-route"></i></span>-->
+<!--                            <h4 class="box-title"><span>Shipment Tracking</span></h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>We offer intelligent concepts for road & tail as well as complex special services.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+<!--                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>-->
+<!--                            <h4 class="box-title"><span>Careful Handling</span></h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>Cargo HUB items are transported at some stage of their journey along the world's roads.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+<!--                            <span class="fh-icon"><i class="flaticon-alarm-clock"></i></span>-->
+<!--                            <h4 class="box-title"><span>On Time Delivery</span></h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>We offer intelligent concepts for road & tail as well as complex special services.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
         <!-- featured sec end -->
 
 
-        <!--footer sec-->
         <!--footer sec-->
         <div class="footer-widgets widgets-area">
             <div class="contact-widget">
                 <div class="container">
                     <div class="row">
-                        <div class="contact col-md-3 col-xs-12 col-sm-12">
-                            <a href="#" class="footer-logo"><img src="../static/images/DELTA GROUP (241 × 53px).svg"
-                                                                 alt="Footer Logo"></a>
-                        </div>
+                        <!--                    <div class="contact col-md-3 col-xs-12 col-sm-12">-->
+                        <!--                        <a href="#" class="footer-logo"><img src="../static/images/DELTA GROUP (241 × 53px).svg"-->
+                        <!--                                                             alt="Footer Logo"></a>-->
+                        <!--                    </div>-->
                         <div class="contact col-md-3 col-xs-12 col-sm-12"><i class="flaticon-signs"></i>
                             <p>Address :  Sofia, Bulgaria</p>
                             <h4>48-A, Suhodolska Str.</h4>
@@ -403,7 +500,14 @@
                                         solutions.</p>
                                 </div>
                             </div>
-
+                            <!--                        <div class="widget cargohub-social-links-widget">-->
+                            <!--                            <div class="list-social style-1">-->
+                            <!--                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>-->
+                            <!--                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>-->
+                            <!--                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>-->
+                            <!--                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>-->
+                            <!--                            </div>-->
+                            <!--                        </div>-->
                         </div>
                         <div class="footer-sidebar footer-2 col-xs-12 col-sm-6 col-md-3">
                             <div class="widget widget_nav_menu">
@@ -411,15 +515,122 @@
                                 <div class="menu-service-menu-container">
                                     <ul class="menu">
                                         <li><a href="#">All Services</a></li>
-                                        <li><a href="#">Ground Transport</a></li>
-                                        <li><a href="#">Cargo Service</a></li>
-                                        <li><a href="#">Warehousing</a></li>
                                         <li><a href="#">Road Freight Forwarding</a></li>
                                         <li><a href="#">Ocean Freight Forwarding</a></li>
+                                        <!--                                    <li><a href="#">Ground Transport</a></li>-->
+                                        <!--                                    <li><a href="#">Cargo Service</a></li>-->
+                                        <li><a href="#">Warehousing</a></li>
+
                                     </ul>
                                 </div>
                             </div>
                         </div>
+                        <div class="footer-sidebar footer-3 col-xs-12 col-sm-6 col-md-6">
+                            <div class="widget widget_contact_info">
+                                <h4 class="widget-title">Contact Information</h4>
+                                <div class="contact-info">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <i class="fa fa-phone"></i> Phones:<br>
+                                            +359 2 9202137<br>
+                                            +359 2 9631223<br>
+                                            +359 2 9634369<br>
+                                            Fax: +359 2 9202138
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <i class="fa fa-envelope"></i> Emails:<br>
+                                            <span>info@deltagroup.bg</span><br>
+                                            <span>sales@deltagroup.bg</span><br>
+                                            <span>export@deltagroup.bg</span><br>
+                                            <span>import@deltagroup.bg</span><br>
+                                            <span>terminal@deltagroup.bg</span><br>
+                                            <span>account@deltagroup.bg</span><br>
+                                            <span>documentation@deltagroup.bg</span><br>
+                                            <span>trucks@deltagroup.bg</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--                    <div class="footer-sidebar footer-3 col-xs-12 col-sm-6 col-md-3">-->
+                        <!--                        <div class="widget latest-project-widget">-->
+                        <!--                            <h4 class="widget-title">Photo gallery</h4>-->
+                        <!--                            <div class="latest-project-list clearfix">-->
+                        <!--                                <div class="latest-project clearfix">-->
+                        <!--                                    <div class="fp-widget-thumb">-->
+                        <!--                                        <a class="widget-thumb" href="#">-->
+                        <!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+                        <!--                                            <img src="../static/images/projects/fg1.jpg" alt="">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="latest-project clearfix">-->
+                        <!--                                    <div class="fp-widget-thumb">-->
+                        <!--                                        <a class="widget-thumb" href="#">-->
+                        <!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+                        <!--                                            <img src="../static/images/projects/fg2.jpg" alt="">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="latest-project clearfix">-->
+                        <!--                                    <div class="fp-widget-thumb">-->
+                        <!--                                        <a class="widget-thumb" href="#">-->
+                        <!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+                        <!--                                            <img src="../static/images/projects/fg3.jpg" alt="">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="latest-project clearfix">-->
+                        <!--                                    <div class="fp-widget-thumb">-->
+                        <!--                                        <a class="widget-thumb" href="#">-->
+                        <!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+                        <!--                                            <img src="../static/images/projects/fg4.jpg" alt="">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="latest-project clearfix">-->
+                        <!--                                    <div class="fp-widget-thumb">-->
+                        <!--                                        <a class="widget-thumb" href="#">-->
+                        <!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+                        <!--                                            <img src="../static/images/projects/fg5.jpg" alt="">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="latest-project clearfix">-->
+                        <!--                                    <div class="fp-widget-thumb">-->
+                        <!--                                        <a class="widget-thumb" href="#">-->
+                        <!--                                            <i class="fa fa-link" aria-hidden="true"></i>-->
+                        <!--                                            <img src="../static/images/projects/fg6.jpg" alt="">-->
+                        <!--                                        </a>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="footer-sidebar footer-4 col-xs-12 col-sm-6 col-md-3">-->
+                        <!--                        <div class="widget widget_mc4wp_form_widget">-->
+                        <!--                            <h4 class="widget-title">Our Newsletter</h4>-->
+                        <!--                            <form>-->
+                        <!--                                <div class="footform">-->
+                        <!--                                    <div class="fh-form-field">-->
+                        <!--                                        <p>-->
+                        <!--                                            Sign up today for tips and latest news and exclusive special offers.-->
+                        <!--                                        </p>-->
+                        <!--                                        <div class="subscribe">-->
+                        <!--                                            <input name="EMAIL" placeholder="Enter Your Email" required="" type="email">-->
+                        <!--                                            <input value="Sign Up" type="submit">-->
+                        <!--                                        </div>-->
+                        <!--                                    </div>-->
+                        <!--                                </div>-->
+                        <!--                            </form>-->
+                        <!--                            &lt;!&ndash; / MailChimp for WordPress Plugin &ndash;&gt;-->
+                        <!--                        </div>-->
+                        <!--                        <div class="widget widget_text">-->
+                        <!--                            <div class="textwidget">-->
+                        <!--                                <p>We don’t do spam and Your mail id very confidential.</p>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
                     </div>
                 </div>
             </div>
@@ -457,7 +668,7 @@
                 <ul class="sub-menu">
                     <li><a href="services.html">All Services</a></li>
                     <li><a href="road-freight-forwarding.html">Road Freight Forwarding</a></li>
-                    <li><a href="ocean-forwarding.html">Ocean Freight Forwarding</a></li>
+                    <li><a href="ocean-freight-forwarding.html">Ocean Freight Forwarding</a></li>
                     <li><a href="air-freight-forwarding.html">Air Freight Forwarding</a></li>
                     <li><a href="warehousing.html">Warehousing</a></li>
                     <li><a href="door-to-door-delivery.html">Door to Door Delivery</a></li>
