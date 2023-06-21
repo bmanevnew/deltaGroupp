@@ -2726,32 +2726,22 @@ div.aligncenter,
     font-size: 26px;
 }
 
-.admin-bar .primary-mobile-nav {
-    top: 32px;
-}
-
+/* CSS styles for the mobile menu */
 .primary-mobile-nav {
-    width: 340px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    right: -340px;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    color: #848484;
-    z-index: 99999;
-    border: 1px solid #f4f4f4;
+    /* Add your CSS styles here */
+    display: none; /* Hide the menu by default */
 }
 
-.primary-mobile-nav .close-canvas-mobile-panel {
-    padding: 20px;
-    display: inline-block;
-    font-size: 46px;
-    line-height: 30px;
-    padding-bottom: 0;
+/* Additional CSS styles for the menu */
+.primary-mobile-nav ul.menu {
+    /* Add your CSS styles here */
+}
+
+/* Show the mobile menu only on screens smaller than 768px */
+@media (max-width: 767px) {
+    .primary-mobile-nav {
+        display: block; /* Show the menu on smaller screens */
+    }
 }
 
 .primary-mobile-nav ul {
@@ -8415,6 +8405,7 @@ ul.service-menu .children li:last-child {
     top: 10px;
     left: 25px;
 }
+
 
 .custom-quote.quote-project blockquote:after {
     content: '';
