@@ -3,9 +3,33 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Contact</title>
+    <title>Insurance</title>
+    <style>
+        .blurry-header {
+            position: relative;
+            overflow: hidden;
+        }
 
+        .header-content {
+            position: relative;
+            padding: 20px;
+            color: blue; /* Set the text color to blue */
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
+            backdrop-filter: blur(2px); /* Adjust the blur radius as needed */
+        }
 
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: inherit;
+            filter: blur(2px);
+            opacity: 0.3; /* Adjust the opacity value as needed */
+            z-index: -1;
+        }
+    </style>
     <!-- Stylesheets -->
     <!-- bootstrap v3.3.6 css -->
     <link href="../static/css/bootstrap.css" rel="stylesheet">
@@ -199,12 +223,15 @@
 
 
         <!--Page Header-->
-        <div class="page-header title-area">
+        <div class="page-header title-area blurry-header">
             <div class="header-title">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <h1 class="page-title">Contact</h1>
+                            <div class="header-content">
+                                <div class="header-overlay"></div>
+                                <h1 class="page-title" style="color: blue;">Insurance</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -214,9 +241,9 @@
                     <div class="row">
                         <div class="col-md-8 col-sm-12 col-xs-12 site-breadcrumb">
                             <nav class="breadcrumb">
-                                <a class="home" href="#"><span>Home</span></a>
+                                <a class="home" href="index.html"><span>Home</span></a>
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
-                                <span>Contact</span>
+                                <span>Insurance</span>
                             </nav>
                         </div>
                     </div>
@@ -225,102 +252,134 @@
         </div>
         <!--Page Header end-->
 
-        <!--contact pagesec-->
-        <section class="contactpagesec secpadd">
+        <!--Insurance-->
+        <section class="aboutsec-2 secpaddbig">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="fh-contact-box type-address "><i class="flaticon-pin"></i>
-                            <h4 class="box-title">Visit our office</h4>
-                            <div class="desc">
-                                <p>48-A, Suhodolska Str,1373 Sofia, Bulgaria</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="fh-contact-box type-phone "><i class="flaticon-phone-call "></i>
-                            <h4 class="box-title">Call us on</h4>
-                            <div class="desc">
-                                <p>+359 2 9202137
-                                    <br>+359 2 9631223
-                                    <br>+359 2 9634369
-                                    <br>Fax: +359 2 9202138</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="fh-contact-box type-email "><i class="flaticon-business"></i>
-                            <h4 class="box-title">Mail Us at</h4>
-                            <div class="desc">
-                                <p>info@deltagroup.bg
-                                    <br>sales@deltagroup.bg
-                                    <br>export@deltagroup.bg
-                                    <br>import@deltagroup.bg
-                                    <br>terminal@deltagroup.bg
-                                    <br>account@deltagroup.bg
-                                    <br>documentation@deltagroup.bg
-                                    <br>trucks@deltagroup.bg
-                                </p>
-                            </div>
-                        </div>
-                    </div>
 
+                    <div class="col-md-12 col-sm-6">
+                        <div class="abotinforgt">
+                            <div class="fh-section-title clearfix text-left version-dark paddbtm30">
+                                <h2>Insurance</h2>
+                            </div>
+                            <div class="about-text">
+                                <p>Under most conditions, whether or not cargo is insured is a matter of commercial
+                                    preference. Should the Seller and/or Buyer arrange insurance, how the cargo is to
+                                    be insured, under what terms the cargo is covered and so on are all matters for
+                                    negotiation. In the context of international trade, the word 'marine insurance'
+                                    refers to all forms of transport and not just sea or waterborne transport. Thus
+                                    cargo moving by air may be covered under a Marine Insurance contract.</p>
+                                <p>Insurance is a contractual agreement between the insured and the underwriter whereby
+                                    the underwriter offers to indemnify the insured against certain specified risks or
+                                    events. It is the intention of the agreement that the insured will be placed in the
+                                    position that they would have been in had the loss or damage not arisen e.g. they
+                                    will be financially compensated for lost goods to the value of those goods and any
+                                    additional charges that they may have incurred in the movement of the goods prior
+                                    to the loss etc.It is often overlooked, however, that the nature of the agreement
+                                    is contractual and that as a consequence there are many things that the insured has
+                                    to achieve in order to keep the contract valid. These include using adequate
+                                    packing, proper carriers, secure transfer of information and so on. Above all else,
+                                    the insured must act reasonably and honour 'their side' of the contract.</p>
+                                <p>Insurance is a very necessary cost in the international transport. Consider, for
+                                    example, you move an inexpensive item by sea, but the shipping line declares
+                                    "General Average" during the vessels' crossing. According to Maritime Low, YOU are
+                                    charged a percentage of the cost, which the shipping line is declaring. You insure
+                                    not only against the possibility of damage, or entire loss of your shipment, but
+                                    also against the danger of the carrier incurring unforeseen costs.</p>
+                                <p>Delta Shipping Ltd., as an official agent of Bulstrad (Vieanna Insurance Group) is
+                                    able to arrange insurance for "All Risks" Coverage, including War Risk, which we
+                                    can quote very favorable rates through leading Bulgarian insurance companies. We
+                                    can of course, place whatever insurance you specify with whatever inclusions, and
+                                    will advise the cost for this.</p>
+                                <p>We PLACE insurance with the insurance company, meaning that we (ourselves) do
+                                    not insure your shipment, the Insurance Company does - the money DOES NOT come
+                                    from our account should YOU have a claim. Can you afford to lose the cost of your
+                                    shipment in a disaster, the freight cost to a destination it does not get to, and
+                                    to pay the shipping line a percentage of the cost of the ship, or repairs to it -
+                                    as maritime low dictates? - it can, and has happened before! Consider Insurance.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+        <!--About us end-->
 
-
-        <!--contact end-->
-
-        <!--contact form -->
-<!--        <section class="contactpagform graybg secpadd">-->
+        <!-- Feature sec -->
+<!--        <section class="features-3 bluebg">-->
 <!--            <div class="container">-->
-<!--                <div class="fh-section-title clearfix f25 text-center version-dark paddbtm40">-->
-<!--                    <h2>Leave Your Message</h2>-->
-<!--                </div>-->
-<!--                <p class="paddbtm40 text-center">If you have any questions about the services we provide simply use the form below. We try and respond to all-->
-<!--                    <br>queries and comments within 24 hours.</p>-->
-<!--                <form method="post" action="../static/ajax/mail.php" id="contact-form" novalidate="novalidate">-->
-<!--                    <div class="fh-form fh-form-3">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-md-6 col-sm-6 col-xs-12">-->
-<!--                                <p class="field">-->
-<!--                                    <input name="name" placeholder="Your Name*" type="text">-->
-<!--                                </p>-->
-<!--                                <p class="field">-->
-<!--                                    <input name="email" placeholder="Email Address*" type="email">-->
-<!--                                </p>-->
-<!--                                <p class="field">-->
-<!--                                    <input name="phone" placeholder="Phone" type="text">-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-6 col-sm-6 col-xs-12">-->
-<!--                                <p class="field single-field">-->
-<!--                                    <textarea name="message" cols="40" rows="10" placeholder="Your Message..."></textarea>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-12 col-sm-12 col-xs-12">-->
-<!--                                <p class="field submit">-->
-<!--                                    <button class="fh-btn" type="submit">Submit</button>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div id="loading" style="display:none"><img src="../static/images/ajax-loader.png" alt="loading" /></div>-->
-<!--                            <div class="contact-form-message"></div>-->
+<!--                <div class="row">-->
+<!--                    <div class="col-sm-4">-->
+<!--                        <div class="fh-feature-box "><span class="chars">M</span>-->
+<!--                            <h4 class="box-title">Our Mission</h4>-->
+<!--                            <div class="desc">We meet our customers’ demands for a personal &amp; profesional service by offering innovative supply chain solutions.</div>-->
 <!--                        </div>-->
 <!--                    </div>-->
-<!--                </form>-->
+<!--                    <div class="col-sm-4">-->
+<!--                        <div class="fh-feature-box "><span class="chars">V</span>-->
+<!--                            <h4 class="box-title">Our Vision</h4>-->
+<!--                            <div class="desc">We proactively and constantly look for new possibilities. Therefore, an important part of our vision is to attract &amp; retain.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-4">-->
+<!--                        <div class="fh-feature-box "><span class="chars">C</span>-->
+<!--                            <h4 class="box-title">Core Values</h4>-->
+<!--                            <div class="desc">Procedures, values and attitudes are crucial to our reputation – not to mention the success we enjoy.</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 <!--            </div>-->
 <!--        </section>-->
-        <!--contact form  end -->
+        <!-- Feature sec end -->
 
-        <!--google map-->
-<!--        <div class="google-map-area">-->
-<!--            <div class="google-map" id="contact-google-map" data-map-lat="51.545527" data-map-lng="-0.133272" data-icon-path="images/icon/maker3.png" data-map-title="Chester" data-map-zoom="13" data-markers='{-->
-<!--							"marker-1": [51.545527, -0.133272, "<h4>Cargo Hub</h4><p>Camden Borough </p>"]-->
-<!--						}' style="height:500px;width:100%;">-->
+        <!-- featured sec -->
+<!--        <section class="whychoos-3 secpadd">-->
+<!--            <div class="container">-->
+<!--                <div class="fh-section-title clearfix text-center version-dark paddbtm30">-->
+<!--                    <h2>Why Choose Us</h2>-->
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+<!--                            <span class="fh-icon"><i class="flaticon-people"></i></span>-->
+<!--                            <h4 class="box-title"><span>Global Supply Chain</span></h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>Efficiently unleash cross-media information without cross-media value.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+<!--                            <span class="fh-icon"><i class="flaticon-route"></i></span>-->
+<!--                            <h4 class="box-title"><span>Shipment Tracking</span></h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>We offer intelligent concepts for road & tail as well as complex special services.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+<!--                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>-->
+<!--                            <h4 class="box-title"><span>Careful Handling</span></h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>Cargo HUB items are transported at some stage of their journey along the world's roads.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-3 col-sm-6">-->
+<!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+<!--                            <span class="fh-icon"><i class="flaticon-alarm-clock"></i></span>-->
+<!--                            <h4 class="box-title"><span>On Time Delivery</span></h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>We offer intelligent concepts for road & tail as well as complex special services.</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 <!--            </div>-->
-<!--        </div>-->
-        <!--google map end-->
+<!--        </section>-->
+        <!-- featured sec end -->
+
 
         <!--footer sec-->
         <div class="footer-widgets widgets-area">

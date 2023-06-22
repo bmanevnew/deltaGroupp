@@ -400,12 +400,8 @@
     margin-top: 15px;
   }
 }
-@media (max-width: 375px) {
-  .primary-mobile-nav {
-    width: 280px;
-    right: -280px;
-  }
-}
+
+
 
 
 

@@ -56,12 +56,31 @@ public class HomeMvcController {
 
     @GetMapping("/road-freight-forwarding.html")
     public String roadFreightForwarding() {
-        return "road-freight-forwarding";
+        return "terminal-delta";
     }
 
     @GetMapping("/services.html")
     public String services() {
         return "services";
+    }
+    @GetMapping("/terminal-delta.html")
+    public String termianlDelta() {
+        return "terminal-delta";
+    }
+
+    @GetMapping("/inland-transport.html")
+    public String inlandTransport() {
+        return "inland-transport";
+    }
+    @GetMapping("/insurance.html")
+    public String insurance() {
+        return "insurance";
+    }
+
+
+    @GetMapping("/cargo-tracking.html")
+    public String cargoTracking() {
+        return "cargo-tracking";
     }
 
 }

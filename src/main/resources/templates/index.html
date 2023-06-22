@@ -48,6 +48,7 @@
         }
     </style>
 
+
     <meta charset="utf-8">
     <title>Delta Group</title>
     <!-- Stylesheets -->
@@ -90,7 +91,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]>
     <script src="../static/js/respond.js"></script><![endif]-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -99,110 +100,46 @@
 
 
     <!-- topbar -->
-    <div id="fh-header-minimized" class="fh-header-minimized fh-header-v1"></div>
     <div id="topbar" class="topbar">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-9 pd-right_zero">
-                    <!-- <div class="topbar-left topbar-widgets text-left">
-                <div id="cargo-office-location-widget-2" class="widget cargo-office-location-widget">
-                    <div class="office-location clearfix">
-                        <div class="office-switcher"><i class="flaticon-globe "></i>
-                            <a class="current-office" href="#">Newyork Office</a>
-                            <ul>
-                                <li>Newyork Office</li>
-                                <li>London Office</li>
-                                <li>Tokyo Office</li>
-                            </ul>
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <div class="topbar-left topbar-widgets">
+                        <div class="current-date-time">
+                            <i class="fa fa-clock-o yellow-icon" aria-hidden="true"></i>
+                            <a href="https://www.timeanddate.com/worldclock/" target="_blank">
+                                <span id="current-date" class="white-text"></span>
+                                <span id="current-time" class="white-text"></span>
+                            </a>
                         </div>
-                        <ul class="topbar-office active">
-                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +012 345 6789</li>
-                            <li><i class="flaticon-web" aria-hidden="true"></i>Mail@CargoHub.com</li>
-                            <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, NY 10012, USA</li>
-                        </ul>
-                        <ul class="topbar-office">
-                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +099 222 1111</li>
-                            <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Evanto.com</li>
-                            <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LD 32614, UK</li>
-                        </ul>
-                        <ul class="topbar-office">
-                            <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +098 765 4321</li>
-                            <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Steelthemes.com</li>
-                            <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, Tokyo 32614, Japan</li>
-                        </ul>
                     </div>
                 </div>
-            </div>--->
-
-
-                    <div class="topbar-left topbar-widgets text-left">
+                <div class="col-lg-6 text-center">
+                    <div class="topbar-center topbar-widgets">
                         <div id="cargo-office-location-widget-2" class="widget cargo-office-location-widget">
                             <div class="office-location clearfix">
-
-
-                                <!--                                    <div class="office-switcher_nw"><i class="flaticon-globe "></i><span class="fa fa-angle-down"></span>-->
-                                <!--                                        <select id="select-box">-->
-                                <!--                                    <option value="1">Newyork Office-->
-
-                                <!--                                       </option>-->
-                                <!--                                    <option value="2">  London Office</option>-->
-                                <!--                                    <option value="3"> Tokyo Office</option>-->
-
-                                <!--                                </select>-->
-                                <!--                                    </div>-->
-
-
                                 <div id="tab-1" class="tab-content">
-                                    <ul class="topbar-office ">
-                                        <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +35929202137</li>
-                                        <li><i class="flaticon-web" aria-hidden="true"></i>info@deltagroup.bg</li>
-                                        <li><i class="flaticon-pin" aria-hidden="true"></i>48-A, Suhodolska Str.</li>
-                                    </ul>
-                                </div>
-                                <div id="tab-2" class="tab-content">
-                                    <ul class="topbar-office">
-                                        <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +099 222 1111
-                                        </li>
-                                        <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Evanto.com</li>
-                                        <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LD 32614, UK</li>
-                                    </ul>
-                                </div>
-                                <div id="tab-3" class="tab-content">
-                                    <ul class="topbar-office">
-                                        <li><i class="flaticon-telephone" aria-hidden="true"></i>Phone +098 765 4321
-                                        </li>
-                                        <li><i class="flaticon-web" aria-hidden="true"></i>Mail@Steelthemes.com</li>
-                                        <li><i class="flaticon-pin" aria-hidden="true"></i>Cargo Hub, LE 32614, Japan
+                                    <ul class="topbar-office text-center">
+                                        <li>
+                                            <i class="flaticon-telephone" aria-hidden="true"></i> Phone +35929202137
+                                            <span class="space"></span>
+                                            <i class="flaticon-web" aria-hidden="true"></i> info@deltagroup.bg
+                                            <span class="space"></span>
+                                            <i class="flaticon-pin" aria-hidden="true"></i> 48-A, Suhodolska Str.
                                         </li>
                                     </ul>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="topbar-right topbar-widgets text-right">
-                        <div class="widget cargohub-social-links-widget">
-                            <div class="list-social style-1">
-                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-skype"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                            </div>
-                        </div>
-                        <div class="widget cargo-search-widget">
-                            <div class="topbar-search topbar-search-1">
-                                <a href="#" class="toggle-search" id="toggle-search"><i class="fa fa-search"
-                                                                                        aria-hidden="true"></i></a>
-                                <form class="search-form" action="#">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                    <input type="search" class="search-field" placeholder="Search..." value="">
-                                    <input type="submit" class="search-submit" value="Search">
-                                </form>
-                            </div>
+                    <div class="topbar-right topbar-widgets text-right" id="weather-info">
+                        <div class="current-weather">
+                            <i class="fa fa-sun-o yellow-icon" aria-hidden="true"></i>
+                            <a href="https://www.timeanddate.com/weather/" target="_blank">
+                                <span id="current-weather" class="white-text"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -214,139 +151,102 @@
 
     <!-- masthead -->
     <header id="masthead" class="site-header clearfix">
-
         <div class="header-main clearfix">
             <div class="container mobile_relative">
                 <div class="row">
                     <div class="site-logo col-md-3 col-sm-6 col-xs-6">
-                        <!--                        <a href="index.html" class="logo">-->
-                        <!--                            <img src="../static/images/logo-light.png" alt="DeltaGroup" class="logo-light show-logo">-->
-                        <!--                            <img src="../static/images/logo-light.png" alt="DeltaGroup" class="logo-dark hide-logo">-->
-                        <!--                        </a>-->
                         <h1 class="site-title"><a href="#">DeltaGroup</a></h1>
                         <h2 class="site-description">Just another Steel Themes Sites site</h2>
                     </div>
-                    <div class="site-menu col-md-9 col-sm-6 col-xs-6">
-                        <nav id="site-navigation" class="main-nav primary-nav nav">
-                            <ul class="menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li class="has-children">
-                                    <a href="services.html" class="dropdown-toggle">Services</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="services.html">All Services</a></li>
-                                        <li><a href="road-freight-forwarding.html">Road Freight Forwarding</a></li>
-                                        <li><a href="ocean-freight-forwarding.html">Ocean Freight Forwarding</a></li>
-                                        <li><a href="warehousing.html">Warehousing</a></li>
-                                        <!--                                        <li><a href="ground-transport.html">Ground Transport</a></li>-->
-                                        <!--                                        <li><a href="cargo-service.html">Cargo Service</a></li>-->
-                                        <!--                                        <li><a href="packaging-storage.html">Packaging & Storage</a></li>-->
-                                        <li class="has-children">
-                                            <a class="dropdown-toggle">Contact</a>
-                                            <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
-                                                <li>
-                                                    <p>Phones:</p>
-                                                    <p>+359 2 9202137</p>
-                                                    <p>+359 2 9631223</p>
-                                                    <p>+359 2 9634369</p>
-                                                    <p>Fax: +359 2 9202138</p>
-                                                </li>
-                                                <li>
-                                                    <p>Emails:</p>
-                                                    <p>info@deltagroup.bg</p>
-                                                    <p>sales@deltagroup.bg</p>
-                                                    <p>export@deltagroup.bg</p>
-                                                    <p>import@deltagroup.bg</p>
-                                                    <p>terminal@deltagroup.bg</p>
-                                                    <p>account@deltagroup.bg</p>
-                                                    <p>documentation@deltagroup.bg</p>
-                                                    <p>trucks@deltagroup.bg</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="has-children"><a href="#" class="dropdown-toggle">Pages</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="faqs.html">FAQS</a></li>
-                                        <li><a href="our-prices.html">Our Prices</a></li>
-                                        <li><a href="testimonials.html">Testimonials</a></li>
-                                        <li class="has-children">
-                                            <a class="dropdown-toggle">Contact</a>
-                                            <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
-                                                <li>
-                                                    <p>Phones:</p>
-                                                    <p>+359 2 9202137</p>
-                                                    <p>+359 2 9631223</p>
-                                                    <p>+359 2 9634369</p>
-                                                    <p>Fax: +359 2 9202138</p>
-                                                </li>
-                                                <li>
-                                                    <p>Emails:</p>
-                                                    <p>info@deltagroup.bg</p>
-                                                    <p>sales@deltagroup.bg</p>
-                                                    <p>export@deltagroup.bg</p>
-                                                    <p>import@deltagroup.bg</p>
-                                                    <p>terminal@deltagroup.bg</p>
-                                                    <p>account@deltagroup.bg</p>
-                                                    <p>documentation@deltagroup.bg</p>
-                                                    <p>trucks@deltagroup.bg</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="has-children"><a href="#" class="dropdown-toggle">Features</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="request-a-quote.html">Request A Quote</a></li>
-                                        <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
-                                        <li class="has-children">
-                                            <a class="dropdown-toggle">Contact</a>
-                                            <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
-                                                <li>
-                                                    <p>Phones:</p>
-                                                    <p>+359 2 9202137</p>
-                                                    <p>+359 2 9631223</p>
-                                                    <p>+359 2 9634369</p>
-                                                    <p>Fax: +359 2 9202138</p>
-                                                </li>
-                                                <li>
-                                                    <p>Emails:</p>
-                                                    <p>info@deltagroup.bg</p>
-                                                    <p>sales@deltagroup.bg</p>
-                                                    <p>export@deltagroup.bg</p>
-                                                    <p>import@deltagroup.bg</p>
-                                                    <p>terminal@deltagroup.bg</p>
-                                                    <p>account@deltagroup.bg</p>
-                                                    <p>documentation@deltagroup.bg</p>
-                                                    <p>trucks@deltagroup.bg</p>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="news.html">News</a>
-
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-                                <li class="extra-menu-item menu-item-button-link">
-                                    <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
-                                </li>
-                            </ul>
-                        </nav>
+                    <div class="col-md-9 col-sm-6 col-xs-6">
+                        <div class="site-menu text-right"> <!-- Updated class: text-right -->
+                            <nav id="site-navigation" class="main-nav primary-nav nav">
+                                <ul class="menu">
+                                    <li class="extra-menu-item menu-item-button-link">
+                                        <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
+                                    </li>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li class="has-children">
+                                        <a href="services.html" class="dropdown-toggle">Transport Services</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="terminal-delta.html">Port Terminal Operations Container Terminal Delta</a></li>
+                                            <li><a href="ocean-freight-forwarding.html">FCL / LCL Ocean Freight & NVOCC</a></li>
+                                            <li><a href="inland-transport.html">Inland Transport</a></li>
+                                            <li><a href="warehousing.html">Customs clearance & warehousing</a></li>
+                                            <li><a href="insurance.html">Insurance</a></li>
+                                            <li><a href="cargo-tracking.html">Cargo Tracking</a></li>
+                                            <li class="has-children">
+                                                <a class="dropdown-toggle">Contact</a>
+                                                <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
+                                                    <li>
+                                                        <p>Phones:</p>
+                                                        <p>+359 2 9202137</p>
+                                                        <p>+359 2 9631223</p>
+                                                        <p>+359 2 9634369</p>
+                                                        <p>Fax: +359 2 9202138</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>Emails:</p>
+                                                        <p>info@deltagroup.bg</p>
+                                                        <p>sales@deltagroup.bg</p>
+                                                        <p>export@deltagroup.bg</p>
+                                                        <p>import@deltagroup.bg</p>
+                                                        <p>terminal@deltagroup.bg</p>
+                                                        <p>account@deltagroup.bg</p>
+                                                        <p>documentation@deltagroup.bg</p>
+                                                        <p>trucks@deltagroup.bg</p>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="about-us.html">Who we are</a></li>
+                                    <li><a href="contact.html">Contact us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
-                <a href="#" class="navbar-toggle">
-    <span class="navbar-icon">
-        <span class="navbars-line"></span>
-    </span>
+                <a href="#" class="navbar-toggle" id="navbarToggle">
+                <span class="navbar-icon">
+                    <span class="navbars-line"></span>
+                </span>
                 </a>
-
-
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var parentMenuItems = document.querySelectorAll(".menu-item-has-children");
 
+                parentMenuItems.forEach(function (item) {
+                    item.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        this.classList.toggle("active");
+                        var subMenu = this.querySelector(".sub-menu");
+                        subMenu.classList.toggle("active");
+                    });
+                });
+
+                var navbarToggle = document.querySelector("#navbarToggle");
+                var mobileNav = document.querySelector("#primary-mobile-nav");
+                var offCanvasLayer = document.querySelector("#off-canvas-layer");
+                var closeCanvasMobilePanel = document.querySelector(".close-canvas-mobile-panel");
+
+                navbarToggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    mobileNav.classList.toggle("active");
+                    offCanvasLayer.classList.toggle("active");
+                });
+
+                closeCanvasMobilePanel.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    mobileNav.classList.remove("active");
+                    offCanvasLayer.classList.remove("active");
+                });
+            });
+        </script>
     </header>
+
 
     <!-- masthead end -->
 
@@ -356,45 +256,35 @@
             <ul>
                 <!-- SLIDE  -->
                 <li class="slide" data-index="rs-1">
-                    <img src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"
-                         data-src="https://coolwallpapers.me/picsup/5824661-container-terminal-wallpapers.jpg"
+                    <img src="../static/images/resources/home1.jpg">
+<!--                         data-src="https://coolwallpapers.me/picsup/5824661-container-terminal-wallpapers.jpg"-->
                          alt="Home Page 1" class="slide-bg lazyload">
-<!--                    <div class="slide-content">-->
-<!--                        <div class="title">WE CARE ABOUT</div>-->
-<!--                        <div class="title">YOUR CARGO</div>-->
-<!--                        <div class="content">Dedicated employees, working in 06 regional</div>-->
-<!--                        <div class="content">around the globe, deliver operational</div>-->
-<!--                        <a href="about-us.html" class="button">About us</a>-->
-<!--                        <a href="request-a-quote.html" class="button">Request Quote</a>-->
-<!--                    </div>-->
                 </li>
                 <!-- SLIDE  -->
                 <li class="slide" data-index="rs-1">
-                    <img src="https://coolwallpapers.me/picsup/5824636-container-terminal-wallpapers.jpg"
-                         data-src="https://coolwallpapers.me/picsup/5824636-container-terminal-wallpapers.jpg"
+                    <img src="../static/images/resources/home2.jpg">
+<!--                         data-src="https://coolwallpapers.me/picsup/5824636-container-terminal-wallpapers.jpg"-->
                          alt="Home Page 1" class="slide-bg lazyload">
-<!--                    <div class="slide-content">-->
-<!--                        <div class="title">WE CARE ABOUT</div>-->
-<!--                        <div class="title">YOUR CARGO</div>-->
-<!--                        <div class="content">Dedicated employees, working in 06 regional</div>-->
-<!--                        <div class="content">around the globe, deliver operational</div>-->
-<!--                        <a href="about-us.html" class="button">About us</a>-->
-<!--                        <a href="request-a-quote.html" class="button">Request Quote</a>-->
-<!--                    </div>-->
+
                 </li>
                 <!-- SLIDE  -->
                 <li class="slide" data-index="rs-1">
-                    <img src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"
-                         data-src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"
+                    <img src="../static/images/resources/home3.jpg">
+<!--                         data-src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"-->
                          alt="Home Page 1" class="slide-bg lazyload">
-<!--                    <div class="slide-content">-->
-<!--                        <div class="title">WE CARE ABOUT</div>-->
-<!--                        <div class="title">YOUR CARGO</div>-->
-<!--                        <div class="content">Dedicated employees, working in 06 regional</div>-->
-<!--                        <div class="content">around the globe, deliver operational</div>-->
-<!--                        <a href="about-us.html" class="button">About us</a>-->
-<!--                        <a href="request-a-quote.html" class="button">Request Quote</a>-->
-<!--                    </div>-->
+
+                </li>
+                <li class="slide" data-index="rs-1">
+                    <img src="../static/images/resources/home4.jpg">
+                    <!--                         data-src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"-->
+                    alt="Home Page 1" class="slide-bg lazyload">
+
+                </li>
+                <li class="slide" data-index="rs-1">
+                    <img src="../static/images/resources/home5.jpg">
+                    <!--                         data-src="https://www.anderinger.com/wp-content/uploads/2016/12/home-hero-1920x1000.jpg"-->
+                    alt="Home Page 1" class="slide-bg lazyload">
+
                 </li>
             </ul>
         </div>
@@ -418,28 +308,19 @@
             <div class="fh-section-title clearfix text-center version-dark paddbtm20">
                 <h2>Welcome to Delta Group</h2>
             </div>
-            <p class="haeadingpara text-center paddbtm40">Cargo HUB is more than logistics.
-                <br/> We can also optimize your packaging, manage your materials sourcing, and so much more.</p>
-
-            <div class="welservices row justify-content-center" style="display: flex; justify-content: center;">
+                       <div class="welservices row justify-content-center" style="display: flex; justify-content: center;">
                 <div class="col-md-4 col-sm-6 text-center">
                     <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
                         <span class="fh-icon"><i class="flaticon-transport-4"></i></span>
                         <h4 class="box-title"><a href="#">Ocean Freight Forwarding</a></h4>
-                        <div class="desc">
-                            <p>Ocean Freight plays perhaps the most vital role in most transportation and supply chain
-                                solutions.</p>
-                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 text-center">
                     <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
                         <span class="fh-icon"><i class="flaticon-transport-5"></i></span>
                         <h4 class="box-title"><a href="#">Road Freight Forwarding</a></h4>
-                        <div class="desc">
-                            <p>Cargo is transported at some stage of its journey along the world’s roads where we give
-                                you a reassuring presence.</p>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -448,163 +329,163 @@
     <!-- Welcome sec   end-->
 
     <!-- special services -->
-    <section class="special_services bluebg secpadd">
-        <div class="container">
-<!--            <div class="row paddbtm40">-->
+<!--    <section class="special_services bluebg secpadd">-->
+<!--        <div class="container">-->
+<!--            &lt;!&ndash;            <div class="row paddbtm40">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <div class="col-md-4 col-sm-12">&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <div class="fh-section-title clearfix  text-left version-light">&ndash;&gt;-->
+<!--            &lt;!&ndash;                        <h2>Our Special SERVICES</h2>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                <div class="col-md-8 col-sm-12">&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <div class="hdrgtpara lftredbrdr">&ndash;&gt;-->
+<!--            &lt;!&ndash;                        <p>Our warehousing services are known nationwide to be one of the most reliable, safe and&ndash;&gt;-->
+<!--            &lt;!&ndash;                            affordable, because we take pride in delivering the best of warehousing services, at the&ndash;&gt;-->
+<!--            &lt;!&ndash;                            most reasonable prices.</p>&ndash;&gt;-->
+<!--            &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <div class="row">-->
 <!--                <div class="col-md-4 col-sm-12">-->
-<!--                    <div class="fh-section-title clearfix  text-left version-light">-->
-<!--                        <h2>Our Special SERVICES</h2>-->
+<!--                    &lt;!&ndash;                        <div class="fh-service-box icon-type-theme_icon style-1">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                            <h4 class="service-title"><a href="#" class="link" target="_blank">Packaging And Storage</a></h4>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                            <div class="desc">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                                <p>Package and store your things effectively and securely to make sure them in storage.</p>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                    <div class="fh-service-box icon-type-theme_icon style-1">-->
+<!--                        <span class="fh-icon"><i class="flaticon-transport-9"></i></span>-->
+<!--                        <h4 class="service-title"><a href="#" class="link" target="_blank">Cargo</a></h4>-->
+<!--                        <div class="desc">-->
+<!--                            <p>Delivery of any freight from a place to another place quickly to save your cost and your-->
+<!--                                time.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="fh-service-box icon-type-theme_icon style-1">-->
+<!--                        <span class="fh-icon"><i class="flaticon-buildings"></i></span>-->
+<!--                        <h4 class="service-title"><a href="#" class="link" target="_blank">Warehousing</a></h4>-->
+<!--                        <div class="desc">-->
+<!--                            <p>Package and store your things effectively and securely to make sure them in storage.</p>-->
+<!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
-<!--                <div class="col-md-8 col-sm-12">-->
-<!--                    <div class="hdrgtpara lftredbrdr">-->
-<!--                        <p>Our warehousing services are known nationwide to be one of the most reliable, safe and-->
-<!--                            affordable, because we take pride in delivering the best of warehousing services, at the-->
-<!--                            most reasonable prices.</p>-->
+<!--                &lt;!&ndash;                    <div class="col-md-4 col-sm-12">&ndash;&gt;-->
+<!--                &lt;!&ndash;                       &ndash;&gt;-->
+<!--                &lt;!&ndash;&lt;!&ndash;                        <div class="fh-service-box icon-type-theme_icon style-1">&ndash;&gt;&ndash;&gt;-->
+<!--                &lt;!&ndash;&lt;!&ndash;                            <span class="fh-icon"><i class="flaticon-transport-2"></i></span>&ndash;&gt;&ndash;&gt;-->
+<!--                &lt;!&ndash;&lt;!&ndash;                            <h4 class="service-title"><a href="#" class="link" target="_blank">Door to Door Delivery</a></h4>&ndash;&gt;&ndash;&gt;-->
+<!--                &lt;!&ndash;&lt;!&ndash;                            <div class="desc">&ndash;&gt;&ndash;&gt;-->
+<!--                &lt;!&ndash;&lt;!&ndash;                                <p>Our expertise in transport management and planning allows us to design a solution.</p>&ndash;&gt;&ndash;&gt;-->
+<!--                &lt;!&ndash;&lt;!&ndash;                            </div>&ndash;&gt;&ndash;&gt;-->
+<!--                &lt;!&ndash;&lt;!&ndash;                        </div>&ndash;&gt;&ndash;&gt;-->
+<!--                &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                <div class="col-md-4 col-sm-12">-->
+<!--                    <div class="fh-service-box icon-type-theme_icon style-1">-->
+<!--                        <span class="fh-icon"><i class="flaticon-international-delivery"></i></span>-->
+<!--                        <h4 class="service-title"><a href="#" class="link" target="_blank">Worldwide Transport</a></h4>-->
+<!--                        <div class="desc">-->
+<!--                            <p>Specialises in international freight forwarding of merchandise and associated general-->
+<!--                                logistic services.</p>-->
+<!--                        </div>-->
 <!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-            <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <!--                        <div class="fh-service-box icon-type-theme_icon style-1">-->
-                    <!--                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>-->
-                    <!--                            <h4 class="service-title"><a href="#" class="link" target="_blank">Packaging And Storage</a></h4>-->
-                    <!--                            <div class="desc">-->
-                    <!--                                <p>Package and store your things effectively and securely to make sure them in storage.</p>-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <div class="fh-service-box icon-type-theme_icon style-1">
-                        <span class="fh-icon"><i class="flaticon-transport-9"></i></span>
-                        <h4 class="service-title"><a href="#" class="link" target="_blank">Cargo</a></h4>
-                        <div class="desc">
-                            <p>Delivery of any freight from a place to another place quickly to save your cost and your
-                                time.</p>
-                        </div>
-                    </div>
-                    <div class="fh-service-box icon-type-theme_icon style-1">
-                        <span class="fh-icon"><i class="flaticon-buildings"></i></span>
-                        <h4 class="service-title"><a href="#" class="link" target="_blank">Warehousing</a></h4>
-                        <div class="desc">
-                            <p>Package and store your things effectively and securely to make sure them in storage.</p>
-                        </div>
-                    </div>
-                </div>
-                <!--                    <div class="col-md-4 col-sm-12">-->
-                <!--                       -->
-                <!--&lt;!&ndash;                        <div class="fh-service-box icon-type-theme_icon style-1">&ndash;&gt;-->
-                <!--&lt;!&ndash;                            <span class="fh-icon"><i class="flaticon-transport-2"></i></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;                            <h4 class="service-title"><a href="#" class="link" target="_blank">Door to Door Delivery</a></h4>&ndash;&gt;-->
-                <!--&lt;!&ndash;                            <div class="desc">&ndash;&gt;-->
-                <!--&lt;!&ndash;                                <p>Our expertise in transport management and planning allows us to design a solution.</p>&ndash;&gt;-->
-                <!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-                <!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-                <!--                    </div>-->
-                <div class="col-md-4 col-sm-12">
-                    <div class="fh-service-box icon-type-theme_icon style-1">
-                        <span class="fh-icon"><i class="flaticon-international-delivery"></i></span>
-                        <h4 class="service-title"><a href="#" class="link" target="_blank">Worldwide Transport</a></h4>
-                        <div class="desc">
-                            <p>Specialises in international freight forwarding of merchandise and associated general
-                                logistic services.</p>
-                        </div>
-                    </div>
-                    <div class="fh-service-box icon-type-theme_icon style-1">
-                        <span class="fh-icon"><i class="flaticon-transport-1"></i></span>
-                        <h4 class="service-title"><a href="#" class="link" target="_blank">Ground Transport</a></h4>
-                        <div class="desc">
-                            <p>Ground transportation options for all visitors, no matter your needs, schedule or
-                                destination.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- special services end -->
-
-    <!--home counters -->
-<!--    <section class="homecounts">-->
-<!--        <style>-->
-<!--            .homecounts .row.justify-content-center {-->
-<!--                display: flex;-->
-<!--                justify-content: center;-->
-<!--            }-->
-
-<!--            .homecounts .row.justify-content-center .col-md-3 {-->
-<!--                flex: none;-->
-<!--            }-->
-
-<!--        </style>-->
-<!--        <div class="container text-content">-->
-<!--            <h2 class="count-title ">Delta Group is a Supplier of Transport and Logistics Solutions.</h2>-->
-<!--            <div class="row justify-content-center">-->
-<!--                <div class="col-lg-8">-->
-<!--                    <div class="row justify-content-center">-->
-<!--                        <div class="col-md-3">-->
-<!--                            <div class="fh-counter icon-type-none text-center">-->
-<!--                                <div class="counter">-->
-<!--                                    <div class="value blue-number" id="deliveredCounter">300</div>-->
-<!--                                    <h4>Delivered Package</h4>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-3">-->
-<!--                            <div class="fh-counter icon-type-none text-center">-->
-<!--                                <div class="counter">-->
-<!--                                    <div class="value blue-number" id="employeesCounter">400</div>-->
-<!--                                    <h4>Employees</h4>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-3">-->
-<!--                            <div class="fh-counter icon-type-none text-center">-->
-<!--                                <div class="counter">-->
-<!--                                    <div class="value blue-number" id="goodsCounter">1000</div>-->
-<!--                                    <h4>Tons of Goods</h4>-->
-<!--                                </div>-->
-<!--                            </div>-->
+<!--                    <div class="fh-service-box icon-type-theme_icon style-1">-->
+<!--                        <span class="fh-icon"><i class="flaticon-transport-1"></i></span>-->
+<!--                        <h4 class="service-title"><a href="#" class="link" target="_blank">Ground Transport</a></h4>-->
+<!--                        <div class="desc">-->
+<!--                            <p>Ground transportation options for all visitors, no matter your needs, schedule or-->
+<!--                                destination.</p>-->
 <!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
 <!--    </section>-->
+    <!-- special services end -->
+
+    <!--home counters -->
+    <!--    <section class="homecounts">-->
+    <!--        <style>-->
+    <!--            .homecounts .row.justify-content-center {-->
+    <!--                display: flex;-->
+    <!--                justify-content: center;-->
+    <!--            }-->
+
+    <!--            .homecounts .row.justify-content-center .col-md-3 {-->
+    <!--                flex: none;-->
+    <!--            }-->
+
+    <!--        </style>-->
+    <!--        <div class="container text-content">-->
+    <!--            <h2 class="count-title ">Delta Group is a Supplier of Transport and Logistics Solutions.</h2>-->
+    <!--            <div class="row justify-content-center">-->
+    <!--                <div class="col-lg-8">-->
+    <!--                    <div class="row justify-content-center">-->
+    <!--                        <div class="col-md-3">-->
+    <!--                            <div class="fh-counter icon-type-none text-center">-->
+    <!--                                <div class="counter">-->
+    <!--                                    <div class="value blue-number" id="deliveredCounter">300</div>-->
+    <!--                                    <h4>Delivered Package</h4>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="col-md-3">-->
+    <!--                            <div class="fh-counter icon-type-none text-center">-->
+    <!--                                <div class="counter">-->
+    <!--                                    <div class="value blue-number" id="employeesCounter">400</div>-->
+    <!--                                    <h4>Employees</h4>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="col-md-3">-->
+    <!--                            <div class="fh-counter icon-type-none text-center">-->
+    <!--                                <div class="counter">-->
+    <!--                                    <div class="value blue-number" id="goodsCounter">1000</div>-->
+    <!--                                    <h4>Tons of Goods</h4>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </section>-->
     <!--home counters end -->
 
     <!--why choose us -->
-    <section class="whychoose-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-6  secpaddlf">
-                    <div class="fh-section-title clearfix  text-left version-dark paddbtm40">
-                        <h2>Why Choosing us?</h2>
-                    </div>
-                    <div class="fh-icon-box  style-2 icon-left has-line">
-                        <span class="fh-icon"><i class="flaticon-international-delivery"></i></span>
-                        <h4 class="box-title"><span>Global supply Chain Solutions</span></h4>
-                        <div class="desc">
-                            <p>Efficiently unleash cross-media information without cross-media value.</p>
-                        </div>
-                    </div>
-                    <div class="fh-icon-box  style-2 icon-left has-line">
-                        <span class="fh-icon"><i class="flaticon-route"></i></span>
-                        <h4 class="box-title"><span>Shipment Tracking</span></h4>
-                        <div class="desc">
-                            <p>We Offer intelligent concepts for road and tail and well as complex special transport
-                                services</p>
-                        </div>
-                    </div>
-                    <div class="fh-icon-box  style-2 icon-left">
-                        <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>
-                        <h4 class="box-title"><span>Careful Handling of Valuable Goods</span></h4>
-                        <div class="desc">
-                            <p>Delta Group are transported at some stage of their journey along the world’s roads</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--    <section class="whychoose-1">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-lg-5 col-md-6  secpaddlf">-->
+<!--                    <div class="fh-section-title clearfix  text-left version-dark paddbtm40">-->
+<!--                        <h2>Why Choosing us?</h2>-->
+<!--                    </div>-->
+<!--                    <div class="fh-icon-box  style-2 icon-left has-line">-->
+<!--                        <span class="fh-icon"><i class="flaticon-international-delivery"></i></span>-->
+<!--                        <h4 class="box-title"><span>Global supply Chain Solutions</span></h4>-->
+<!--                        <div class="desc">-->
+<!--                            <p>Efficiently unleash cross-media information without cross-media value.</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="fh-icon-box  style-2 icon-left has-line">-->
+<!--                        <span class="fh-icon"><i class="flaticon-route"></i></span>-->
+<!--                        <h4 class="box-title"><span>Shipment Tracking</span></h4>-->
+<!--                        <div class="desc">-->
+<!--                            <p>We Offer intelligent concepts for road and tail and well as complex special transport-->
+<!--                                services</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="fh-icon-box  style-2 icon-left">-->
+<!--                        <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>-->
+<!--                        <h4 class="box-title"><span>Careful Handling of Valuable Goods</span></h4>-->
+<!--                        <div class="desc">-->
+<!--                            <p>Delta Group are transported at some stage of their journey along the world’s roads</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
     <!--why choose us end -->
 
     <!--        &lt;!&ndash;partener &ndash;&gt;-->
@@ -907,8 +788,13 @@
                         <div class="widget widget_text">
                             <h4 class="widget-title">About Delta Group</h4>
                             <div class="textwidget">
-                                <p>Delta Group is a supplier of transport and logistics
-                                    solutions.</p>
+                                <p>Delta Transport Ltd., was founded in 1996 as an International Freight Forwarder.
+
+                                    Delta Shipping Ltd., was founded in 2000 as a Container Transport Operator with a
+                                    fleet of own trucks and trailers, specialized in container transport worldwide.
+
+                                    Delta Transport Ltd., is the owner of the registered trade mark Delta Group ®.</p>
+
                             </div>
                         </div>
                         <!--                        <div class="widget cargohub-social-links-widget">-->
@@ -920,22 +806,22 @@
                         <!--                            </div>-->
                         <!--                        </div>-->
                     </div>
-                    <div class="footer-sidebar footer-2 col-xs-12 col-sm-6 col-md-3">
-                        <div class="widget widget_nav_menu">
-                            <h4 class="widget-title">Useful Links</h4>
-                            <div class="menu-service-menu-container">
-                                <ul class="menu">
-                                    <li><a href="#">All Services</a></li>
-                                    <li><a href="#">Ground Transport</a></li>
-                                    <li><a href="#">Cargo Service</a></li>
-                                    <li><a href="#">Warehousing</a></li>
-                                    <li><a href="#">Road Freight Forwarding</a></li>
-                                    <li><a href="#">Ocean Freight Forwarding</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-sidebar footer-3 col-xs-12 col-sm-6 col-md-6">
+<!--                    <div class="footer-sidebar footer-2 col-xs-12 col-sm-6 col-md-3">-->
+<!--                        <div class="widget widget_nav_menu">-->
+<!--                            <h4 class="widget-title">Useful Links</h4>-->
+<!--                            <div class="menu-service-menu-container">-->
+<!--                                <ul class="menu">-->
+<!--                                    <li><a href="#">All Services</a></li>-->
+<!--                                    <li><a href="#">Ground Transport</a></li>-->
+<!--                                    <li><a href="#">Cargo Service</a></li>-->
+<!--                                    <li><a href="#">Warehousing</a></li>-->
+<!--                                    <li><a href="#">Road Freight Forwarding</a></li>-->
+<!--                                    <li><a href="#">Ocean Freight Forwarding</a></li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <div class="footer-sidebar footer-2 col-xs-12 col-sm-6 col-md-6">
                         <div class="widget widget_contact_info">
                             <h4 class="widget-title">Contact Information</h4>
                             <div class="contact-info">
@@ -1059,33 +945,22 @@
 </div>
 <!--End pagewrapper-->
 
+
 <!--primary-mobile-nav-->
 <div class="primary-mobile-nav header-v1" id="primary-mobile-nav" role="navigation">
     <a href="#" class="close-canvas-mobile-panel">×</a>
     <ul class="menu">
-        <li class="current-menu-item menu-item-has-children"><a href="index.html">Home</a>
-            <ul class="sub-menu">
-                <li><a href="index.html">Home Page 1</a></li>
-                <li><a href="home-page-2.html">Home Page 2</a></li>
-                <li><a href="home-page-3.html">Home Page 3</a></li>
-                <li><a href="home-page-4.html">Home Page 4</a></li>
-            </ul>
-        </li>
-        <li class="menu-item-has-children"><a href="services.html" class="dropdown-toggle">Services</a>
+        <li><a href="index.html">Home</a></li>
+        <li class="menu-item-has-children">
+            <a href="#">Services</a>
             <ul class="sub-menu">
                 <li><a href="services.html">All Services</a></li>
-                <li><a href="road-freight-forwarding.html">Road Freight Forwarding</a></li>
-                <li><a href="ocean-forwarding.html">Ocean Freight Forwarding</a></li>
-                <li><a href="air-freight-forwarding.html">Air Freight Forwarding</a></li>
+                <li><a href="terminal-delta.html">Road Freight Forwarding</a></li>
+                <li><a href="ocean-freight-forwarding.html">Ocean Freight Forwarding</a></li>
                 <li><a href="warehousing.html">Warehousing</a></li>
-                <li><a href="door-to-door-delivery.html">Door to Door Delivery</a></li>
-                <li><a href="ground-transport.html">Ground Transport</a></li>
-                <li><a href="worldwide-transport.html">Worldwide Transport</a></li>
-                <li><a href="cargo-service.html">Cargo Service</a></li>
-                <li><a href="packaging-storage.html">Packaging &#038; Storage</a></li>
             </ul>
         </li>
-        <li class="menu-item-has-children"><a href="projects.html" class="dropdown-toggle">Pages</a>
+        <li class="menu-item-has-children"><a href="#" class="dropdown-toggle">Pages</a>
             <ul class="sub-menu">
                 <li><a href="about-us.html">About Us</a></li>
                 <li><a href="faqs.html">FAQS</a></li>
@@ -1147,7 +1022,6 @@
 <!--    </div>-->
 <!--</div>-->
 <!-- jquery Liabrary -->
-<script src="../static/js/jquery-1.12.4.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <!-- bootstrap v3.3.6 js -->
@@ -1276,25 +1150,55 @@
 
     startCountersWhenVisible();
 </script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var navbarToggle = document.querySelector(".navbar-toggle");
-        var mobileNav = document.querySelector("#primary-mobile-nav");
-        var offCanvasLayer = document.querySelector("#off-canvas-layer");
-        var closeCanvasMobilePanel = document.querySelector(".close-canvas-mobile-panel");
+    function getCurrentDateTime() {
+        const currentDateElement = document.getElementById('current-date');
+        const currentTimeElement = document.getElementById('current-time');
 
-        navbarToggle.addEventListener("click", function() {
-            mobileNav.classList.toggle("active");
-            offCanvasLayer.classList.toggle("active");
-        });
+        const currentDate = new Date();
+        const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
+        const formattedDate = currentDate.toLocaleDateString('en-US', options).replace(/\//g, '.');
+        currentDateElement.textContent = formattedDate;
 
-        closeCanvasMobilePanel.addEventListener("click", function() {
-            mobileNav.classList.remove("active");
-            offCanvasLayer.classList.remove("active");
-        });
-    });
+        const currentHours = currentDate.getHours().toString().padStart(2, '0');
+        const currentMinutes = currentDate.getMinutes().toString().padStart(2, '0');
+        const currentTime = `${currentHours}:${currentMinutes}`;
+        currentTimeElement.textContent = currentTime;
+    }
+
+    async function getWeatherData() {
+        const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=Sofia';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '410c32cad3msh3f4e7db0d8d7fcap12cc72jsn8f865181d51d',
+                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const data = await response.json();
+            const weatherInfoElement = document.getElementById('current-weather');
+            weatherInfoElement.innerHTML = `${data.current.temp_c}°C`;
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    function updateClock() {
+        getCurrentDateTime();
+        getWeatherData();
+    }
+
+    getCurrentDateTime();
+    getWeatherData();
+    setInterval(updateClock, 30000); // Update the clock every second (1000 milliseconds)
 </script>
+
+
+
+
 </body>
 
 </html>
