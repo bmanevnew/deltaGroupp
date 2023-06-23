@@ -199,6 +199,20 @@
                             var subMenu = this.querySelector(".sub-menu");
                             subMenu.classList.toggle("active");
                         });
+
+                        var subMenuItems = item.querySelectorAll(".sub-menu li a");
+                        subMenuItems.forEach(function (subMenuItem) {
+                            subMenuItem.addEventListener("click", function (e) {
+                                // Remove the following line if you want the sub-menu to collapse after clicking a sub-menu item
+                                e.preventDefault();
+
+                                // Retrieve the href attribute of the clicked sub-menu item
+                                var href = this.getAttribute("href");
+
+                                // Navigate to the specified page
+                                window.location.href = href;
+                            });
+                        });
                     });
 
                     var navbarToggle = document.querySelector("#navbarToggle");
@@ -587,65 +601,24 @@
     <div class="primary-mobile-nav header-v1" id="primary-mobile-nav" role="navigation">
         <a href="#" class="close-canvas-mobile-panel">×</a>
         <ul class="menu">
-            <li class="current-menu-item menu-item-has-children"><a href="index.html">Home</a>
+            <li><a href="index.html">Home</a></li>
+            <li class="menu-item-has-children">
+                <a href="#">Transport Services</a>
                 <ul class="sub-menu">
-                    <li><a href="index.html">Home Page 1</a></li>
-                    <li><a href="home-page-2.html">Home Page 2</a></li>
-                    <li><a href="home-page-3.html">Home Page 3</a></li>
-                    <li><a href="home-page-4.html">Home Page 4</a></li>
+                    <li><a href="terminal-delta.html">Port Terminal Operations Container Terminal Delta</a></li>
+                    <li><a href="ocean-freight-forwarding.html">FCL / LCL Ocean Freight & NVOCC</a></li>
+                    <li><a href="inland-transport.html">Inland Transport</a></li>
+                    <li><a href="warehousing.html">Customs clearance & warehousing</a></li>
+                    <li><a href="insurance.html">Insurance</a></li>
+                    <li><a href="cargo-tracking.html">Cargo Tracking</a></li>
                 </ul>
             </li>
-            <li class="menu-item-has-children"><a href="services.html" class="dropdown-toggle">Services</a>
-                <ul class="sub-menu">
-                    <li><a href="services.html">All Services</a></li>
-                    <li><a href="terminal-delta.html">Road Freight Forwarding</a></li>
-                    <li><a href="ocean-freight-forwarding.html">Ocean Freight Forwarding</a></li>
-                    <li><a href="air-freight-forwarding.html">Air Freight Forwarding</a></li>
-                    <li><a href="warehousing.html">Warehousing</a></li>
-                    <li><a href="door-to-door-delivery.html">Door to Door Delivery</a></li>
-                    <li><a href="ground-transport.html">Ground Transport</a></li>
-                    <li><a href="worldwide-transport.html">Worldwide Transport</a></li>
-                    <li><a href="cargo-service.html">Cargo Service</a></li>
-                    <li><a href="packaging-storage.html">Packaging &#038; Storage</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="projects.html" class="dropdown-toggle">Pages</a>
-                <ul class="sub-menu">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="faqs.html">FAQS</a></li>
-                    <li><a href="our-prices.html">Our Prices</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="gallery.html" class="dropdown-toggle">Gallery</a>
-                <ul class="sub-menu">
-                    <li><a href="gallery-column-4.html">Gallery Four Columns</a></li>
-                    <li><a href="gallery-column-3.html">Gallery Three Columns</a></li>
-                    <li><a href="gallery.html">Gallery Two Columns</a></li>
-                    <li><a href="gallery-single.html">Gallery Single</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="#" class="dropdown-toggle">Features</a>
-                <ul class="sub-menu">
-                    <li><a href="request-a-quote.html">Request A Quote</a></li>
-                    <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="blog.html" class="dropdown-toggle">News</a>
-                <ul class="sub-menu">
-                    <li><a href="news.html">Blog Two Columns</a></li>
-                    <li><a href="blog-column-3.html">Blog Three Columns</a></li>
-                    <li><a href="blog-column-4.html">Blog Four Columns</a></li>
-                    <li><a href="blog-sidebar.html">Blog With Sidebar</a></li>
-                    <li><a href="blog-single.html">Blog Single Post</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about-us.html">Who we are</a></li>
+            <li><a href="contact.html">Contact us</a></li>
             <li class="extra-menu-item menu-item-button-link">
                 <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
             </li>
         </ul>
-
     </div>
     <div id="off-canvas-layer" class="off-canvas-layer"></div>
     <!--primary-mobile-nav end-->

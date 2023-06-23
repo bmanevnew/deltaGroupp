@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <title>Contact</title>
 
-
+    <script>
+        function openGoogleMaps() {
+            window.open("https://maps.google.com/maps?q=48-A, Suhodolska Str,1373 Sofia, Bulgaria", "_blank");
+        }
+    </script>
     <!-- Stylesheets -->
     <!-- bootstrap v3.3.6 css -->
     <link href="../static/css/bootstrap.css" rel="stylesheet">
@@ -44,6 +48,7 @@
     <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]>
     <script src="../static/js/respond.js"></script><![endif]-->
+
 </head>
 
 <body class="home header-transparent  header-sticky header-v1 hide-topbar-mobile">
@@ -175,6 +180,20 @@
                             var subMenu = this.querySelector(".sub-menu");
                             subMenu.classList.toggle("active");
                         });
+
+                        var subMenuItems = item.querySelectorAll(".sub-menu li a");
+                        subMenuItems.forEach(function (subMenuItem) {
+                            subMenuItem.addEventListener("click", function (e) {
+                                // Remove the following line if you want the sub-menu to collapse after clicking a sub-menu item
+                                e.preventDefault();
+
+                                // Retrieve the href attribute of the clicked sub-menu item
+                                var href = this.getAttribute("href");
+
+                                // Navigate to the specified page
+                                window.location.href = href;
+                            });
+                        });
                     });
 
                     var navbarToggle = document.querySelector("#navbarToggle");
@@ -226,19 +245,63 @@
         <!--Page Header end-->
 
         <!--contact pagesec-->
+<!--        <section class="contactpagesec secpadd">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-4">-->
+<!--                        <div class="fh-contact-box type-address "><i class="flaticon-pin"></i>-->
+<!--                            <h4 class="box-title">Visit our office</h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>48-A, Suhodolska Str,1373 Sofia, Bulgaria</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-4">-->
+<!--                        <div class="fh-contact-box type-phone "><i class="flaticon-phone-call "></i>-->
+<!--                            <h4 class="box-title">Call us on</h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>+359 2 9202137-->
+<!--                                    <br>+359 2 9631223-->
+<!--                                    <br>+359 2 9634369-->
+<!--                                    <br>Fax: +359 2 9202138</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-4">-->
+<!--                        <div class="fh-contact-box type-email "><i class="flaticon-business"></i>-->
+<!--                            <h4 class="box-title">Mail Us at</h4>-->
+<!--                            <div class="desc">-->
+<!--                                <p>info@deltagroup.bg-->
+<!--                                    <br>sales@deltagroup.bg-->
+<!--                                    <br>export@deltagroup.bg-->
+<!--                                    <br>import@deltagroup.bg-->
+<!--                                    <br>terminal@deltagroup.bg-->
+<!--                                    <br>account@deltagroup.bg-->
+<!--                                    <br>documentation@deltagroup.bg-->
+<!--                                    <br>trucks@deltagroup.bg-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--        </section>-->
+
+        <!--contact pagesec-->
         <section class="contactpagesec secpadd">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="fh-contact-box type-address "><i class="flaticon-pin"></i>
-                            <h4 class="box-title">Visit our office</h4>
-                            <div class="desc">
-                                <p>48-A, Suhodolska Str,1373 Sofia, Bulgaria</p>
-                            </div>
+                        <div class="fh-contact-box type-address">
+                            <div id="map" style="height: 300px;" ></div>
+<!--                                 onclick="openGoogleMaps()"-->
+
+                            <p class="address">48-A, Suhodolska Str,1373 Sofia, Bulgaria</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="fh-contact-box type-phone "><i class="flaticon-phone-call "></i>
+                        <div class="fh-contact-box type-phone"><i class="flaticon-phone-call"></i>
                             <h4 class="box-title">Call us on</h4>
                             <div class="desc">
                                 <p>+359 2 9202137
@@ -249,7 +312,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="fh-contact-box type-email "><i class="flaticon-business"></i>
+                        <div class="fh-contact-box type-email"><i class="flaticon-business"></i>
                             <h4 class="box-title">Mail Us at</h4>
                             <div class="desc">
                                 <p>info@deltagroup.bg
@@ -264,7 +327,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -272,55 +334,7 @@
 
         <!--contact end-->
 
-        <!--contact form -->
-<!--        <section class="contactpagform graybg secpadd">-->
-<!--            <div class="container">-->
-<!--                <div class="fh-section-title clearfix f25 text-center version-dark paddbtm40">-->
-<!--                    <h2>Leave Your Message</h2>-->
-<!--                </div>-->
-<!--                <p class="paddbtm40 text-center">If you have any questions about the services we provide simply use the form below. We try and respond to all-->
-<!--                    <br>queries and comments within 24 hours.</p>-->
-<!--                <form method="post" action="../static/ajax/mail.php" id="contact-form" novalidate="novalidate">-->
-<!--                    <div class="fh-form fh-form-3">-->
-<!--                        <div class="row">-->
-<!--                            <div class="col-md-6 col-sm-6 col-xs-12">-->
-<!--                                <p class="field">-->
-<!--                                    <input name="name" placeholder="Your Name*" type="text">-->
-<!--                                </p>-->
-<!--                                <p class="field">-->
-<!--                                    <input name="email" placeholder="Email Address*" type="email">-->
-<!--                                </p>-->
-<!--                                <p class="field">-->
-<!--                                    <input name="phone" placeholder="Phone" type="text">-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-6 col-sm-6 col-xs-12">-->
-<!--                                <p class="field single-field">-->
-<!--                                    <textarea name="message" cols="40" rows="10" placeholder="Your Message..."></textarea>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="col-md-12 col-sm-12 col-xs-12">-->
-<!--                                <p class="field submit">-->
-<!--                                    <button class="fh-btn" type="submit">Submit</button>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div id="loading" style="display:none"><img src="../static/images/ajax-loader.png" alt="loading" /></div>-->
-<!--                            <div class="contact-form-message"></div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </section>-->
-        <!--contact form  end -->
 
-        <!--google map-->
-<!--        <div class="google-map-area">-->
-<!--            <div class="google-map" id="contact-google-map" data-map-lat="51.545527" data-map-lng="-0.133272" data-icon-path="images/icon/maker3.png" data-map-title="Chester" data-map-zoom="13" data-markers='{-->
-<!--							"marker-1": [51.545527, -0.133272, "<h4>Cargo Hub</h4><p>Camden Borough </p>"]-->
-<!--						}' style="height:500px;width:100%;">-->
-<!--            </div>-->
-<!--        </div>-->
-        <!--google map end-->
 
         <!--footer sec-->
         <div class="footer-widgets widgets-area">
@@ -515,65 +529,24 @@
     <div class="primary-mobile-nav header-v1" id="primary-mobile-nav" role="navigation">
         <a href="#" class="close-canvas-mobile-panel">×</a>
         <ul class="menu">
-            <li class="current-menu-item menu-item-has-children"><a href="index.html">Home</a>
+            <li><a href="index.html">Home</a></li>
+            <li class="menu-item-has-children">
+                <a href="#">Transport Services</a>
                 <ul class="sub-menu">
-                    <li><a href="index.html">Home Page 1</a></li>
-                    <li><a href="home-page-2.html">Home Page 2</a></li>
-                    <li><a href="home-page-3.html">Home Page 3</a></li>
-                    <li><a href="home-page-4.html">Home Page 4</a></li>
+                    <li><a href="terminal-delta.html">Port Terminal Operations Container Terminal Delta</a></li>
+                    <li><a href="ocean-freight-forwarding.html">FCL / LCL Ocean Freight & NVOCC</a></li>
+                    <li><a href="inland-transport.html">Inland Transport</a></li>
+                    <li><a href="warehousing.html">Customs clearance & warehousing</a></li>
+                    <li><a href="insurance.html">Insurance</a></li>
+                    <li><a href="cargo-tracking.html">Cargo Tracking</a></li>
                 </ul>
             </li>
-            <li class="menu-item-has-children"><a href="services.html" class="dropdown-toggle">Services</a>
-                <ul class="sub-menu">
-                    <li><a href="services.html">All Services</a></li>
-                    <li><a href="terminal-delta.html">Road Freight Forwarding</a></li>
-                    <li><a href="ocean-freight-forwarding.html">Ocean Freight Forwarding</a></li>
-                    <li><a href="air-freight-forwarding.html">Air Freight Forwarding</a></li>
-                    <li><a href="warehousing.html">Warehousing</a></li>
-                    <li><a href="door-to-door-delivery.html">Door to Door Delivery</a></li>
-                    <li><a href="ground-transport.html">Ground Transport</a></li>
-                    <li><a href="worldwide-transport.html">Worldwide Transport</a></li>
-                    <li><a href="cargo-service.html">Cargo Service</a></li>
-                    <li><a href="packaging-storage.html">Packaging &#038; Storage</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="projects.html" class="dropdown-toggle">Pages</a>
-                <ul class="sub-menu">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="faqs.html">FAQS</a></li>
-                    <li><a href="our-prices.html">Our Prices</a></li>
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="gallery.html" class="dropdown-toggle">Gallery</a>
-                <ul class="sub-menu">
-                    <li><a href="gallery-column-4.html">Gallery Four Columns</a></li>
-                    <li><a href="gallery-column-3.html">Gallery Three Columns</a></li>
-                    <li><a href="gallery.html">Gallery Two Columns</a></li>
-                    <li><a href="gallery-single.html">Gallery Single</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="#" class="dropdown-toggle">Features</a>
-                <ul class="sub-menu">
-                    <li><a href="request-a-quote.html">Request A Quote</a></li>
-                    <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
-                </ul>
-            </li>
-            <li class="menu-item-has-children"><a href="blog.html" class="dropdown-toggle">News</a>
-                <ul class="sub-menu">
-                    <li><a href="news.html">Blog Two Columns</a></li>
-                    <li><a href="blog-column-3.html">Blog Three Columns</a></li>
-                    <li><a href="blog-column-4.html">Blog Four Columns</a></li>
-                    <li><a href="blog-sidebar.html">Blog With Sidebar</a></li>
-                    <li><a href="blog-single.html">Blog Single Post</a></li>
-                </ul>
-            </li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about-us.html">Who we are</a></li>
+            <li><a href="contact.html">Contact us</a></li>
             <li class="extra-menu-item menu-item-button-link">
                 <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
             </li>
         </ul>
-
     </div>
     <div id="off-canvas-layer" class="off-canvas-layer"></div>
     <!--primary-mobile-nav end-->
@@ -618,7 +591,6 @@
     <script src="../static/js/switcher.js"></script>
 
     <!-- google map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
     <script src="../static/js/gmap.js"></script>
     <script src="../static/js/map-helper.js"></script>
 
@@ -682,6 +654,22 @@
         getCurrentDateTime();
         getWeatherData();
         setInterval(updateClock, 30000); // Update the clock every second (1000 milliseconds)
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA03AcDfNB4dirASdvif6sYEZCs3zm6GLY&callback=initMap" async defer></script>
+    <script>
+        function initMap() {
+            var mapContainer = document.getElementById('map');
+            var map = new google.maps.Map(mapContainer, {
+                center: { lat: 42.69549430000001, lng: 23.25026056772268 },
+                zoom: 15
+            });
+
+            var marker = new google.maps.Marker({
+                position: { lat: 42.69549430000001, lng: 23.25026056772268 },
+                map: map,
+                title: 'Delta Container Terminal'
+            });
+        }
     </script>
 
 </body>

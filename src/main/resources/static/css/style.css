@@ -2960,6 +2960,21 @@ div.aligncenter,
 .primary-mobile-nav .menu .sub-menu li {
     margin-bottom: 10px;
 }
+.language-switcher {
+    color: white;
+    font-size: 16px;
+}
+
+.switcher-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.switcher-link:hover {
+    text-decoration: underline;
+}
+
 
 /* Styles for the sub-menu items */
 .primary-mobile-nav .menu .sub-menu li a {

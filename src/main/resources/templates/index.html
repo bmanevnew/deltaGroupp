@@ -8,6 +8,7 @@
     <!--            color: #ff0006 !important; /* Change the color to your desired value */-->
     <!--        }-->
     <!--    </style>-->
+
     <style>
         .welservices.row {
             justify-content: center;
@@ -47,7 +48,14 @@
             z-index: -1;
         }
     </style>
-
+    <style>
+        .language-option {
+            display: none;
+        }
+        .language-option.active {
+            display: inline-block;
+        }
+    </style>
 
     <meta charset="utf-8">
     <title>Delta Group</title>
@@ -146,6 +154,7 @@
             </div>
         </div>
     </div>
+
     <!-- topbar end -->
 
 
@@ -155,8 +164,16 @@
             <div class="container mobile_relative">
                 <div class="row">
                     <div class="site-logo col-md-3 col-sm-6 col-xs-6">
-                        <h1 class="site-title"><a href="#">DeltaGroup</a></h1>
-                        <h2 class="site-description">Just another Steel Themes Sites site</h2>
+<!--                        <div class="language-switcher-container">-->
+<!--                            <ul class="language-switcher">-->
+<!--                                <li class="language-option">-->
+<!--                                    <a href="#" data-lang="bg" class="language-link">BG</a>-->
+<!--                                </li>-->
+<!--                                <li class="language-option">-->
+<!--                                    <a href="#" data-lang="en" class="language-link">ENG</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
                     </div>
                     <div class="col-md-9 col-sm-6 col-xs-6">
                         <div class="site-menu text-right"> <!-- Updated class: text-right -->
@@ -225,6 +242,20 @@
                         var subMenu = this.querySelector(".sub-menu");
                         subMenu.classList.toggle("active");
                     });
+
+                    var subMenuItems = item.querySelectorAll(".sub-menu li a");
+                    subMenuItems.forEach(function (subMenuItem) {
+                        subMenuItem.addEventListener("click", function (e) {
+                            // Remove the following line if you want the sub-menu to collapse after clicking a sub-menu item
+                            e.preventDefault();
+
+                            // Retrieve the href attribute of the clicked sub-menu item
+                            var href = this.getAttribute("href");
+
+                            // Navigate to the specified page
+                            window.location.href = href;
+                        });
+                    });
                 });
 
                 var navbarToggle = document.querySelector("#navbarToggle");
@@ -245,6 +276,7 @@
                 });
             });
         </script>
+
     </header>
 
 
@@ -952,45 +984,25 @@
     <ul class="menu">
         <li><a href="index.html">Home</a></li>
         <li class="menu-item-has-children">
-            <a href="#">Services</a>
+            <a href="#">Transport Services</a>
             <ul class="sub-menu">
-                <li><a href="services.html">All Services</a></li>
-                <li><a href="terminal-delta.html">Road Freight Forwarding</a></li>
-                <li><a href="ocean-freight-forwarding.html">Ocean Freight Forwarding</a></li>
-                <li><a href="warehousing.html">Warehousing</a></li>
+                <li><a href="terminal-delta.html">Port Terminal Operations Container Terminal Delta</a></li>
+                <li><a href="ocean-freight-forwarding.html">FCL / LCL Ocean Freight & NVOCC</a></li>
+                <li><a href="inland-transport.html">Inland Transport</a></li>
+                <li><a href="warehousing.html">Customs clearance & warehousing</a></li>
+                <li><a href="insurance.html">Insurance</a></li>
+                <li><a href="cargo-tracking.html">Cargo Tracking</a></li>
             </ul>
         </li>
-        <li class="menu-item-has-children"><a href="#" class="dropdown-toggle">Pages</a>
-            <ul class="sub-menu">
-                <li><a href="about-us.html">About Us</a></li>
-                <li><a href="faqs.html">FAQS</a></li>
-                <li><a href="our-prices.html">Our Prices</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-            </ul>
-        </li>
-        <li class="menu-item-has-children"><a href="#" class="dropdown-toggle">Features</a>
-            <ul class="sub-menu">
-                <li><a href="request-a-quote.html">Request A Quote</a></li>
-                <li><a href="track-your-shipment.html">Track Your Shipment</a></li>
-            </ul>
-        </li>
-        <li class="menu-item-has-children"><a href="blog.html" class="dropdown-toggle">News</a>
-            <ul class="sub-menu">
-                <li><a href="news.html">Blog Two Columns</a></li>
-                <li><a href="blog-column-3.html">Blog Three Columns</a></li>
-                <li><a href="blog-column-4.html">Blog Four Columns</a></li>
-                <li><a href="blog-sidebar.html">Blog With Sidebar</a></li>
-                <li><a href="blog-single.html">Blog Single Post</a></li>
-            </ul>
-        </li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about-us.html">Who we are</a></li>
+        <li><a href="contact.html">Contact us</a></li>
         <li class="extra-menu-item menu-item-button-link">
             <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
         </li>
     </ul>
-
 </div>
 <div id="off-canvas-layer" class="off-canvas-layer"></div>
+
 <!--primary-mobile-nav end-->
 
 <!--Scroll to top-->
@@ -1195,7 +1207,19 @@
     getWeatherData();
     setInterval(updateClock, 30000); // Update the clock every second (1000 milliseconds)
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var currentLang = "en"; // Update this value dynamically based on the current page
 
+        var languageOptions = document.querySelectorAll(".language-option");
+        languageOptions.forEach(function (option) {
+            var lang = option.querySelector(".language-link").getAttribute("data-lang");
+            if (lang === currentLang) {
+                option.classList.add("active");
+            }
+        });
+    });
+</script>
 
 
 
