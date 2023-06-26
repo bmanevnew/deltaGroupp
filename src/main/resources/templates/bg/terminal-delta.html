@@ -5,6 +5,14 @@
     <meta charset="utf-8">
     <title>Делта Груп</title>
     <style>
+        .sub-menu li .email {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: right;
+            width: 100%; /* Ensure the email spans take up the full width */
+        }
         .blurry-header {
             position: relative;
             overflow: hidden;
@@ -167,22 +175,22 @@
                                                     <a class="dropdown-toggle">Контакти</a>
                                                     <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
                                                         <li>
-                                                            <p>Телефони:</p>
-                                                            <p>+359 2 9202137</p>
-                                                            <p>+359 2 9631223</p>
-                                                            <p>+359 2 9634369</p>
-                                                            <p>Факс: +359 2 9202138</p>
+                                                            <span>Телефони:</span><br>
+                                                            <span>+359 2 9202137</span><br>
+                                                            <span>+359 2 9631223</span><br>
+                                                            <span>+359 2 9634369</span><br>
+                                                            <span>Fax: +359 2 9202138</span>
                                                         </li>
                                                         <li>
-                                                            <p>Имейли:</p>
-                                                            <p>info@deltagroup.bg</p>
-                                                            <p>sales@deltagroup.bg</p>
-                                                            <p>export@deltagroup.bg</p>
-                                                            <p>import@deltagroup.bg</p>
-                                                            <p>terminal@deltagroup.bg</p>
-                                                            <p>account@deltagroup.bg</p>
-                                                            <p>documentation@deltagroup.bg</p>
-                                                            <p>trucks@deltagroup.bg</p>
+                                                            <span>Имейли:</span><br>
+                                                            <span class="email">info@deltagroup.bg</span><br>
+                                                            <span class="email">sales@deltagroup.bg</span><br>
+                                                            <span class="email">export@deltagroup.bg</span><br>
+                                                            <span class="email">import@deltagroup.bg</span><br>
+                                                            <span class="email">terminal@deltagroup.bg</span><br>
+                                                            <span class="email">account@deltagroup.bg</span><br>
+                                                            <span class="email">documentation@deltagroup.bg</span><br>
+                                                            <span class="email">trucks@deltagroup.bg</span>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -357,6 +365,8 @@
                                         Гемлик</p>
                                     <br><p>Имате товар и се нуждаете от навло за транспорт или просто съвет? - за нас
                                     ще бъде удоволствие да сме ви полезни.</p>
+                                    <br> <p><strong>И много други...</strong>
+                                    </p>
 
                             </div>
                         </div>
@@ -395,7 +405,7 @@
                                 <h4 class="widget-title">Относно Делта Груп</h4>
                                 <div class="textwidget">
                                     <p>Делта Груп ® е запазена търговска марка на Делта Транспорт ЕООД.
-                                        Делта Транспорт ЕООД е създадена през 1996, a през 2000 година беше
+                                        Делта Транспорт ЕООД е създадена през 1996, a през 1999 година беше
                                         създадена нова фирма - Делта Шипинг ЕООД.</p>
                                 </div>
                             </div>
@@ -479,23 +489,7 @@
     <!--Scroll to top-->
     <a id="scroll-top" class="backtotop" href="#page-top"><i class="fa fa-angle-up"></i></a>
 
-    <!--Color switcher-->
-    <div class="demo_changer" id="demo_changer">
-        <div class="demo-icon fa fa-sliders"></div>
-        <div class="form_holder">
-            <h3 class="demo-title">Customize CargoHub</h3>
 
-            <div class="line"></div>
-            <p>Color Scheme</p>
-            <div class="predefined_styles" id="styleswitch_area">
-                <a href="?default=true" data-rel="default" class="styleswitch" style="background:#ff0000;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-                <a href="#" data-rel="navy-darkblue" class="styleswitch" style="background:#00baff;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-                <a href="#" data-rel="orange-black" class="styleswitch" style="background:#ee6012;border-right-color: #202020;border-bottom-color: #202020"></a>
-                <a href="#" data-rel="yellow-blue" class="styleswitch" style="background:#f6a604;border-right-color: #0032ab;border-bottom-color: #0032ab"></a>
-            </div>
-            <div class="line"></div>
-        </div>
-    </div>
 
     <!-- jquery Liabrary -->
     <script src="../../static/js/jquery-1.12.4.min.js"></script>
@@ -542,8 +536,10 @@
             const currentTimeElement = document.getElementById('current-time');
 
             const currentDate = new Date();
-            const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
-            const formattedDate = currentDate.toLocaleDateString('en-US', options).replace(/\//g, '.');
+            const currentDay = currentDate.getDate().toString().padStart(2, '0');
+            const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+            const currentYear = currentDate.getFullYear().toString();
+            const formattedDate = `${currentDay}.${currentMonth}.${currentYear}`;
             currentDateElement.textContent = formattedDate;
 
             const currentHours = currentDate.getHours().toString().padStart(2, '0');

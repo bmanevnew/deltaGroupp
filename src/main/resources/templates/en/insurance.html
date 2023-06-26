@@ -5,6 +5,14 @@
     <meta charset="utf-8">
     <title>Delta Group</title>
     <style>
+        .sub-menu li .email {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: right;
+            width: 100%; /* Ensure the email spans take up the full width */
+        }
         .blurry-header {
             position: relative;
             overflow: hidden;
@@ -140,116 +148,117 @@
 
 
     <!-- masthead -->
-        <header id="masthead" class="site-header clearfix">
-            <div class="header-main clearfix">
-                <div class="container mobile_relative">
-                    <div class="row">
-                        <div class="site-logo col-md-3 col-sm-6 col-xs-6">
-                            <h1 class="site-title"><a href="#">DeltaGroup</a></h1>
-                            <h2 class="site-description">Just another Steel Themes Sites site</h2>
-                        </div>
-                        <div class="col-md-9 col-sm-6 col-xs-6">
-                            <div class="site-menu text-right"> <!-- Updated class: text-right -->
-                                <nav id="site-navigation" class="main-nav primary-nav nav">
-                                    <ul class="menu">
-                                        <li class="extra-menu-item menu-item-button-link">
-                                            <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
-                                        </li>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li class="has-children">
-                                            <a href="../services.html" class="dropdown-toggle">Transport Services</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="terminal-delta.html">Port Terminal Operations Container Terminal Delta</a></li>
-                                                <li><a href="ocean-freight-forwarding.html">FCL / LCL Ocean Freight & NVOCC</a></li>
-                                                <li><a href="inland-transport.html">Inland Transport</a></li>
-                                                <li><a href="warehousing.html">Customs clearance & warehousing</a></li>
-                                                <li><a href="insurance.html">Insurance</a></li>
-                                                <li><a href="cargo-tracking.html">Cargo Tracking</a></li>
-                                                <li class="has-children">
-                                                    <a class="dropdown-toggle">Contact</a>
-                                                    <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
-                                                        <li>
-                                                            <p>Phones:</p>
-                                                            <p>+359 2 9202137</p>
-                                                            <p>+359 2 9631223</p>
-                                                            <p>+359 2 9634369</p>
-                                                            <p>Fax: +359 2 9202138</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Emails:</p>
-                                                            <p>info@deltagroup.bg</p>
-                                                            <p>sales@deltagroup.bg</p>
-                                                            <p>export@deltagroup.bg</p>
-                                                            <p>import@deltagroup.bg</p>
-                                                            <p>terminal@deltagroup.bg</p>
-                                                            <p>account@deltagroup.bg</p>
-                                                            <p>documentation@deltagroup.bg</p>
-                                                            <p>trucks@deltagroup.bg</p>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about-us.html">Who we are</a></li>
-                                        <li><a href="contact.html">Contact us</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+    <header id="masthead" class="site-header clearfix">
+        <div class="header-main clearfix">
+            <div class="container mobile_relative">
+                <div class="row">
+                    <div class="site-logo col-md-3 col-sm-6 col-xs-6"></div>
+                    <div class="col-md-9 col-sm-6 col-xs-6">
+                        <div class="site-menu text-right"> <!-- Updated class: text-right -->
+                            <nav id="site-navigation" class="main-nav primary-nav nav">
+                                <ul class="menu">
+                                    <li class="extra-menu-item menu-item-button-link">
+                                        <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
+                                    </li>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li class="has-children">
+                                        <a href="../services.html" class="dropdown-toggle">Transport Services</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="terminal-delta.html">Port Terminal Operations Container Terminal
+                                                Delta</a></li>
+                                            <li><a href="ocean-freight-forwarding.html">FCL / LCL Ocean Freight & NVOCC</a>
+                                            </li>
+                                            <li><a href="inland-transport.html">Inland Transport</a></li>
+                                            <li><a href="warehousing.html">Customs clearance & warehousing</a></li>
+                                            <li><a href="insurance.html">Insurance</a></li>
+                                            <li><a href="cargo-tracking.html">Cargo Tracking</a></li>
+                                            <li class="has-children">
+                                                <a class="dropdown-toggle">Contact</a>
+                                                <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
+                                                    <li>
+                                                        <span>Phones:</span><br>
+                                                        <span>+359 2 9202137</span><br>
+                                                        <span>+359 2 9631223</span><br>
+                                                        <span>+359 2 9634369</span><br>
+                                                        <span>Fax: +359 2 9202138</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Emails:</span><br>
+                                                        <span class="email">info@deltagroup.bg</span><br>
+                                                        <span class="email">sales@deltagroup.bg</span><br>
+                                                        <span class="email">export@deltagroup.bg</span><br>
+                                                        <span class="email">import@deltagroup.bg</span><br>
+                                                        <span class="email">terminal@deltagroup.bg</span><br>
+                                                        <span class="email">account@deltagroup.bg</span><br>
+                                                        <span class="email">documentation@deltagroup.bg</span><br>
+                                                        <span class="email">trucks@deltagroup.bg</span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="about-us.html">Who we are</a></li>
+                                    <li><a href="contact.html">Contact us</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
-                    <a href="#" class="navbar-toggle" id="navbarToggle">
+                </div>
+                <a href="#" class="navbar-toggle" id="navbarToggle">
                 <span class="navbar-icon">
                     <span class="navbars-line"></span>
                 </span>
-                    </a>
-                </div>
+                </a>
             </div>
-            <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    var parentMenuItems = document.querySelectorAll(".menu-item-has-children");
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var parentMenuItems = document.querySelectorAll(".menu-item-has-children");
 
-                    parentMenuItems.forEach(function (item) {
-                        item.addEventListener("click", function (e) {
+                parentMenuItems.forEach(function (item) {
+                    item.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        this.classList.toggle("active");
+                        var subMenu = this.querySelector(".sub-menu");
+                        subMenu.classList.toggle("active");
+                    });
+
+                    var subMenuItems = item.querySelectorAll(".sub-menu li a");
+                    subMenuItems.forEach(function (subMenuItem) {
+                        subMenuItem.addEventListener("click", function (e) {
+                            // Remove the following line if you want the sub-menu to collapse after clicking a sub-menu item
                             e.preventDefault();
-                            this.classList.toggle("active");
-                            var subMenu = this.querySelector(".sub-menu");
-                            subMenu.classList.toggle("active");
+
+                            // Retrieve the href attribute of the clicked sub-menu item
+                            var href = this.getAttribute("href");
+
+                            // Navigate to the specified page
+                            window.location.href = href;
                         });
-
-                        var subMenuItems = item.querySelectorAll(".sub-menu li a");
-                        subMenuItems.forEach(function (subMenuItem) {
-                            subMenuItem.addEventListener("click", function (e) {
-                                // Remove the following line if you want the sub-menu to collapse after clicking a sub-menu item
-                                e.preventDefault();
-
-                                // Retrieve the href attribute of the clicked sub-menu item
-                                var href = this.getAttribute("href");
-
-                                // Navigate to the specified page
-                                window.location.href = href;
-                            });
-                        });
-                    });
-
-                    var navbarToggle = document.querySelector("#navbarToggle");
-                    var mobileNav = document.querySelector("#primary-mobile-nav");
-                    var offCanvasLayer = document.querySelector("#off-canvas-layer");
-                    var closeCanvasMobilePanel = document.querySelector(".close-canvas-mobile-panel");
-
-                    navbarToggle.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        mobileNav.classList.toggle("active");
-                        offCanvasLayer.classList.toggle("active");
-                    });
-
-                    closeCanvasMobilePanel.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        mobileNav.classList.remove("active");
-                        offCanvasLayer.classList.remove("active");
                     });
                 });
-            </script>
-        </header>
+
+                var navbarToggle = document.querySelector("#navbarToggle");
+                var mobileNav = document.querySelector("#primary-mobile-nav");
+                var offCanvasLayer = document.querySelector("#off-canvas-layer");
+                var closeCanvasMobilePanel = document.querySelector(".close-canvas-mobile-panel");
+
+                navbarToggle.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    mobileNav.classList.toggle("active");
+                    offCanvasLayer.classList.toggle("active");
+                });
+
+                closeCanvasMobilePanel.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    mobileNav.classList.remove("active");
+                    offCanvasLayer.classList.remove("active");
+                });
+            });
+        </script>
+
+    </header>
 
 
         <!--Page Header-->
@@ -444,7 +453,7 @@
                                 <div class="textwidget">
                                     <p>Delta Transport Ltd., was founded in 1996 as an International Freight Forwarder.
 
-                                        Delta Shipping Ltd., was founded in 2000 as a Container Transport Operator with a
+                                        Delta Shipping Ltd., was founded in 1999 as a Container Transport Operator with a
                                         fleet of own trucks and trailers, specialized in container transport worldwide.
 
                                         Delta Transport Ltd., is the owner of the registered trade mark Delta Group ®.</p>
@@ -629,23 +638,7 @@
     <!--Scroll to top-->
     <a id="scroll-top" class="backtotop" href="#page-top"><i class="fa fa-angle-up"></i></a>
 
-    <!--Color switcher-->
-    <div class="demo_changer" id="demo_changer">
-        <div class="demo-icon fa fa-sliders"></div>
-        <div class="form_holder">
-            <h3 class="demo-title">Customize CargoHub</h3>
 
-            <div class="line"></div>
-            <p>Color Scheme</p>
-            <div class="predefined_styles" id="styleswitch_area">
-                <a href="?default=true" data-rel="default" class="styleswitch" style="background:#ff0000;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-                <a href="#" data-rel="navy-darkblue" class="styleswitch" style="background:#00baff;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-                <a href="#" data-rel="orange-black" class="styleswitch" style="background:#ee6012;border-right-color: #202020;border-bottom-color: #202020"></a>
-                <a href="#" data-rel="yellow-blue" class="styleswitch" style="background:#f6a604;border-right-color: #0032ab;border-bottom-color: #0032ab"></a>
-            </div>
-            <div class="line"></div>
-        </div>
-    </div>
 
     <!-- jquery Liabrary -->
     <script src="../../static/js/jquery-1.12.4.min.js"></script>
@@ -692,8 +685,10 @@
             const currentTimeElement = document.getElementById('current-time');
 
             const currentDate = new Date();
-            const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
-            const formattedDate = currentDate.toLocaleDateString('en-US', options).replace(/\//g, '.');
+            const currentDay = currentDate.getDate().toString().padStart(2, '0');
+            const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+            const currentYear = currentDate.getFullYear().toString();
+            const formattedDate = `${currentDay}.${currentMonth}.${currentYear}`;
             currentDateElement.textContent = formattedDate;
 
             const currentHours = currentDate.getHours().toString().padStart(2, '0');

@@ -38,6 +38,14 @@
     <link rel="icon" type="image/png" href="../../static/images/icon/maker1.png">
 
         <style>
+            .sub-menu li .email {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: right;
+                width: 100%; /* Ensure the email spans take up the full width */
+            }
         .blurry-header {
             position: relative;
             overflow: hidden;
@@ -176,22 +184,22 @@
                                                 <a class="dropdown-toggle">Контакти</a>
                                                 <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
                                                     <li>
-                                                        <p>Телефони:</p>
-                                                        <p>+359 2 9202137</p>
-                                                        <p>+359 2 9631223</p>
-                                                        <p>+359 2 9634369</p>
-                                                        <p>Факс: +359 2 9202138</p>
+                                                        <span>Телефони:</span><br>
+                                                        <span>+359 2 9202137</span><br>
+                                                        <span>+359 2 9631223</span><br>
+                                                        <span>+359 2 9634369</span><br>
+                                                        <span>Fax: +359 2 9202138</span>
                                                     </li>
                                                     <li>
-                                                        <p>Имейли:</p>
-                                                        <p>info@deltagroup.bg</p>
-                                                        <p>sales@deltagroup.bg</p>
-                                                        <p>export@deltagroup.bg</p>
-                                                        <p>import@deltagroup.bg</p>
-                                                        <p>terminal@deltagroup.bg</p>
-                                                        <p>account@deltagroup.bg</p>
-                                                        <p>documentation@deltagroup.bg</p>
-                                                        <p>trucks@deltagroup.bg</p>
+                                                        <span>Имейли:</span><br>
+                                                        <span class="email">info@deltagroup.bg</span><br>
+                                                        <span class="email">sales@deltagroup.bg</span><br>
+                                                        <span class="email">export@deltagroup.bg</span><br>
+                                                        <span class="email">import@deltagroup.bg</span><br>
+                                                        <span class="email">terminal@deltagroup.bg</span><br>
+                                                        <span class="email">account@deltagroup.bg</span><br>
+                                                        <span class="email">documentation@deltagroup.bg</span><br>
+                                                        <span class="email">trucks@deltagroup.bg</span>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -298,57 +306,62 @@
         <div class="container">
             <div class="row quote1top">
                 <div class="col-md-12">
-                    <div class="fh-section-title clearfix  text-left version-dark paddbtm40">
+                    <div class="fh-section-title clearfix text-left version-dark paddbtm40">
                         <h2>Запитване за оферта</h2>
                     </div>
                 </div>
             </div>
             <div class="row quote1forms">
                 <div class="col-md-12">
-                    <form>
+                    <form th:action="@{/bg/request-a-quote.html}" th:object="${quoteDto}" method="post">
 
                         <div class="fh-form request-form">
                             <div class="row">
-                                <div class="fh-section-title f5 clearfix  text-left version-dark paddbtm40">
+                                <div class="fh-section-title f5 clearfix text-left version-dark paddbtm40">
                                     <h1 class="page-title">Данни на компанията</h1>
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Име на компанията<span class="require">*</span></label>
-                                    <input placeholder="Company Name" type="text">
+                                    <input th:field="*{companyName}" placeholder="Име на компанията" type="text" required="required">
+                                    <div class="error" th:if="${#fields.hasErrors('companyName')}" th:errors="*{companyName}">Required field.</div>
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Отговорик<span class="require">*</span></label>
-                                    <input placeholder="Person in charge" type="text">
+                                    <input th:field="*{personInCharge}" placeholder="Отговорик" type="text" required="required">
+                                    <div class="error" th:if="${#fields.hasErrors('personInCharge')}" th:errors="*{personInCharge}">Required field.</div>
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Имейл<span class="require">*</span></label>
-                                    <input name="your-email" placeholder="Email Address" type="email">
+                                    <input th:field="*{email}" placeholder="Имейл" type="email" required="required">
+                                    <div class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Required field.</div>
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Телефонен номер<span class="require">*</span></label>
-                                    <input placeholder="Phone Number" type="text">
+                                    <input th:field="*{phone}" placeholder="Телефонен номер" type="text" required="required">
+                                    <div class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Required field.</div>
                                 </div>
                                 <div class="field col-md-4">
-                                    <label>Дата<span class="require">*</span></label>
-                                    <input type="date" id="date-input">
+                                    <label>Дате<span class="require">*</span></label>
+                                    <input th:field="*{date}" type="date" required="required">
+                                    <div class="error" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Required field.</div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="fh-section-title f5 clearfix  text-left version-dark paddbtm40">
+                                <div class="fh-section-title f5 clearfix text-left version-dark paddbtm40">
                                     <h1 class="page-title">Информация за транспорта</h1>
                                 </div>
                                 <p class="field field col-md-4">
                                     <label>Вид транспорт</label>
-                                    <select>
-                                        <option></option>
-                                        <option>Full Container Load (FCL)</option>
-                                        <option>Less Container Load (LCL)</option>
+                                    <select th:field="*{transportType}">
+                                        <option value=""></option>
+                                        <option value="Full Container Load (FCL)">Full Container Load (FCL)</option>
+                                        <option value="Less Container Load (LCL)">Less Container Load (LCL)</option>
                                     </select>
                                 </p>
                                 <p class="field field col-md-4">
                                     <label>Вид контейнер</label>
-                                    <select>
-                                        <option></option>
+                                    <select th:field="*{containerType}">
+                                        <option value=""></option>
                                         <option value="1">20’ Dry Cargo Container</option>
                                         <option value="7">20’ Flat Rack Container</option>
                                         <option value="5">20’ Open Top Container</option>
@@ -364,8 +377,8 @@
                                 </p>
                                 <p class="field field col-md-4">
                                     <label>Условия на доставка по Инкотермс 2000</label>
-                                    <select>
-                                        <option></option>
+                                    <select th:field="*{deliveryTerms}">
+                                        <option value=""></option>
                                         <option value="5">CFR</option>
                                         <option value="6">CIF</option>
                                         <option value="8">CIP</option>
@@ -383,31 +396,31 @@
                                 </p>
                                 <div class="field col-md-4">
                                     <label>Адрес на товарене<span></span></label>
-                                    <input placeholder="Loading Address" type="text">
+                                    <input th:field="*{loadingAddress}" placeholder="Адрес на товарене" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Отправно пристанище<span></span></label>
-                                    <input placeholder="Port of loading" type="text">
+                                    <input th:field="*{loadingPort}" placeholder="Отправно пристанище" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Държава<span></span></label>
-                                    <input placeholder="Country" type="text">
+                                    <input th:field="*{initialCountry}" placeholder="Държава" type="text">
                                 </div>
                                 <div class="field col-md-4">
-                                    <label>Получаващо пристанище<span></span></label>
-                                    <input placeholder="Port of Discharge" type="text">
+                                    <label>Пристанище за разтоварване<span></span></label>
+                                    <input th:field="*{dischargePort}" placeholder="Пристанище за разтоварванe" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Адрес на разтоварване<span></span></label>
-                                    <input placeholder="Delivery Address" type="text">
+                                    <input th:field="*{deliveryAddress}" placeholder="Адрес на разтоварване" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Държава<span></span></label>
-                                    <input placeholder="Country" type="text">
+                                    <input th:field="*{deliveryCountry}" placeholder="Държава" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Готовност на товарене<span class="require">*</span></label>
-                                    <input type="date" id="readiness-date-input">
+                                    <input th:field="*{readyDate}" type="date" id="readiness-date-input">
                                 </div>
                             </div>
                             <div class="row">
@@ -416,28 +429,28 @@
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Вид на стоката<span></span></label>
-                                    <input placeholder="Cargo Type" type="text">
+                                    <input th:field="*{cargoType}" placeholder="Вид на стоката" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Забележка / Допълнителни изисквания<span></span></label>
-                                    <input type="text">
+                                    <input th:field="*{remarks}" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Бруто тегло (кг.)<span></span></label>
-                                    <input type="text">
+                                    <input th:field="*{weight}" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Обем, куб.м.<span></span></label>
-                                    <input type="text">
+                                    <input th:field="*{volume}" type="text">
                                 </div>
                                 <div class="field col-md-4">
                                     <label>Количество, бр.<span></span></label>
-                                    <input type="text">
+                                    <input th:field="*{quantity}" type="text">
                                 </div>
                                 <p class="field field col-md-4">
                                     <label>Вид на опаковката</label>
-                                    <select>
-                                        <option></option>
+                                    <select th:field="*{packageType}">
+                                        <option value=""></option>
                                         <option value="1">Bales</option>
                                         <option value="4">Cartons</option>
                                         <option value="5">Cases</option>
@@ -450,8 +463,8 @@
                                     </select>
                                 </p>
                                 <div class="field col-md-4">
-                                    <label>Размери, метри (Ш x Д x В)<span></span></label>
-                                    <input type="text">
+                                    <label>Размери, метри (Ш x Д x В))<span></span></label>
+                                    <input th:field="*{dimensions}" type="text">
                                 </div>
                             </div>
                             <div class="row">
@@ -461,14 +474,14 @@
                                 <div class="field col-md-4">
                                     <label class="imdg-label">IMDG<span class="require">*</span></label>
                                     <label for="imdg-yes">
-                                        <input id="imdg-yes" name="imdg-option" type="radio" value="yes"> Yes
+                                        <input id="imdg-yes" th:field="*{imdg}" name="imdg-option" type="radio" value="true"> Yes
                                     </label>
                                     <label for="imdg-no">
-                                        <input id="imdg-no" name="imdg-option" type="radio" value="no"> No
+                                        <input id="imdg-no" th:field="*{imdg}" name="imdg-option" type="radio" value="false"> No
                                     </label>
                                     <div class="imdg-type">
                                         <label for="imdg-type-input">Клас</label>
-                                        <input id="imdg-type-input" type="text">
+                                        <input id="imdg-type-input" th:field="*{imdgClass}" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -477,6 +490,7 @@
                                     <button class="fh-btn" type="submit">Изпрати</button>
                                 </p>
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -513,7 +527,7 @@
                             <h4 class="widget-title">Относно Делта Груп</h4>
                             <div class="textwidget">
                                 <p>Делта Груп ® е запазена търговска марка на Делта Транспорт ЕООД.
-                                    Делта Транспорт ЕООД е създадена през 1996, a през 2000 година беше
+                                    Делта Транспорт ЕООД е създадена през 1996, a през 1999 година беше
                                     създадена нова фирма - Делта Шипинг ЕООД.</p>
                             </div>
                         </div>
@@ -598,26 +612,7 @@
 <a id="scroll-top" class="backtotop" href="#page-top"><i class="fa fa-angle-up"></i></a>
 
 <!--Color switcher-->
-<div class="demo_changer" id="demo_changer">
-    <div class="demo-icon fa fa-sliders"></div>
-    <div class="form_holder">
-        <h3 class="demo-title">Customize CargoHub</h3>
 
-        <div class="line"></div>
-        <p>Color Scheme</p>
-        <div class="predefined_styles" id="styleswitch_area">
-            <a href="?default=true" data-rel="default" class="styleswitch"
-               style="background:#ff0000;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-            <a href="#" data-rel="navy-darkblue" class="styleswitch"
-               style="background:#00baff;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-            <a href="#" data-rel="orange-black" class="styleswitch"
-               style="background:#ee6012;border-right-color: #202020;border-bottom-color: #202020"></a>
-            <a href="#" data-rel="yellow-blue" class="styleswitch"
-               style="background:#f6a604;border-right-color: #0032ab;border-bottom-color: #0032ab"></a>
-        </div>
-        <div class="line"></div>
-    </div>
-</div>
 
 <!-- jquery Liabrary -->
 <script src="../../static/js/jquery-1.12.4.min.js"></script>
@@ -665,8 +660,10 @@
         const currentTimeElement = document.getElementById('current-time');
 
         const currentDate = new Date();
-        const options = { month: '2-digit', day: '2-digit', year: 'numeric' };
-        const formattedDate = currentDate.toLocaleDateString('en-US', options).replace(/\//g, '.');
+        const currentDay = currentDate.getDate().toString().padStart(2, '0');
+        const currentMonth = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+        const currentYear = currentDate.getFullYear().toString();
+        const formattedDate = `${currentDay}.${currentMonth}.${currentYear}`;
         currentDateElement.textContent = formattedDate;
 
         const currentHours = currentDate.getHours().toString().padStart(2, '0');

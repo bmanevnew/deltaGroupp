@@ -1,17 +1,29 @@
 package com.example.newproject.controllers.mvc;
 
-import com.example.newproject.models.QouteDto;
+import com.example.newproject.exceptions.EmailSenderException;
+import com.example.newproject.models.QuoteDto;
+import com.example.newproject.services.impl.EmailService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class HomeMvcController {
 
+private EmailService emailService;
+
+    @Autowired
+    public void setEmailService(EmailService emailService) {
+        this.emailService = emailService;
+    }
     @GetMapping("/")
     public String home() {
-        return "bg/index.html";
+        return "bg/index";
     }
 
     @GetMapping("/en/index.html")
@@ -27,20 +39,40 @@ public class HomeMvcController {
 
 
     @GetMapping("/request-a-quote.html")
-    public String quote() {
-        return "bg/request-a-quote";
+    public String quote() { return "bg/request-a-quote";
     }
 
+
     @GetMapping("/en/request-a-quote.html")
-    public String quoteEn() {
+    public String quoteEn(Model model) {
+        model.addAttribute("quoteDto", new QuoteDto());
         return "en/request-a-quote";
     }
 
+    @PostMapping("/en/request-a-quote.html")
+    public String submitQuoteEn(@ModelAttribute("quoteDto") QuoteDto quoteDto, Model model) {
+            String subject = "Quote Requested " + quoteDto.getCompanyName();
+            String text = emailService.formatQuoteDtoEn(quoteDto);
+            String senderMail = quoteDto.getEmail();
+            emailService.sendEmail(senderMail, subject, text);
+            return "en/index";
+
+    }
+
     @GetMapping("/bg/request-a-quote.html")
-    public String quoteBg() {
+    public String quoteBg(Model model) {
+        model.addAttribute("quoteDto", new QuoteDto());
         return "bg/request-a-quote";
     }
 
+    @PostMapping("/bg/request-a-quote.html")
+    public String submitQuoteBg(@ModelAttribute("quoteDto") QuoteDto quoteDto) {
+        String subject = "Quote Requested " + quoteDto.getCompanyName();
+        String text = emailService.formatQuoteDtoEn(quoteDto);
+        String senderMail = quoteDto.getEmail();
+        emailService.sendEmail(senderMail, subject, text);
+        return "en/index";
+    }
 
 
     // Add mappings for other pages similarly...
