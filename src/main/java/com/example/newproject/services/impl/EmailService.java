@@ -27,10 +27,16 @@ public class EmailService {
 
         try {
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
-            helper.setFrom(from);
-            helper.setFrom("manev_boris@yahoo.com");
-            helper.setReplyTo("manev_boris@yahoo.com");
-            helper.setTo("manev_boris@yahoo.com");
+
+            helper.setFrom("Delta Group <deltaGroupContact@gmail.com>");
+            helper.setReplyTo(from);
+            helper.addTo("info@deltagroup.bg");
+            helper.addTo("export@deltagroup.bg");
+            helper.addTo("import@deltagroup.bg");
+//            helper.addTo("manev_boris@yahoo.com");
+//            helper.addTo("manev_borissss@yahoo.com");
+//            helper.addCc("manevboris94454@gmail.com");
+//            helper.addCc("manevboris944444@gmail.com");
             helper.setSubject(subject);
             helper.setText(text, true); // true indicates HTML content
 

@@ -51,7 +51,7 @@ private EmailService emailService;
 
     @PostMapping("/en/request-a-quote.html")
     public String submitQuoteEn(@ModelAttribute("quoteDto") QuoteDto quoteDto, Model model) {
-            String subject = "Quote Requested " + quoteDto.getCompanyName();
+            String subject = "Quote Requested - " + quoteDto.getCompanyName();
             String text = emailService.formatQuoteDtoEn(quoteDto);
             String senderMail = quoteDto.getEmail();
             emailService.sendEmail(senderMail, subject, text);
@@ -67,11 +67,11 @@ private EmailService emailService;
 
     @PostMapping("/bg/request-a-quote.html")
     public String submitQuoteBg(@ModelAttribute("quoteDto") QuoteDto quoteDto) {
-        String subject = "Quote Requested " + quoteDto.getCompanyName();
-        String text = emailService.formatQuoteDtoEn(quoteDto);
+        String subject = "Запитване - " + quoteDto.getCompanyName();
+        String text = emailService.formatQuoteDtoBg(quoteDto);
         String senderMail = quoteDto.getEmail();
         emailService.sendEmail(senderMail, subject, text);
-        return "en/index";
+        return "bg/index";
     }
 
 
