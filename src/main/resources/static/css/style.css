@@ -154,13 +154,13 @@ template {
     display: none;
 }
 .lazyload {
-    opacity: 0; /* Hide the image initially */
     transition: opacity 0.3s ease-in; /* Add a smooth transition effect */
 }
 
 .lazyload.visible {
     opacity: 1; /* Make the image visible when it is in the viewport */
 }
+
 
 a {
     background: transparent;

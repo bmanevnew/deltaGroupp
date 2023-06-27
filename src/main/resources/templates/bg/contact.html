@@ -14,6 +14,40 @@
         width: 100%; /* Ensure the email spans take up the full width */
     }
 </style>
+    <style>
+        .sub-menu li .email {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: right;
+            width: 100%; /* Ensure the email spans take up the full width */
+        }
+        .blurry-header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            position: relative;
+            padding: 20px;
+            color: blue; /* Set the text color to blue */
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
+            backdrop-filter: blur(2px); /* Adjust the blur radius as needed */
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: inherit;
+            filter: blur(2px);
+            opacity: 0.3; /* Adjust the opacity value as needed */
+            z-index: -1;
+        }
+    </style>
     <script>
         function openGoogleMaps() {
             window.open("https://maps.google.com/maps?q=48-A, Suhodolska Str,1373 Sofia, Bulgaria", "_blank");
@@ -39,7 +73,7 @@
     <link href="../../static/css/style.css" rel="stylesheet">
     <!-- switcher css -->
     <link href="../../static/css/switcher.css" rel="stylesheet">
-    <link rel='stylesheet' id='factoryhub-color-switcher-css' href='../../static/css/switcher/default.css' />
+    <link rel='stylesheet' id='factoryhub-color-switcher-css'  />
     <!-- revolution slider css -->
     <link rel="stylesheet" type="text/css" href="../../static/css/revolution/settings.css">
     <link rel="stylesheet" type="text/css" href="../../static/css/revolution/layers.css">
@@ -145,7 +179,7 @@
                                         </li>
                                         <li><a href="index.html">Начало</a></li>
                                         <li class="has-children">
-                                            <a href="../services.html" class="dropdown-toggle">Транспортни Услуги</a>
+                                            <a href="" class="dropdown-toggle">Транспортни Услуги</a>
                                             <ul class="sub-menu">
                                                 <li><a href="../bg/terminal-delta.html">Пристанищни операции / Контейнерен Терминал Делта</a></li>
                                                 <li><a href="../bg/ocean-freight-forwarding.html">FCL / LCL Ocean Freight & NVOCC</a></li>
@@ -244,7 +278,7 @@
         <!-- masthead end -->
 
         <!--Page Header-->
-        <div class="page-header title-area">
+        <div class="page-header title-area blurry-header">
             <div class="header-title">
                 <div class="container">
                     <div class="row">
