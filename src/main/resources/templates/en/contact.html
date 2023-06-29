@@ -4,6 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>Delta Group</title>
+    <style>
+        .contact-info a:hover {
+
+            text-decoration: underline !important;
+        }
+    </style>
 <style>
     .sub-menu li .email {
         display: inline-block;
@@ -189,24 +195,13 @@
                                             <li><a href="cargo-tracking.html">Cargo Tracking</a></li>
                                             <li class="has-children">
                                                 <a class="dropdown-toggle">Contact</a>
-                                                <ul class="sub-menu side-dropdown" style="margin-top: -100%;">
+                                                <ul class="sub-menu side-dropdown" style="margin-top: -20%;">
                                                     <li>
                                                         <span>Phones:</span><br>
                                                         <span>+359 2 9202137</span><br>
                                                         <span>+359 2 9631223</span><br>
                                                         <span>+359 2 9634369</span><br>
                                                         <span>Fax: +359 2 9202138</span>
-                                                    </li>
-                                                    <li>
-                                                        <span>Emails:</span><br>
-                                                        <span class="email">info@deltagroup.bg</span><br>
-                                                        <span class="email">sales@deltagroup.bg</span><br>
-                                                        <span class="email">export@deltagroup.bg</span><br>
-                                                        <span class="email">import@deltagroup.bg</span><br>
-                                                        <span class="email">terminal@deltagroup.bg</span><br>
-                                                        <span class="email">account@deltagroup.bg</span><br>
-                                                        <span class="email">documentation@deltagroup.bg</span><br>
-                                                        <span class="email">trucks@deltagroup.bg</span>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -276,7 +271,8 @@
     </header>
 
 
-        <!--Page Header-->
+
+    <!--Page Header-->
     <div class="page-header title-area blurry-header">
         <div class="header-title">
             <div class="container">
@@ -351,50 +347,71 @@
 <!--        </section>-->
 
         <!--contact pagesec-->
-        <section class="contactpagesec secpadd">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="fh-contact-box type-address">
-                            <div id="map" style="height: 300px;" ></div>
-<!--                                 onclick="openGoogleMaps()"-->
-
-                            <p class="address">48-A, Suhodolska Str,1373 Sofia, Bulgaria</p>
+    <section class="contactpagesec secpadd">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="fh-contact-box type-address">
+                        <div id="map" style="height: 300px; width: 100%;"></div>
+                        <p class="address">ул. Суходолска 48-А, 1373 София, България</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="fh-contact-box type-phone">
+                        <i class="flaticon-phone-call"></i>
+                        <h4 class="box-title">Call us on</h4>
+                        <div class="desc">
+                            <p style="color: black">+359 2 9202137<br>
+                                +359 2 9631223<br>
+                                +359 2 9634369<br>
+                                Fax: +359 2 9202138</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="fh-contact-box type-phone"><i class="flaticon-phone-call"></i>
-                            <h4 class="box-title">Call us on</h4>
-                            <div class="desc">
-                                <p>+359 2 9202137
-                                    <br>+359 2 9631223
-                                    <br>+359 2 9634369
-                                    <br>Fax: +359 2 9202138</p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fh-contact-box type-email">
+                        <i class="flaticon-business"></i>
+                        <h4 class="box-title">Mail us at</h4>
+                        <div class="desc">
+                            <p style="color: black">
+                                <a href="mailto:info@deltagroup.bg" style="color: black;">info@deltagroup.bg</a><br>
+                                <a href="mailto:sales@deltagroup.bg" style="color: black;">sales@deltagroup.bg</a><br>
+                                <a href="mailto:export@deltagroup.bg" style="color: black;">export@deltagroup.bg</a><br>
+                                <a href="mailto:import@deltagroup.bg" style="color: black;">import@deltagroup.bg</a><br>
+                                <a href="mailto:terminal@deltagroup.bg" style="color: black;">terminal@deltagroup.bg</a><br>
+                                <a href="mailto:account@deltagroup.bg" style="color: black;">account@deltagroup.bg</a><br>
+                                <a href="mailto:documentation@deltagroup.bg" style="color: black;">documentation@deltagroup.bg</a><br>
+                                <a href="mailto:trucks@deltagroup.bg" style="color: black;">trucks@deltagroup.bg</a>
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="fh-contact-box type-email"><i class="flaticon-business"></i>
-                            <h4 class="box-title">Mail Us at</h4>
-                            <div class="desc">
-                                <p>info@deltagroup.bg
-                                    <br>sales@deltagroup.bg
-                                    <br>export@deltagroup.bg
-                                    <br>import@deltagroup.bg
-                                    <br>terminal@deltagroup.bg
-                                    <br>account@deltagroup.bg
-                                    <br>documentation@deltagroup.bg
-                                    <br>trucks@deltagroup.bg
-                                </p>
-                            </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fh-contact-box type-email">
+                        <i class="flaticon-business"></i>
+                        <h4 class="box-title">Or at</h4>
+                        <div class="desc">
+                            <p style="color: black">
+                                <a href="mailto:info@delta-transport.eu" style="color: black;">info@delta-transport.eu</a><br>
+                                <a href="mailto:sales@delta-transport.eu" style="color: black;">sales@delta-transport.eu</a><br>
+                                <a href="mailto:export@delta-transport.eu" style="color: black;">export@delta-transport.eu</a><br>
+                                <a href="mailto:import@delta-transport.eu" style="color: black;">import@delta-transport.eu</a><br>
+                                <a href="mailto:terminal@delta-transport.eu" style="color: black;">terminal@delta-transport.eu</a><br>
+                                <a href="mailto:account@delta-transport.eu" style="color: black;">account@delta-transport.eu</a><br>
+                                <a href="mailto:documentation@delta-transport.eu" style="color: black;">documentation@delta-transport.eu</a><br>
+                                <a href="mailto:trucks@deltagroup.bg" style="color: black;">trucks@delta-transport.eu</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <!--contact end-->
+    <!--contact end-->
 
 
 
@@ -424,18 +441,18 @@
         <div class="footer-sidebars">
             <div class="container">
                 <div class="row">
-                    <div class="footer-sidebar footer-1 col-xs-12 col-sm-6 col-md-4">
+                    <div class="footer-sidebar footer-1 col-xs-12 col-sm-6 col-md-3">
                         <div class="widget widget_text">
                             <h4 class="widget-title">About Delta Group</h4>
                             <div class="textwidget">
                                 <p>Delta Transport Ltd., was founded in 1996 as an International Freight Forwarder.
                                     Delta Shipping Ltd., was founded in 1999 as a Container Transport Operator with a
                                     fleet of own trucks and trailers, specialized in container transport worldwide.
-                                    Delta Transport Ltd., is the owner of the registered trade mark Delta Group ®.</p>
+                                    Delta Transport Ltd., is the owner of the registered trademark Delta Group ®.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="footer-sidebar footer-2 col-xs-12 col-sm-6 col-md-4">
+                    <div class="footer-sidebar footer-2 col-xs-12 col-sm-6 col-md-3">
                         <div class="widget widget_contact_info">
                             <h4 class="widget-title">Phones</h4>
                             <div class="contact-info">
@@ -444,20 +461,41 @@
                                 <i class="fa fa-phone"></i> +359 2 9634369<br>
                                 <i class="fa fa-fax"></i> Fax: +359 2 9202138
                             </div>
+                            <h4 class="widget-title"></h4>
+                            <div class="contact-info">
+                                <a href="https://deltagroup.bg/" target="_blank"
+                                   style="color: #fff; text-decoration: none;">www.delta-transport.eu</a><br>
+                                <a href="https://deltagroup.bg/" target="_blank"
+                                   style="color: #fff; text-decoration: none;">www.deltagroup.bg</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="footer-sidebar footer-3 col-xs-12 col-sm-6 col-md-4">
+                    <div class="footer-sidebar footer-3 col-xs-12 col-sm-6 col-md-6">
                         <div class="widget widget_contact_info">
-                            <h4 class="widget-title">Emails</h4>
+                            <h4 class="widget-title">Emails:</h4>
                             <div class="contact-info">
-                                <i class="fa fa-envelope"></i> <a href="mailto:info@deltagroup.bg" style="color: #fff;">info@deltagroup.bg</a><br>
-                                <i class="fa fa-envelope"></i> <a href="mailto:sales@deltagroup.bg" style="color: #fff;">sales@deltagroup.bg</a><br>
-                                <i class="fa fa-envelope"></i> <a href="mailto:export@deltagroup.bg" style="color: #fff;">export@deltagroup.bg</a><br>
-                                <i class="fa fa-envelope"></i> <a href="mailto:import@deltagroup.bg" style="color: #fff;">import@deltagroup.bg</a><br>
-                                <i class="fa fa-envelope"></i> <a href="mailto:terminal@deltagroup.bg" style="color: #fff;">terminal@deltagroup.bg</a><br>
-                                <i class="fa fa-envelope"></i> <a href="mailto:account@deltagroup.bg" style="color: #fff;">account@deltagroup.bg</a><br>
-                                <i class="fa fa-envelope"></i> <a href="mailto:documentation@deltagroup.bg" style="color: #fff;">documentation@deltagroup.bg</a><br>
-                                <i class="fa fa-envelope"></i> <a href="mailto:trucks@deltagroup.bg" style="color: #fff;">trucks@deltagroup.bg</a>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <i class="fa fa-envelope"></i> <a href="mailto:info@deltagroup.bg" style="color: #fff;">info@deltagroup.bg</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:sales@deltagroup.bg" style="color: #fff;">sales@deltagroup.bg</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:export@deltagroup.bg" style="color: #fff;">export@deltagroup.bg</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:import@deltagroup.bg" style="color: #fff;">import@deltagroup.bg</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:terminal@deltagroup.bg" style="color: #fff;">terminal@deltagroup.bg</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:account@deltagroup.bg" style="color: #fff;">account@deltagroup.bg</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:documentation@deltagroup.bg" style="color: #fff;">documentation@deltagroup.bg</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:trucks@delta-transport.eu" style="color: #fff;">trucks@delta-transport.eu</a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <i class="fa fa-envelope"></i> <a href="mailto:info@delta-transport.eu" style="color: #fff;">info@delta-transport.eu</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:sales@delta-transport.eu" style="color: #fff;">sales@delta-transport.eu</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:export@delta-transport.eu" style="color: #fff;">export@delta-transport.eu</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:import@delta-transport.eu" style="color: #fff;">import@delta-transport.eu</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:terminal@delta-transport.eu" style="color: #fff;">terminal@delta-transport.eu</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:account@delta-transport.eu" style="color: #fff;">account@delta-transport.eu</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:documentation@delta-transport.eu" style="color: #fff;">documentation@delta-transport.eu</a><br>
+                                        <i class="fa fa-envelope"></i> <a href="mailto:trucks@deltagroup.bg" style="color: #fff;">trucks@delta-transport.eu</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

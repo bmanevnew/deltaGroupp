@@ -99,7 +99,7 @@ body {
     position: relative;
     color: #fff; /* Adjust the text color as needed */
     background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
-    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+    backdrop-filter: blur(1px); /* Adjust the blur radius as needed */
     padding: 20px; /* Adjust the padding as needed */
     /* Additional styling for the slide content */
 }
@@ -107,7 +107,7 @@ body {
 .text-content {
     position: relative;
     color: #fff; /* Adjust the text color as needed */
-    background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
+    background-color: rgba(255, 255, 255, 0.1); /* Adjust the background color and opacity as needed */
     backdrop-filter: blur(2px); /* Adjust the blur radius as needed */
     padding: 20px; /* Adjust the padding as needed */
     /* Additional styling for the slide content */
@@ -3675,6 +3675,10 @@ p {
     font-size: 55px;
     line-height: 55px;
     margin-bottom: 10px;
+    font-family: fantasy;
+    /*font-family: fantasy;*/
+    /*font-family: "Brush Script MT", cursive;*/
+    /*font-family: "Century Gothic", serif;*/
 }
 
 .content {
@@ -5962,8 +5966,8 @@ ul.service-menu .children li:last-child {
 }
 
 .footer-sidebars {
-    padding-top: 80px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .opening-hours {
@@ -7140,6 +7144,11 @@ ul.service-menu .children li:last-child {
 .fh-contact-box h4,
 .fh-contact-box .desc {
     padding-left: 40px;
+}
+
+.contact-info a:hover {
+    color: #ff0000;
+    text-decoration: underline;
 }
 
 .fh-contact-box ul {
