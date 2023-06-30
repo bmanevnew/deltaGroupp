@@ -1,22 +1,25 @@
 package com.example.newproject.models;
 
-import javax.persistence.*;
+
 //@Where(clause = "is_active = true")
-@Entity
-@Table(name = "jobs")
 public class Job {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "job_id")
+
+
+    public Job(Long id, String name, String description, boolean isActive) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.isActive = isActive;
+    }
+
     private Long id;
 
-    @Column(name = "name")
+
     private String name;
 
-    @Column(name = "description")
+
     private String description;
 
-    @Column(name = "is_active")
     private boolean isActive;
 
     public Long getId() {

@@ -1,25 +1,32 @@
 package com.example.newproject.models;
 
-import javax.persistence.*;
 
-@Entity
-@Table(name = "users")
+
+
+
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+
+    public User(Long id, String username, String password, String email, boolean isAdmin, boolean isBlocked) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.isAdmin = isAdmin;
+        this.isBlocked = isBlocked;
+    }
+
     private Long id;
 
-    @Column(name = "username")
+
     private String username;
 
-    @Column(name = "password")
+
     private String password;
-    @Column(name = "email", nullable = false)
+
     private String email;
-    @Column(name = "isAdmin")
+
     private boolean isAdmin;
-    @Column(name = "isBlocked")
+
     private boolean isBlocked;
 
     public String getUsername() {

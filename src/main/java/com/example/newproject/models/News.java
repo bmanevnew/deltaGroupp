@@ -3,29 +3,32 @@ package com.example.newproject.models;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "news")
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class News {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "news_id")
+    public News(Long id, String name, String smallName, String photos, String description, LocalDateTime date) {
+        this.id = id;
+        this.name = name;
+        this.smallName = smallName;
+        this.photos = photos;
+        this.description = description;
+        this.date = date;
+    }
+
     private Long id;
 
-    @Column(name = "name")
+
     private String name;
-    @Column(name = "smallName")
+
     private String smallName;
-    @Column(name = "photos")
+
     private String photos;
 
-    @Column(name = "description")
+
     private String description;
-    @Column(name = "date")
+
     private LocalDateTime date;
 
     public Long getId() {

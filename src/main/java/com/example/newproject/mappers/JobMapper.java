@@ -23,7 +23,7 @@ public class JobMapper {
     }
 
     public Job dtoToJob(JobDtoIn jobDtoIn){
-        Job job = new Job();
+        Job job = new Job(1L,"a","a",true);
         job.setName(jobDtoIn.getName());
         job.setDescription(jobDtoIn.getDescription());
         job.setActive(true);

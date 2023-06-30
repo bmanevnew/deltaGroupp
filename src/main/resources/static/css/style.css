@@ -3675,10 +3675,9 @@ p {
     font-size: 55px;
     line-height: 55px;
     margin-bottom: 10px;
-    font-family: fantasy;
     /*font-family: fantasy;*/
     /*font-family: "Brush Script MT", cursive;*/
-    /*font-family: "Century Gothic", serif;*/
+    font-family: "Century Gothic", serif;
 }
 
 .content {

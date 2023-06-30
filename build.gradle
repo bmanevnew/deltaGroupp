@@ -16,24 +16,17 @@ sourceCompatibility = '1.8'
 
 repositories {
     mavenCentral()
-    maven {
-        url 'https://maven.mariadb.org/mariadb-java-client'
-    }
 }
 
 dependencies {
-    implementation 'mysql:mysql-connector-java:8.0.26'
-    implementation 'org.mariadb.jdbc:mariadb-java-client:2.7.4'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.projectlombok:lombok:1.18.26'
     implementation 'org.modelmapper:modelmapper:3.1.1'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
-
-
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -48,6 +41,5 @@ jar {
     manifest {
         attributes 'Class-Path': configurations.implementationOnly.collect { it.getName() }.join(' '),
                 'Main-Class': 'com.example.newproject.Main'
-        // Replace 'com.example.newproject.Main' with your actual main class
     }
 }
