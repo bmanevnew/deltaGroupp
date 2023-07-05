@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en">
 
 <head>
-    <!--    <style>-->
-    <!--        .count-title {-->
-    <!--            color: #ff0006 !important; /* Change the color to your desired value */-->
-    <!--        }-->
-    <!--    </style>-->
+    <meta charset="utf-8">
+    <title>Delta Group</title>
     <style>
         .contact-info a:hover {
 
@@ -15,8 +11,6 @@
         }
     </style>
     <style>
-
-
         .sub-menu li .email {
             display: inline-block;
             white-space: nowrap;
@@ -25,99 +19,69 @@
             text-align: right;
             width: 100%; /* Ensure the email spans take up the full width */
         }
-
-        .welservices.row {
-            justify-content: center;
-        }
-
-        .welservices .col-md-4 {
-            display: flex;
-            justify-content: center;
-        }
-
-        .footer-widgets {
+        .blurry-header {
             position: relative;
             overflow: hidden;
         }
 
-        .footer-widgets::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            /*background-image: url(../static/images/bg/footer-bg.jpg); !* Replace with the actual path to your image *!*/
-            background-size: cover;
-            filter: blur(50px); /* Adjust the blur strength as needed */
-            z-index: -1;
+        .header-content {
+            position: relative;
+            padding: 20px;
+            color: blue; /* Set the text color to blue */
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the background color and opacity as needed */
+            backdrop-filter: blur(2px); /* Adjust the blur radius as needed */
         }
 
-        .footer-widgets::after {
-            content: "";
+        .header-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 255, 0.5); /* Adjust the color and opacity as needed */
+            width: 100%;
+            height: 100%;
+            background-image: inherit;
+            filter: blur(2px);
+            opacity: 0.3; /* Adjust the opacity value as needed */
             z-index: -1;
         }
     </style>
-<!--    <style>-->
-<!--        .language-option {-->
-<!--            display: none;-->
-<!--        }-->
-
-<!--        .language-option.active {-->
-<!--            display: inline-block;-->
-<!--        }-->
-<!--    </style>-->
-
-    <meta charset="utf-8">
-    <title>Delta Group</title>
     <!-- Stylesheets -->
     <!-- bootstrap v3.3.6 css -->
-    <link href="../../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
     <!-- font-awesome css -->
-    <link href="../../static/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
     <!-- flaticon css -->
-    <link href="../../static/css/flaticon.css" rel="stylesheet">
+    <link href="../css/flaticon.css" rel="stylesheet">
     <!-- factoryplus-icons css -->
-    <link href="../../static/css/factoryplus-icons.css" rel="stylesheet">
+    <link href="../css/factoryplus-icons.css" rel="stylesheet">
     <!-- animate css -->
-    <link href="../../static/css/animate.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
     <!-- owl.carousel css -->
-    <link href="../../static/css/owl.css" rel="stylesheet">
+    <link href="../css/owl.css" rel="stylesheet">
     <!-- fancybox css -->
-    <link href="../../static/css/jquery.fancybox.css" rel="stylesheet">
-    <link href="../../static/css/hover.css" rel="stylesheet">
-    <link href="../../static/css/frontend.css" rel="stylesheet">
-    <link href="../../static/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../static/css/style.css">
+    <link href="../css/jquery.fancybox.css" rel="stylesheet">
+    <link href="../css/hover.css" rel="stylesheet">
+    <link href="../css/frontend.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <!-- switcher css -->
-    <link href="../../static/css/switcher.css" rel="stylesheet">
+    <link href="../css/switcher.css" rel="stylesheet">
     <link rel='stylesheet' id='factoryhub-color-switcher-css' />
     <!-- revolution slider css -->
-    <link rel="stylesheet" type="text/css" href="../../static/css/revolution/settings.css">
-    <link rel="stylesheet" type="text/css" href="../../static/css/revolution/layers.css">
-    <link rel="stylesheet" type="text/css" href="../../static/css/revolution/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../css/revolution/settings.css">
+    <link rel="stylesheet" type="text/css" href="../css/revolution/layers.css">
+    <link rel="stylesheet" type="text/css" href="../css/revolution/navigation.css">
 
     <!--Favicon-->
-    <!--    <link rel="shortcut icon" href="../static/images/maker1.png" type="image/x-icon">-->
-    <!--    <link rel="icon" href="../static/images/maker1.png" type="image/x-icon">-->
-    <link rel="icon" type="image/png" href="../../static/images/icon/maker1.png">
-
+    <!--    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">-->
+    <!--    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon">-->
+    <link rel="icon" type="image/png" href="../images/icon/maker1.png">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../static/css/responsive.css" rel="stylesheet">
+    <link href="../css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
     <!--[if lt IE 9]>
     <script src="../static/js/respond.js"></script><![endif]-->
-
-
 </head>
 
 <body class="home header-transparent  header-sticky header-v1 hide-topbar-mobile">
@@ -174,11 +138,11 @@
                 </div>
                 <div class="col-lg-1">
                     <div class="language-switcher">
-                        <a href="../../static/index.html" class="language-option" data-lang="bg">
-                            <img src="../../static/images/resources/bg-flag.png" alt="Bulgarian" width="16" height="16" />
+                        <a href="../bg/ocean-freight-forwarding.html" class="language-option" data-lang="bg">
+                            <img src="../images/resources/bg-flag.png" alt="Bulgarian" width="16" height="16" />
                         </a>
                         <a href="#" class="language-option" data-lang="en" style="display: none;">
-                            <img src="../../static/images/resources/en-flag.png" alt="English" width="16" height="16" />
+                            <img src="../images/resources/en-flag.png" alt="English" width="16" height="16" />
                         </a>
                     </div>
                 </div>
@@ -187,8 +151,6 @@
         </div>
     </div>
 </div>
-
-<!-- topbar end -->
 
 
 <!-- masthead -->
@@ -295,89 +257,179 @@
 
 
 
-<!-- masthead end -->
-
-<!--Main Slider-->
-<section class="rev_slider_wrapper">
-    <div id="slider1" class="rev_slider" data-version="5.0">
-        <ul>
-            <!-- SLIDE  -->
-            <li class="slide" data-index="rs-1">
-                <img src="https://imgur.com/mwASp4z.jpg"
-                     data-src="https://imgur.com/mwASp4z.jpg"
-                     alt="Home Page 1" class="slide-bg lazyload">
-                <div class="slide-content">
-                    <div class="title">Welcome to Delta Group</div>
-                </div>
-            </li>
-            <!-- SLIDE  -->
-            <li class="slide" data-index="rs-1">
-                <img src="https://imgur.com/5nfaXQz.jpg"
-                     data-src="https://imgur.com/5nfaXQz.jpg"
-                     alt="Home Page 2" class="slide-bg lazyload">
-                <div class="slide-content">
-                    <div class="title">Welcome to Delta Group</div>
-                </div>
-            </li>
-            <!-- SLIDE  -->
-            <li class="slide" data-index="rs-1">
-                <img src="https://imgur.com/q1eIHjD.jpg"
-                     data-src="https://imgur.com/q1eIHjD.jpg"
-                     alt="Home Page 3" class="slide-bg lazyload">
-                <div class="slide-content">
-                    <div class="title">Welcome to Delta Group</div>
-                </div>
-            </li>
-            <li class="slide" data-index="rs-1">
-                <img src="https://imgur.com/EG0PvsS.jpg"
-                     data-src="https://imgur.com/EG0PvsS.jpg"
-                     alt="Home Page 4" class="slide-bg lazyload">
-                <div class="slide-content">
-                    <div class="title">Welcome to Delta Group</div>
-                </div>
-            </li>
-            <li class="slide" data-index="rs-1">
-                <img src="https://imgur.com/AaV8AFb.jpg"
-                     data-src="https://imgur.com/AaV8AFb.jpg"
-                     alt="Home Page 5" class="slide-bg lazyload">
-                <div class="slide-content">
-                    <div class="title">Welcome to Delta Group</div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
-<!--Main Slider  end-->
-
-
-
-<div class="welcomesec secpadd">
-    <div class="container">
-<!--        <div class="fh-section-title clearfix text-center version-dark paddbtm20">-->
-<!--            <h2>Welcome to Delta Group</h2>-->
-<!--        </div>-->
-        <div class="welservices row justify-content-center" style="display: flex; justify-content: center;">
-            <div class="col-md-4 col-sm-6 text-center">
-                <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
-                    <span class="fh-icon"><i class="flaticon-transport-4"></i></span>
-                    <h4 class="box-title"><a href="ocean-freight-forwarding.html">Ocean Freight Forwarding</a></h4>
-
+<!--Page Header-->
+<div class="page-header title-area blurry-header">
+    <div class="header-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="header-content">
+                        <div class="header-overlay"></div>
+                        <h1 class="page-title" style="color: blue;">FCL / LCL Ocean Freight & NVOCC</h1>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6 text-center">
-                <div class="fh-icon-box icon-type-theme_icon style-1 version-dark hide-button icon-left">
-                    <span class="fh-icon"><i class="flaticon-transport-5"></i></span>
-                    <h4 class="box-title"><a href="inland-transport.html">Road Freight Forwarding</a></h4>
-
+        </div>
+    </div>
+    <div class="breadcrumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-12 col-xs-12 site-breadcrumb">
+                    <nav class="breadcrumb">
+                        <a class="home" href="index.html"><span>Home</span></a>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <span>FCL / LCL Ocean Freight & NVOCC</span>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Welcome sec   end-->
+<!--Page Header end-->
 
+<!--FCL / LCL Ocean Freight & NVOCC-->
+<section class="aboutsec-2 secpaddbig">
+    <div class="container">
+        <div class="row">
 
-<!--footer sec-->
+            <div class="col-md-12 col-sm-6">
+                <div class="abotinforgt">
+                    <div class="fh-section-title clearfix text-left version-dark paddbtm30">
+                        <h2>FCL / LCL Ocean Freight & NVOCC</h2>
+                    </div>
+                    <div class="about-text">
+                        <p><strong>FCL - Full Container Load by sea</strong><br>
+                            <strong>LCL - Less Container Load by sea</strong></p>
+                        <p>The advent of the multi-modal container has revolutionized the shipping industry over
+                            the past 35 years, and now the containerized vessels serve the majority of Deep-Sea
+                            destinations.<br>
+                            <br><strong>Delta Group ®,</strong> will provide advice about which type of service and
+                            line is the optimum choice for shipping, according to the criteria of the cargo in
+                            question, documentation requirements, vessels availability, transit times and cost.
+                            Our general freight agreements with the world's biggest shipping lines enables us
+                            to offer most competitive ocean freights available at the transport market. As
+                            leading ocean freight forwarder & NVOCC in Bulgaria, Delta Transport Ltd./Delta
+                            Shipping Ltd., provides a full door to door FCL and LCL services, in complete
+                            control of your cargo from place of acceptance up to delivery to your consignees
+                            address.</p>
+                        <br>
+                        <p><strong>Southeast Asia</strong>
+                            <br>Singapore, Port Klang, Keelung, Kaohsiung, Bangkok, Laem Chabang, Ho Chi Minh,
+                            Haiphong, Manila, Jakarta, Surabaya, Panjang, Semarang</p>
+                        <p><strong>South Asia</strong>
+                            <br>Mumbai, Nhava Sheva, Cochin, Chennai, Madras, Calcutta, Colombo, Chitagong, Karachi,
+                            Bandar Abbas</p>
+                        <p><strong>The Middle East</strong>
+                            <br>Dubai, Jeddah, Kuwait, Basra, Aqaba, Salalah, Hodeidah, Dammam, Port Sudan, Haifa,
+                            Ashdod, Lattakia, Beirut, Limassol</p>
+                        <p><strong>North Africa</strong>
+                            <br>Port Said, Alexandria, Damietta, Tripoli, Tunis, Skikda, Alger, Casablanca</p>
+                        <p><strong>Equatorial Africa</strong>
+                            <br>Mombasa, Dar es Salaam, Douala, Abidjan, Lagos</p>
+                        <p><strong>South Africa</strong>
+                            <br>Capetown, Durban, Port Elizabeth, Port Louis, Toamasina, Reunion</p>
+                        <p><strong>USA & Canada</strong>
+                            <br>Halifax, Toronto, Montreal, New York, Boston, Baltimore, Norfolk, Charlestone,
+                            Savannah, Miami, Houston, Freeport, Port Everglades, Jacksonville, New Orleans,
+                            Los Angeles, Long Beach, San Francisco, Oakland, Seattle, Vancouver </p>
+                        <p><strong>Mexico & Central America</strong>
+                            <br>Veracruz, Altamira, Manzanillo, Puerto Limon, Panama, Santos Tomas de Castilla,
+                            Puerto Cortes, Caucedo, Kingston, San Juan, Puerto Cabello, La Guaira</p>
+                        <p><strong>South America</strong>
+                            <br>Rio De Janeiro, Santos, Itajai, Vitoria, Sao Francisco do Sul, Recife, Paranagua,
+                            Salvador, Fortaleza, Valparaiso, Buena Ventura, Cartagena, San Viicente, Montevideo,
+                            Callao, Rio Grande</p>
+                        <p><strong>Australia & New Zealand</strong>
+                            <br>Melbourne, Sidney, Adelaide, Freemantle, Brisbane, Aukland, Wellington</p>
+                        <p><strong>Black Sea region & Turkey</strong>
+                            <br>Varna, Bourgas, Constanza, Odessa, Novorossijsk, Poti, Istanbul, Izmir, Mersin,
+                            Gemlik</p>
+
+                        <p><strong>And many more...</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--About us end-->
+    <!-- Feature sec -->
+    <!--        <section class="features-3 bluebg">-->
+    <!--            <div class="container">-->
+    <!--                <div class="row">-->
+    <!--                    <div class="col-sm-4">-->
+    <!--                        <div class="fh-feature-box "><span class="chars">M</span>-->
+    <!--                            <h4 class="box-title">Our Mission</h4>-->
+    <!--                            <div class="desc">We meet our customers’ demands for a personal &amp; profesional service by offering innovative supply chain solutions.</div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="col-sm-4">-->
+    <!--                        <div class="fh-feature-box "><span class="chars">V</span>-->
+    <!--                            <h4 class="box-title">Our Vision</h4>-->
+    <!--                            <div class="desc">We proactively and constantly look for new possibilities. Therefore, an important part of our vision is to attract &amp; retain.</div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="col-sm-4">-->
+    <!--                        <div class="fh-feature-box "><span class="chars">C</span>-->
+    <!--                            <h4 class="box-title">Core Values</h4>-->
+    <!--                            <div class="desc">Procedures, values and attitudes are crucial to our reputation – not to mention the success we enjoy.</div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </section>-->
+    <!-- Feature sec end -->
+
+    <!-- featured sec -->
+    <!--        <section class="whychoos-3 secpadd">-->
+    <!--            <div class="container">-->
+    <!--                <div class="fh-section-title clearfix text-center version-dark paddbtm30">-->
+    <!--                    <h2>Why Choose Us</h2>-->
+    <!--                </div>-->
+    <!--                <div class="row">-->
+    <!--                    <div class="col-md-3 col-sm-6">-->
+    <!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+    <!--                            <span class="fh-icon"><i class="flaticon-people"></i></span>-->
+    <!--                            <h4 class="box-title"><span>Global Supply Chain</span></h4>-->
+    <!--                            <div class="desc">-->
+    <!--                                <p>Efficiently unleash cross-media information without cross-media value.</p>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="col-md-3 col-sm-6">-->
+    <!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+    <!--                            <span class="fh-icon"><i class="flaticon-route"></i></span>-->
+    <!--                            <h4 class="box-title"><span>Shipment Tracking</span></h4>-->
+    <!--                            <div class="desc">-->
+    <!--                                <p>We offer intelligent concepts for road & tail as well as complex special services.</p>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="col-md-3 col-sm-6">-->
+    <!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+    <!--                            <span class="fh-icon"><i class="flaticon-open-cardboard-box"></i></span>-->
+    <!--                            <h4 class="box-title"><span>Careful Handling</span></h4>-->
+    <!--                            <div class="desc">-->
+    <!--                                <p>Cargo HUB items are transported at some stage of their journey along the world's roads.</p>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="col-md-3 col-sm-6">-->
+    <!--                        <div class="fh-icon-box style-2 version-dark icon-center">-->
+    <!--                            <span class="fh-icon"><i class="flaticon-alarm-clock"></i></span>-->
+    <!--                            <h4 class="box-title"><span>On Time Delivery</span></h4>-->
+    <!--                            <div class="desc">-->
+    <!--                                <p>We offer intelligent concepts for road & tail as well as complex special services.</p>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </section>-->
+    <!-- featured sec end -->
+
+    <!--footer sec-->
 <div class="footer-widgets widgets-area">
     <div class="contact-widget">
         <div class="container">
@@ -465,22 +517,21 @@
         </div>
     </div>
 </div>
-<!--footer sec end-->
+    <!--footer sec end-->
 
-<!--copyright sec-->
-<footer class="site-footer">
-    <div class="container">
-        <div class="row">
-            <div class="footer-copyright col-md-6 col-sm-12 col-sx-12">
-                <div class="site-info">Copyright @ 2023 <a href="#">Delta Group</a>, All Right Reserved</div>
+    <!--copyright sec-->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-copyright col-md-6 col-sm-12 col-sx-12">
+                    <div class="site-info">Copyright @ 2023 <a href="#">Delta Group</a>, All Right Reserved</div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<!--copyright sec end-->
+    </footer>
+    <!--copyright sec end-->
 </div>
 <!--End pagewrapper-->
-
 
 <!--primary-mobile-nav-->
 <div class="primary-mobile-nav header-v1" id="primary-mobile-nav" role="navigation">
@@ -504,176 +555,63 @@
             <a href="request-a-quote.html" class="fh-btn btn">Get A Quote</a>
         </li>
         <li class="language-switcher">
-            <a href="../../static/index.html" class="language-option" data-lang="bg">
-                <img src="../../static/images/resources/bg-flag.png" alt="Bulgarian" width="16" height="16" />
+            <a href="../bg/ocean-freight-forwarding.html" class="language-option" data-lang="bg">
+                <img src="../images/resources/bg-flag.png" alt="Bulgarian" width="16" height="16" />
             </a>
             <a href="#" class="language-option" data-lang="en" style="display: none;">
-                <img src="../../static/images/resources/en-flag.png" alt="English" width="16" height="16" />
+                <img src="../images/resources/en-flag.png" alt="English" width="16" height="16" />
             </a>
         </li>
     </ul>
 </div>
 <div id="off-canvas-layer" class="off-canvas-layer"></div>
-
 <!--primary-mobile-nav end-->
 
 <!--Scroll to top-->
 <a id="scroll-top" class="backtotop" href="#page-top"><i class="fa fa-angle-up"></i></a>
 
-<!--Color switcher-->
-<div class="predefined_styles" id="styleswitch_area">
-    <a href="?default=true" data-rel="default" class="styleswitch"
-       style="background:#000080;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>
-</div>
-<!--<div class="demo_changer" id="demo_changer">-->
-<!--    <div class="demo-icon fa fa-sliders"></div>-->
-<!--    <div class="form_holder">-->
-<!--        <h3 class="demo-title">Customize CargoHub</h3>-->
 
-<!--        <div class="line"></div>-->
-<!--        <p>Color Scheme</p>-->
-<!--        <div class="predefined_styles" id="styleswitch_area">-->
-<!--            <a href="?default=true" data-rel="default" class="styleswitch"-->
-<!--               style="background:#000080;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>-->
-<!--            <a href="#" data-rel="navy-darkblue" class="styleswitch"-->
-<!--               style="background:#00baff;border-right-color: #0c1239;border-bottom-color: #0c1239"></a>-->
-<!--            <a href="#" data-rel="orange-black" class="styleswitch"-->
-<!--               style="background:#ee6012;border-right-color: #202020;border-bottom-color: #202020"></a>-->
-<!--            <a href="#" data-rel="yellow-blue" class="styleswitch"-->
-<!--               style="background:#f6a604;border-right-color: #0032ab;border-bottom-color: #0032ab"></a>-->
-<!--        </div>-->
-<!--        <div class="line"></div>-->
-<!--    </div>-->
-<!--</div>-->
+
 <!-- jquery Liabrary -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<script src="../js/jquery-1.12.4.min.js"></script>
 <!-- bootstrap v3.3.6 js -->
-<script src="../../static/js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <!-- fancybox js -->
-<script src="../../static/js/jquery.fancybox.pack.js"></script>
-<script src="../../static/js/jquery.fancybox-media.js"></script>
+<script src="../js/jquery.fancybox.pack.js"></script>
+<script src="../js/jquery.fancybox-media.js"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <!-- owl.carousel js -->
-<script src="../../static/js/owl.js"></script>
+<script src="../js/owl.js"></script>
 <!-- counter js -->
-<script src="../../static/js/jquery.appear.js"></script>
-<script src="../../static/js/jquery.countTo.js"></script>
+<script src="../js/jquery.appear.js"></script>
+<script src="../js/jquery.countTo.js"></script>
 <!-- validate js -->
-<script src="../../static/js/validate.js"></script>
+<script src="../js/validate.js"></script>
 <!-- switcher js -->
-<script src="../../static/js/switcher.js"></script>
+<script src="../js/switcher.js"></script>
 
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
-<script src="../../static/js/gmap.js"></script>
-<script src="../../static/js/map-helper.js"></script>
+<script src="../js/gmap.js"></script>
+<script src="../js/map-helper.js"></script>
 
 <!-- REVOLUTION JS FILES -->
-<script type="text/javascript" src="../../static/js/revolution/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="../../static/js/revolution/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="../js/revolution/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="../js/revolution/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="../js/revolution/extensions/revolution.extension.actions.min.js"></script>
+<script type="text/javascript" src="../js/revolution/extensions/revolution.extension.carousel.min.js"></script>
+<script type="text/javascript" src="../js/revolution/extensions/revolution.extension.kenburn.min.js"></script>
 <script type="text/javascript"
-        src="../../static/js/revolution/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript"
-        src="../../static/js/revolution/extensions/revolution.extension.carousel.min.js"></script>
-<script type="text/javascript"
-        src="../../static/js/revolution/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript"
-        src="../../static/js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript"
-        src="../../static/js/revolution/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript"
-        src="../../static/js/revolution/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript"
-        src="../../static/js/revolution/extensions/revolution.extension.parallax.min.js"></script>
-<script type="text/javascript"
-        src="../../static/js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="../../static/js/revolution/extensions/revolution.extension.video.min.js"></script>
-<script>
-    // Select all the images with the lazyload class
-    const lazyImages = document.querySelectorAll('.lazyload');
-
-    // Create an intersection observer instance
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                const src = img.getAttribute('data-src');
-
-                // Load the actual image source
-                img.setAttribute('src', src);
-                img.classList.remove('lazyload');
-
-                // Stop observing the image once it's loaded
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    // Observe each lazy image
-    lazyImages.forEach(image => {
-        observer.observe(image);
-    });
-</script>
+        src="../js/revolution/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript" src="../js/revolution/extensions/revolution.extension.migration.min.js"></script>
+<script type="text/javascript" src="../js/revolution/extensions/revolution.extension.navigation.min.js"></script>
+<script type="text/javascript" src="../js/revolution/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="../js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
+<script type="text/javascript" src="../js/revolution/extensions/revolution.extension.video.min.js"></script>
 
 <!-- script JS  -->
-<script src="../../static/js/scripts.min.js"></script>
-<script src="../../static/js/script.js"></script>
-<script>
-    function countNumbers(target, counterId, duration) {
-        const counterElement = document.getElementById(counterId);
-        const startValue = 0;
-        const increment = (target - startValue) / (duration / 10); // Adjust the increment for smoother counting
-
-        let currentValue = startValue;
-        const interval = setInterval(() => {
-            currentValue += increment;
-            if (currentValue >= target) {
-                clearInterval(interval);
-                currentValue = target;
-            }
-            counterElement.innerText = Math.floor(currentValue);
-        }, 10);
-    }
-
-    // Start counting when the element is visible
-    function startCountersWhenVisible() {
-        const counters = document.querySelectorAll('.value');
-
-        function isInViewport(element) {
-            const rect = element.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        function checkCountersVisibility() {
-            counters.forEach(counter => {
-                if (isInViewport(counter) && !counter.classList.contains('counting')) {
-                    const targetValue = parseInt(counter.innerText);
-                    counter.innerText = '0'; // Reset counter to start from 0
-                    counter.classList.add('counting');
-                    countNumbers(targetValue, counter.id, 1000); // Adjust the duration as needed
-                }
-            });
-        }
-
-        window.addEventListener('scroll', function () {
-            if (window.requestAnimationFrame) {
-                window.requestAnimationFrame(checkCountersVisibility);
-            } else {
-                checkCountersVisibility();
-            }
-        });
-
-        checkCountersVisibility();
-    }
-
-    startCountersWhenVisible();
-</script>
+<script src="../js/scripts.min.js"></script>
+<script src="../js/script.js"></script>
 <script>
     function getCurrentDateTime() {
         const currentDateElement = document.getElementById('current-date');
@@ -691,6 +629,7 @@
         const currentTime = `${currentHours}:${currentMinutes}`;
         currentTimeElement.textContent = currentTime;
     }
+
     async function getWeatherData() {
         const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=Sofia';
         const options = {
@@ -720,20 +659,6 @@
     getWeatherData();
     setInterval(updateClock, 30000); // Update the clock every second (1000 milliseconds)
 </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var currentLang = "en"; // Update this value dynamically based on the current page
-
-        var languageOptions = document.querySelectorAll(".language-option");
-        languageOptions.forEach(function (option) {
-            var lang = option.querySelector(".language-link").getAttribute("data-lang");
-            if (lang === currentLang) {
-                option.classList.add("active");
-            }
-        });
-    });
-</script>
-
 
 </body>
 
